@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- 防语言闪跳(FOUC)：在外部 CSS/JS 之前先确定语言；非英文时暂隐正文，译文注入完成后再显示 -->
+  <script>
+  (function () {
+    var LANGS = ["zh", "en", "ar", "ru", "de"], l = "en";
+    try {
+      var s = localStorage.getItem("ts-lang");
+      if (s && LANGS.indexOf(s) > -1) l = s;
+      var q = new URLSearchParams(location.search).get("lang");
+      if (q && LANGS.indexOf(q) > -1) l = q;
+      var h = document.documentElement;
+      h.setAttribute("lang", l);
+      h.setAttribute("dir", l === "ar" ? "rtl" : "ltr");
+      if (l !== "en") h.className += " lang-pending";
+    } catch (e) {}
+    // 兜底：万一 app.js 加载失败，4 秒后强制显示，避免页面永久空白
+    setTimeout(function () {
+      try { document.documentElement.classList.remove("lang-pending"); } catch (e) {}
+    }, 4000);
+  })();
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quality Control &amp; Certificates | EN 10204, ISO 9001 | ALLOYTI</title>
+  <meta name="description" content="How ALLOYTI controls titanium quality: ISO 9001 and AS9100D systems, EN 10204 3.1/3.2 certificates, third-party inspection, traceability and export documents.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0A1A3A">
+  <link rel="canonical" href="https://www.alloyti.com/quality.html">
+  <link rel="icon" type="image/png" href="assets/favicon-64.png">
+  <link rel="stylesheet" href="styles.css">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="ALLOYTI">
+  <meta property="og:title" content="Quality Control &amp; Certificates | EN 10204, ISO 9001 | ALLOYTI">
+  <meta property="og:description" content="How ALLOYTI controls titanium quality: ISO 9001 and AS9100D systems, EN 10204 3.1/3.2 certificates, third-party inspection, traceability and export documents.">
+  <meta property="og:url" content="https://www.alloyti.com/quality.html">
+  <meta property="og:image" content="https://www.alloyti.com/assets/hero-industry.jpg">
+  <meta property="og:image:alt" content="Titanium mill products for industrial supply">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Quality Control &amp; Certificates | EN 10204, ISO 9001 | ALLOYTI">
+  <meta name="twitter:description" content="How ALLOYTI controls titanium quality: ISO 9001 and AS9100D systems, EN 10204 3.1/3.2 certificates, third-party inspection, traceability and export documents.">
+  <meta name="twitter:image" content="https://www.alloyti.com/assets/hero-industry.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.alloyti.com/#organization",
+        "name": "ALLOYTI",
+        "url": "https://www.alloyti.com/",
+        "email": "sales@alloyti.com",
+        "contactPoint": { "@type": "ContactPoint", "contactType": "sales", "email": "sales@alloyti.com", "availableLanguage": ["en", "zh", "ar", "ru", "de"] }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [[{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.alloyti.com/"}, {"@type": "ListItem", "position": 2, "name": "Quality & Service"}]]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+        {
+                "@type": "Question",
+                "name": "Which certificates are issued with an order?",
+                "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Mill test certificates to EN 10204 3.1 are issued as standard, covering chemical composition, mechanical properties and heat-number traceability. EN 10204 3.2 certificates countersigned by an independent inspector, and third-party inspection, can be arranged when agreed in the order."
+                }
+        },
+        {
+                "@type": "Question",
+                "name": "Can you arrange third-party inspection before shipment?",
+                "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. Independent inspection (for example SGS, TÜV or Bureau Veritas) can be arranged by agreement, with the scope — dimensional, visual, UT, PT or witness testing — defined before production starts."
+                }
+        },
+        {
+                "@type": "Question",
+                "name": "How are titanium shipments packed and identified?",
+                "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Material is packed to prevent contact damage and contamination, marked with grade, heat number, size and order reference, and shipped with packing list and commercial invoice. Export documents required at destination are confirmed before dispatch."
+                }
+        }
+]
+      },
+      {
+        "@type": "WebPage",
+        "url": "https://www.alloyti.com/quality.html",
+        "name": "Quality Control & Certificates | ALLOYTI",
+        "isPartOf": { "@id": "https://www.alloyti.com/#website" },
+        "inLanguage": "en"
+      }
+    ]
+  }
+  </script>
+</head>
+<body data-light-header="1">
+  <header class="site-header scrolled" id="siteHeader">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="ALLOYTI home">
+        <img class="brand-mark" src="assets/logo-emblem.png" alt="ALLOYTI logo" width="36" height="36"> <span class="brand-word" data-i18n="s001">ALLOYTI</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="primaryNav" aria-label="Open navigation"><span></span><span></span><span></span></button>
+      <div class="nav-links" id="primaryNav">
+        <a href="index.html" data-i18n="nav.home"><span data-i18n="s004">Home</span></a>
+        <a href="products.html" data-i18n="nav.products"><span data-i18n="s008">Products</span></a>
+        <a href="about.html" data-i18n="nav.about"><span data-i18n="s023">About</span></a>
+        <a href="quality.html" class="is-active" data-i18n="nav.quality"><span data-i18n="s043">Quality &amp; Service</span></a>
+        <a href="faq.html" data-i18n="nav.faq"><span data-i18n="s010">FAQ</span></a>
+        <a href="contact.html" class="nav-contact" data-i18n="nav.contact"><span data-i18n="s012">Contact</span></a>        <div class="lang-switch" id="langSwitch">
+          <button class="lang-toggle" id="langToggle" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Switch language">
+            <svg class="lang-globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            <span class="lang-code" id="langCode">EN</span>
+            <svg class="lang-caret" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </button>
+          <ul class="lang-menu" id="langMenu" role="listbox" aria-label="Language">
+            <li role="option" data-lang="en" class="is-active" aria-selected="true"><span class="lc">EN</span><span class="ln">English</span></li>
+            <li role="option" data-lang="zh"><span class="lc">中文</span><span class="ln">简体中文</span></li>
+            <li role="option" data-lang="ar" dir="rtl"><span class="lc">AR</span><span class="ln">العربية</span></li>
+            <li role="option" data-lang="ru"><span class="lc">RU</span><span class="ln">Русский</span></li>
+            <li role="option" data-lang="de"><span class="lc">DE</span><span class="ln">Deutsch</span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html" data-i18n="s004"><span data-i18n="s004">Home</span></a> › <span aria-current="page" data-i18n="s043"><span data-i18n="s043">Quality &amp; Service</span></span></nav>
+        <h1 data-i18n="s170"><span data-i18n="s170">Quality, Certificates &amp; Documents</span></h1>
+        <p class="page-lead" data-i18n="s171"><span data-i18n="s171">ISO 9001 and AS9100D certified production, EN 10204 3.1 and 3.2 certificates, third-party inspection on request, and heat-number traceability from mill certificate to packing list.</span></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="prose">
+          <h2 data-i18n="s172"><span data-i18n="s172">Quality management</span></h2>
+          <p><span data-i18n="s384">ALLOYTI operates a quality management system certified to</span> <b data-i18n="s034"><span data-i18n="s034">ISO 9001</span></b> <span data-i18n="s385">and an aerospace quality management system certified to</span> <b data-i18n="s035"><span data-i18n="s035">AS9100D</span></b><span data-i18n="s386">. In practice that means every order follows the same sequence: specification confirmed in writing, material identified by heat number, inspection performed to the agreed scope, and documents issued before dispatch.</span></p>
+
+          <h2 data-i18n="s173"><span data-i18n="s173">Order workflow</span></h2>
+          <ol>
+            <li><b data-i18n="s174"><span data-i18n="s174">Requirement confirmation</span></b> <span data-i18n="s387">— grade, standard, dimensions, quantity, service conditions and target delivery.</span></li>
+            <li><b data-i18n="s175"><span data-i18n="s175">Production planning</span></b> <span data-i18n="s388">— availability, route (hot rolling, forging, machining) and any special requirements confirmed.</span></li>
+            <li><b data-i18n="s176"><span data-i18n="s176">Documents and inspection</span></b> <span data-i18n="s389">— certificate type, inspection scope and any third-party witness agreed in advance.</span></li>
+            <li><b data-i18n="s177"><span data-i18n="s177">Delivery follow-up</span></b> <span data-i18n="s390">— packing, marking, inspection, dispatch and shipping documents tracked to closure.</span></li>
+          </ol>
+
+          <h2 data-i18n="s178"><span data-i18n="s178">Inspection scope</span></h2>
+          <table class="spec-table">
+            <thead><tr><th data-i18n="s179"><span data-i18n="s179">Item</span></th><th data-i18n="s180"><span data-i18n="s180">What it covers</span></th><th data-i18n="s181"><span data-i18n="s181">When it applies</span></th></tr></thead>
+            <tbody>
+              <tr><td data-i18n="s182"><span data-i18n="s182">Chemical composition</span></td><td data-i18n="s183"><span data-i18n="s183">Heat analysis against the grade specification</span></td><td data-i18n="s184"><span data-i18n="s184">Every order, on the mill certificate</span></td></tr>
+              <tr><td data-i18n="s185"><span data-i18n="s185">Mechanical properties</span></td><td data-i18n="s186"><span data-i18n="s186">Tensile, yield and elongation to the applicable standard</span></td><td data-i18n="s184"><span data-i18n="s184">Every order, on the mill certificate</span></td></tr>
+              <tr><td data-i18n="s187"><span data-i18n="s187">Dimensional inspection</span></td><td data-i18n="s188"><span data-i18n="s188">Diameter, thickness, length, straightness and tolerances</span></td><td data-i18n="s189"><span data-i18n="s189">Before packing</span></td></tr>
+              <tr><td data-i18n="s190"><span data-i18n="s190">Surface inspection</span></td><td data-i18n="s191"><span data-i18n="s191">Cracks, laps, scratches and finish condition</span></td><td data-i18n="s189"><span data-i18n="s189">Before packing</span></td></tr>
+              <tr><td data-i18n="s192"><span data-i18n="s192">Non-destructive testing</span></td><td data-i18n="s193"><span data-i18n="s193">Ultrasonic (UT) and penetrant (PT) testing</span></td><td data-i18n="s194"><span data-i18n="s194">When required by standard or your specification</span></td></tr>
+              <tr><td data-i18n="s195"><span data-i18n="s195">Third-party inspection</span></td><td data-i18n="s196"><span data-i18n="s196">Independent witness and reporting</span></td><td data-i18n="s197"><span data-i18n="s197">By agreement, defined in the order</span></td></tr>
+            </tbody>
+          </table>
+
+          <h2 data-i18n="s198"><span data-i18n="s198">Documents</span></h2>
+          <ul>
+            <li><b data-i18n="s199"><span data-i18n="s199">EN 10204 3.1</span></b> <span data-i18n="s391">— mill test certificate, issued as standard.</span></li>
+            <li><b data-i18n="s200"><span data-i18n="s200">EN 10204 3.2</span></b> <span data-i18n="s392">— countersigned certificate, on agreement.</span></li>
+            <li><b data-i18n="s201"><span data-i18n="s201">Third-party inspection report</span></b> <span data-i18n="s393">— when arranged.</span></li>
+            <li><b data-i18n="s202"><span data-i18n="s202">Packing list and commercial invoice</span></b> <span data-i18n="s394">— with grade, heat number and order reference.</span></li>
+            <li><b data-i18n="s203"><span data-i18n="s203">Certificate of origin</span></b> <span data-i18n="s395">and other destination-specific documents — confirmed before dispatch.</span></li>
+          </ul>
+          <p data-i18n="s204"><span data-i18n="s204">For customs purposes titanium and articles of titanium are generally classified under HS heading 8108; we confirm the exact code for your destination with the shipment documents.</span></p>
+
+          <h2 data-i18n="s205"><span data-i18n="s205">Traceability</span></h2>
+          <p data-i18n="s206"><span data-i18n="s206">Material is identified by heat number from mill certificate through to packing list, so any delivered piece can be traced back to its heat and inspection record. Marking method and identification rules are agreed with the order.</span></p>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item"><h3 data-i18n="s207"><span data-i18n="s207">Which certificates are issued with an order?</span></h3><p data-i18n="s208"><span data-i18n="s208">Mill test certificates to EN 10204 3.1 are issued as standard, covering chemical composition, mechanical properties and heat-number traceability. EN 10204 3.2 certificates countersigned by an independent inspector, and third-party inspection, can be arranged when agreed in the order.</span></p></div>
+          <div class="faq-item"><h3 data-i18n="s209"><span data-i18n="s209">Can you arrange third-party inspection before shipment?</span></h3><p data-i18n="s210"><span data-i18n="s210">Yes. Independent inspection (for example SGS, TÜV or Bureau Veritas) can be arranged by agreement, with the scope — dimensional, visual, UT, PT or witness testing — defined before production starts.</span></p></div>
+          <div class="faq-item"><h3 data-i18n="s211"><span data-i18n="s211">How are titanium shipments packed and identified?</span></h3><p data-i18n="s212"><span data-i18n="s212">Material is packed to prevent contact damage and contamination, marked with grade, heat number, size and order reference, and shipped with packing list and commercial invoice. Export documents required at destination are confirmed before dispatch.</span></p></div>
+        </div>
+      <div class="cta-band">
+        <div>
+          <h2 data-i18n="s045"><span data-i18n="s045">Need a quote for titanium?</span></h2>
+          <p data-i18n="s046"><span data-i18n="s046">Send the product form, grade, dimensions and destination — we confirm availability, standards and documents before you commit.</span></p>
+        </div>
+        <a class="button button-primary" href="contact.html"><span data-i18n="s339">Request a Quotation</span> <span aria-hidden="true">→</span></a>
+      </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" aria-label="ALLOYTI home">
+          <img class="brand-mark" src="assets/logo-emblem.png" alt="ALLOYTI logo" width="36" height="36"> <span class="brand-word" data-i18n="s001">ALLOYTI</span>
+        </a>
+        <p class="footer-slogan" data-i18n="ui.slogan"><span data-i18n="s326">Built on Titanium. Driven by Technology.</span></p>
+        <p data-i18n="footer.brandDesc"><span data-i18n="s327">Titanium and titanium alloy R&amp;D, production and deep processing — plate, bar, tube, fasteners and precision forgings to ASTM, GB and AMS standards, certified to ISO 9001 and AS9100D, exported to North America, Europe, the Middle East and Southeast Asia.</span></p>
+      </div>
+      <nav class="footer-col" aria-label="Product links">
+        <p class="footer-col-title" data-i18n="s008"><span data-i18n="s008">Products</span></p>
+        <a href="titanium-plate.html" data-i18n="s014"><span data-i18n="s014">Titanium Plate &amp; Sheet</span></a>
+        <a href="titanium-bar.html" data-i18n="s015"><span data-i18n="s015">Titanium Bar &amp; Rod</span></a>
+        <a href="titanium-tube.html" data-i18n="s016"><span data-i18n="s016">Titanium Tube & Pipe</span></a>
+        <a href="titanium-fasteners.html" data-i18n="s017"><span data-i18n="s017">Titanium Fasteners</span></a>
+        <a href="titanium-forgings.html" data-i18n="s018"><span data-i18n="s018">Forgings &amp; Machined Parts</span></a>
+      </nav>
+      <nav class="footer-col" aria-label="Company links">
+        <p class="footer-col-title" data-i18n="footer.colAbout"><span data-i18n="s057">Company</span></p>
+        <a href="about.html" data-i18n="nav.about"><span data-i18n="s023">About</span></a>
+        <a href="quality.html" data-i18n="nav.quality"><span data-i18n="s043">Quality &amp; Service</span></a>
+        <a href="faq.html" data-i18n="nav.faq"><span data-i18n="s010">FAQ</span></a>
+        <a href="index.html#showcase" data-i18n="nav.showcase"><span data-i18n="s328">Production</span></a>
+      </nav>
+      <div class="footer-col">
+        <p class="footer-col-title" data-i18n="footer.colContact"><span data-i18n="s012">Contact</span></p>
+        <a href="mailto:sales@alloyti.com" data-i18n="s019"><span data-i18n="s019">sales@alloyti.com</span></a>
+        <a href="https://wa.me/8618523283306" target="_blank" rel="noopener noreferrer" data-i18n="s020"><span data-i18n="s020">WhatsApp +86 185 2328 3306</span></a>
+        <a href="contact.html" data-i18n="s021"><span data-i18n="s021">Send an enquiry ↗</span></a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year">2026</span> <span data-i18n="s001">ALLOYTI</span></p>
+      <p data-i18n="ui.bottomTag"><span data-i18n="s329">TITANIUM · ASTM / DIN / ISO · Confirmed per order</span></p>
+      <a href="privacy.html" data-i18n="s022"><span data-i18n="s022">Privacy Policy</span></a>
+      <a href="index.html" data-i18n="ui.backTop"><span data-i18n="s330">Back to top ↑</span></a>
+    </div>
+  </footer>
+
+  <script src="i18n-pages.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

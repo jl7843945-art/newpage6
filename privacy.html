@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- 防语言闪跳(FOUC)：在外部 CSS/JS 之前先确定语言；非英文时暂隐正文，译文注入完成后再显示 -->
+  <script>
+  (function () {
+    var LANGS = ["zh", "en", "ar", "ru", "de"], l = "en";
+    try {
+      var s = localStorage.getItem("ts-lang");
+      if (s && LANGS.indexOf(s) > -1) l = s;
+      var q = new URLSearchParams(location.search).get("lang");
+      if (q && LANGS.indexOf(q) > -1) l = q;
+      var h = document.documentElement;
+      h.setAttribute("lang", l);
+      h.setAttribute("dir", l === "ar" ? "rtl" : "ltr");
+      if (l !== "en") h.className += " lang-pending";
+    } catch (e) {}
+    // 兜底：万一 app.js 加载失败，4 秒后强制显示，避免页面永久空白
+    setTimeout(function () {
+      try { document.documentElement.classList.remove("lang-pending"); } catch (e) {}
+    }, 4000);
+  })();
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy | ALLOYTI</title>
+  <meta name="description" content="How ALLOYTI handles the information you send through the enquiry form — what we collect, why, how long we keep it and your rights.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0A1A3A">
+  <link rel="canonical" href="https://www.alloyti.com/privacy.html">
+  <link rel="icon" type="image/png" href="assets/favicon-64.png">
+  <link rel="stylesheet" href="styles.css">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="ALLOYTI">
+  <meta property="og:title" content="Privacy Policy | ALLOYTI">
+  <meta property="og:description" content="How ALLOYTI handles the information you send through the enquiry form — what we collect, why, how long we keep it and your rights.">
+  <meta property="og:url" content="https://www.alloyti.com/privacy.html">
+  <meta property="og:image" content="https://www.alloyti.com/assets/hero-industry.jpg">
+  <meta property="og:image:alt" content="Titanium mill products for industrial supply">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Privacy Policy | ALLOYTI">
+  <meta name="twitter:description" content="How ALLOYTI handles the information you send through the enquiry form — what we collect, why, how long we keep it and your rights.">
+  <meta name="twitter:image" content="https://www.alloyti.com/assets/hero-industry.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.alloyti.com/#organization",
+        "name": "ALLOYTI",
+        "url": "https://www.alloyti.com/",
+        "email": "sales@alloyti.com",
+        "contactPoint": { "@type": "ContactPoint", "contactType": "sales", "email": "sales@alloyti.com", "availableLanguage": ["en", "zh", "ar", "ru", "de"] }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [[{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.alloyti.com/"}, {"@type": "ListItem", "position": 2, "name": "Privacy Policy"}]]
+      },
+      {
+        "@type": "WebPage",
+        "url": "https://www.alloyti.com/privacy.html",
+        "name": "Privacy Policy | ALLOYTI",
+        "isPartOf": { "@id": "https://www.alloyti.com/#website" },
+        "inLanguage": "en"
+      }
+    ]
+  }
+  </script>
+</head>
+<body data-light-header="1">
+  <header class="site-header scrolled" id="siteHeader">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="ALLOYTI home">
+        <img class="brand-mark" src="assets/logo-emblem.png" alt="ALLOYTI logo" width="36" height="36"> <span class="brand-word" data-i18n="s001">ALLOYTI</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="primaryNav" aria-label="Open navigation"><span></span><span></span><span></span></button>
+      <div class="nav-links" id="primaryNav">
+        <a href="index.html" data-i18n="nav.home"><span data-i18n="s004">Home</span></a>
+        <a href="products.html" data-i18n="nav.products"><span data-i18n="s008">Products</span></a>
+        <a href="about.html" data-i18n="nav.about"><span data-i18n="s023">About</span></a>
+        <a href="quality.html" data-i18n="nav.quality"><span data-i18n="s043">Quality &amp; Service</span></a>
+        <a href="faq.html" data-i18n="nav.faq"><span data-i18n="s010">FAQ</span></a>
+        <a href="contact.html" class="nav-contact" data-i18n="nav.contact"><span data-i18n="s012">Contact</span></a>        <div class="lang-switch" id="langSwitch">
+          <button class="lang-toggle" id="langToggle" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Switch language">
+            <svg class="lang-globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            <span class="lang-code" id="langCode">EN</span>
+            <svg class="lang-caret" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </button>
+          <ul class="lang-menu" id="langMenu" role="listbox" aria-label="Language">
+            <li role="option" data-lang="en" class="is-active" aria-selected="true"><span class="lc">EN</span><span class="ln">English</span></li>
+            <li role="option" data-lang="zh"><span class="lc">中文</span><span class="ln">简体中文</span></li>
+            <li role="option" data-lang="ar" dir="rtl"><span class="lc">AR</span><span class="ln">العربية</span></li>
+            <li role="option" data-lang="ru"><span class="lc">RU</span><span class="ln">Русский</span></li>
+            <li role="option" data-lang="de"><span class="lc">DE</span><span class="ln">Deutsch</span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html" data-i18n="s004"><span data-i18n="s004">Home</span></a> › <span aria-current="page" data-i18n="s022"><span data-i18n="s022">Privacy Policy</span></span></nav>
+        <h1 data-i18n="s022"><span data-i18n="s022">Privacy Policy</span></h1>
+        <p class="page-lead" data-i18n="s126"><span data-i18n="s126">How ALLOYTI handles enquiry data: what we collect, why, retention and your rights.</span></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="prose">
+          <p><b data-i18n="s127"><span data-i18n="s127">Last updated:</span></b> 2026-09-23</p>
+          <h2 data-i18n="s128"><span data-i18n="s128">What we collect</span></h2>
+          <p data-i18n="s129"><span data-i18n="s129">When you submit an enquiry we collect the details you enter: company name, contact person, email address, country or region, product requirements, and any file you attach. The form also records a timestamp and a language preference used for spam prevention.</span></p>
+          <h2 data-i18n="s130"><span data-i18n="s130">Why we collect it</span></h2>
+          <p data-i18n="s131"><span data-i18n="s131">The information is used only to answer your enquiry, prepare a quotation and, if an order follows, to handle that order. We do not sell it or use it for unrelated marketing.</span></p>
+          <h2 data-i18n="s132"><span data-i18n="s132">How long we keep it</span></h2>
+          <p data-i18n="s133"><span data-i18n="s133">Enquiry records are kept for as long as needed to handle the enquiry and any resulting order, and for the period required by applicable accounting and tax rules.</span></p>
+          <h2 data-i18n="s134"><span data-i18n="s134">Your rights</span></h2>
+          <p><span data-i18n="s381">You can ask us for a copy of the data you sent, ask for corrections, or ask us to delete it. Write to</span> <a href="mailto:sales@alloyti.com" data-i18n="s019"><span data-i18n="s019">sales@alloyti.com</span></a> <span data-i18n="s382">and we will action the request.</span></p>
+          <h2 data-i18n="s135"><span data-i18n="s135">Cookies and analytics</span></h2>
+          <p data-i18n="s136"><span data-i18n="s136">This site currently sets no advertising cookies. If analytics are added later, this page will be updated to describe what is collected and how to opt out.</span></p>
+          <!-- TODO: 上线前补充公司注册名称、注册地址与数据主体请求的正式联系渠道 -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" aria-label="ALLOYTI home">
+          <img class="brand-mark" src="assets/logo-emblem.png" alt="ALLOYTI logo" width="36" height="36"> <span class="brand-word" data-i18n="s001">ALLOYTI</span>
+        </a>
+        <p class="footer-slogan" data-i18n="ui.slogan"><span data-i18n="s326">Built on Titanium. Driven by Technology.</span></p>
+        <p data-i18n="footer.brandDesc"><span data-i18n="s327">Titanium and titanium alloy R&amp;D, production and deep processing — plate, bar, tube, fasteners and precision forgings to ASTM, GB and AMS standards, certified to ISO 9001 and AS9100D, exported to North America, Europe, the Middle East and Southeast Asia.</span></p>
+      </div>
+      <nav class="footer-col" aria-label="Product links">
+        <p class="footer-col-title" data-i18n="s008"><span data-i18n="s008">Products</span></p>
+        <a href="titanium-plate.html" data-i18n="s014"><span data-i18n="s014">Titanium Plate &amp; Sheet</span></a>
+        <a href="titanium-bar.html" data-i18n="s015"><span data-i18n="s015">Titanium Bar &amp; Rod</span></a>
+        <a href="titanium-tube.html" data-i18n="s016"><span data-i18n="s016">Titanium Tube & Pipe</span></a>
+        <a href="titanium-fasteners.html" data-i18n="s017"><span data-i18n="s017">Titanium Fasteners</span></a>
+        <a href="titanium-forgings.html" data-i18n="s018"><span data-i18n="s018">Forgings &amp; Machined Parts</span></a>
+      </nav>
+      <nav class="footer-col" aria-label="Company links">
+        <p class="footer-col-title" data-i18n="footer.colAbout"><span data-i18n="s057">Company</span></p>
+        <a href="about.html" data-i18n="nav.about"><span data-i18n="s023">About</span></a>
+        <a href="quality.html" data-i18n="nav.quality"><span data-i18n="s043">Quality &amp; Service</span></a>
+        <a href="faq.html" data-i18n="nav.faq"><span data-i18n="s010">FAQ</span></a>
+        <a href="index.html#showcase" data-i18n="nav.showcase"><span data-i18n="s328">Production</span></a>
+      </nav>
+      <div class="footer-col">
+        <p class="footer-col-title" data-i18n="footer.colContact"><span data-i18n="s012">Contact</span></p>
+        <a href="mailto:sales@alloyti.com" data-i18n="s019"><span data-i18n="s019">sales@alloyti.com</span></a>
+        <a href="https://wa.me/8618523283306" target="_blank" rel="noopener noreferrer" data-i18n="s020"><span data-i18n="s020">WhatsApp +86 185 2328 3306</span></a>
+        <a href="contact.html" data-i18n="s021"><span data-i18n="s021">Send an enquiry ↗</span></a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year">2026</span> <span data-i18n="s001">ALLOYTI</span></p>
+      <p data-i18n="ui.bottomTag"><span data-i18n="s329">TITANIUM · ASTM / DIN / ISO · Confirmed per order</span></p>
+      <a href="privacy.html" data-i18n="s022"><span data-i18n="s022">Privacy Policy</span></a>
+      <a href="index.html" data-i18n="ui.backTop"><span data-i18n="s330">Back to top ↑</span></a>
+    </div>
+  </footer>
+
+  <script src="i18n-pages.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
