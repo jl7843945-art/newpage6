@@ -564,13 +564,14 @@ form: { title: "Anfrage senden", note: "Bitte zuerst die mit * markierten Felder
   }
 
   /* ================= 询盘表单 ================= */
-  /* 表单端点：填入 Formspree（https://formspree.io/f/xxxxxxx）或任意可接收 multipart/form-data 的地址即自动启用。
-     留空 / 占位符时，表单改为打开本地邮件客户端并预填内容，避免询盘静默丢失。 */
-  const FORM_ENDPOINT = "https://formsubmit.co/ajax/sales@alloyti.com"; // 留空则回到「邮件兜底」模式
-  /* FormSubmit 源站 2026-11-04 起全线 522（Cloudflare 回源超时，owner_action_required），
-     激活邮件根本发不出来。暂将其从发送链中摘除，等其恢复把下面的开关改回 true 即可。 */
-  const FORM_ENDPOINT_ENABLED = false;
-  const WEB3FORMS_KEY = ""; // 在 web3forms.com 用邮箱免费领取 access key 后填到这里；填了则优先走它
+  /* 主通道：同源 Cloudflare Pages Function `/api/inquiry`（functions/api/inquiry.js），
+     由 Resend 发信，支持图纸附件。未配置 RESEND_API_KEY 时该接口返回 503，
+     前端自动降级到备用通道，最后兜底为「打开邮件客户端 + 复制内容」，避免询盘静默丢失。 */
+  const PAGES_ENDPOINT = "/api/inquiry";
+  /* 备用通道（当前均未启用，需要时填 key / 打开开关即可） */
+  const WEB3FORMS_KEY = ""; // web3forms.com 领取 access key 后填入
+  const FORM_ENDPOINT = "https://formsubmit.co/ajax/sales@alloyti.com";
+  const FORM_ENDPOINT_ENABLED = false; // FormSubmit 源站 2026-11 起 522，暂不启用
   const SALES_EMAIL = "sales@alloyti.com";
 
   const FORM_MSG = {
@@ -626,24 +627,10 @@ form: { title: "Anfrage senden", note: "Bitte zuerst die mit * markierten Felder
   if (inqForm) {
     formLang.value = lang;
 
-    // 解析端点：显式配置优先，其次读取 action；占位符视为未配置
-    let endpoint = (FORM_ENDPOINT || inqForm.getAttribute("action") || "").trim();
-    if (!/^https?:\/\//.test(endpoint) || /X{6,}/.test(endpoint)) {
-      endpoint = "";
-    } else if (/formsubmit\.co\/ajax\//.test(endpoint)) {
-      // 无 JS 时退化为原生 multipart 提交（FormSubmit 支持附件）
-      inqForm.setAttribute("action", endpoint.replace("/ajax/", "/"));
-      inqForm.setAttribute("enctype", "multipart/form-data");
-      [["_captcha", "false"], ["_template", "table"]].forEach(function (pair) {
-        if (!inqForm.elements[pair[0]]) {
-          const i = document.createElement("input");
-          i.type = "hidden"; i.name = pair[0]; i.value = pair[1];
-          inqForm.appendChild(i);
-        }
-      });
-    } else {
-      inqForm.setAttribute("action", endpoint);
-    }
+    // 无 JS 时浏览器原生提交到同一个 Pages Function（服务端会返回可读的确认页）
+    inqForm.setAttribute("action", PAGES_ENDPOINT);
+    inqForm.setAttribute("method", "post");
+    inqForm.setAttribute("enctype", "multipart/form-data");
 
     // 停留过久（超过服务端 2 小时窗口）时重新打时间戳，避免被误判为过期
     inqForm.addEventListener("focusin", () => {
@@ -712,32 +699,6 @@ form: { title: "Anfrage senden", note: "Bitte zuerst die mit * markierten Felder
       }
     }
 
-    // FormSubmit 的 AJAX 接口不收附件：有图纸时走隐藏 iframe 的原生 multipart 提交
-    function submitWithAttachment(btn) {
-      let sink = document.getElementById("fsSink");
-      if (!sink) {
-        sink = document.createElement("iframe");
-        sink.id = "fsSink"; sink.name = "fsSink";
-        sink.style.cssText = "display:none;width:0;height:0;border:0";
-        sink.setAttribute("aria-hidden", "true");
-        document.body.appendChild(sink);
-      }
-      inqForm.setAttribute("target", "fsSink");
-      inqForm.setAttribute("action", endpoint.replace("/ajax/", "/"));
-      inqForm.setAttribute("method", "post");
-      inqForm.setAttribute("enctype", "multipart/form-data");
-      if (btn) btn.disabled = true;
-      if (formStatus) { formStatus.className = "form-status is-loading"; formStatus.textContent = msg.sending; }
-      HTMLFormElement.prototype.submit.call(inqForm);
-      window.setTimeout(function () {
-        if (formStatus) { formStatus.className = "form-status is-ok"; formStatus.textContent = msg.ok; }
-        inqForm.reset();
-        inqForm.removeAttribute("target");
-        stampForm();
-        if (btn) btn.disabled = false;
-      }, 2500);
-    }
-
     inqForm.addEventListener("submit", async (ev) => {
       ev.preventDefault();
       if (!inqForm.reportValidity()) return;
@@ -752,11 +713,10 @@ form: { title: "Anfrage senden", note: "Bitte zuerst die mit * markierten Felder
       const fileEl = inqForm.elements["drawing"];
       const hasFile = !!(fileEl && fileEl.files && fileEl.files[0]);
 
-      // 服务商容灾链：Web3Forms（若配置 key）→ FormSubmit → 邮件兜底
-      const providers = [];
+      // 容灾链：Pages Function（Resend）→ Web3Forms（若配置 key）→ FormSubmit → 邮件兜底
+      const providers = ["pages"];
       if (WEB3FORMS_KEY) providers.push("web3forms");
-      if (endpoint && FORM_ENDPOINT_ENABLED) providers.push("formsubmit");
-      if (!providers.length) { openMailFallback(); return; }
+      if (FORM_ENDPOINT_ENABLED) providers.push("formsubmit");
 
       if (btn) btn.disabled = true;
       if (formStatus) { formStatus.className = "form-status is-loading"; formStatus.textContent = msg.sending; }
@@ -777,7 +737,25 @@ form: { title: "Anfrage senden", note: "Bitte zuerst die mit * markierten Felder
       let sent = false;
       for (const provider of providers) {
         try {
-          if (provider === "web3forms") {
+          if (provider === "pages") {
+            // 主通道：multipart 直传，附件一起走
+            const ctrl = new AbortController();
+            const timer = window.setTimeout(function () { ctrl.abort(); }, 25000);
+            let res;
+            try {
+              res = await fetch(PAGES_ENDPOINT, {
+                method: "POST",
+                body: new FormData(inqForm),
+                headers: { Accept: "application/json" },
+                signal: ctrl.signal
+              });
+            } finally { window.clearTimeout(timer); }
+            let data = null;
+            try { data = await res.json(); } catch (e) { data = null; }
+            if (!res.ok || !data || data.ok !== true) {
+              throw new Error("pages " + res.status + (data && data.error ? " " + data.error : ""));
+            }
+          } else if (provider === "web3forms") {
             // Web3Forms：multipart 直传，天然支持附件
             const fd = new FormData(inqForm);
             fd.set("access_key", WEB3FORMS_KEY);
@@ -789,25 +767,10 @@ form: { title: "Anfrage senden", note: "Bitte zuerst die mit * markierten Felder
             });
             let data = null; try { data = await res.json(); } catch (e) { data = null; }
             if (!res.ok || !data || data.success !== true) throw new Error("web3forms HTTP " + res.status);
-          } else {
-            const isFormSubmit = /formsubmit\.co/.test(endpoint);
-            // 带附件：FormSubmit AJAX 不支持文件，改走原生 multipart（隐藏 iframe）
-            if (hasFile && isFormSubmit) { submitWithAttachment(btn); return; }
-            let res;
-            if (isFormSubmit) {
-              res = await postJSON(endpoint, JSON.stringify(payload()), 12000);
-            } else {
-              const ctrl = new AbortController();
-              const timer = window.setTimeout(function () { ctrl.abort(); }, 12000);
-              try {
-                res = await fetch(endpoint, {
-                  method: "POST",
-                  body: new FormData(inqForm),
-                  headers: { Accept: "application/json" },
-                  signal: ctrl.signal
-                });
-              } finally { window.clearTimeout(timer); }
-            }
+          } else if (provider === "formsubmit") {
+            // FormSubmit 的 AJAX 接口不收附件；有图纸就跳过，交给邮件兜底
+            if (hasFile) throw new Error("formsubmit: no attachment support");
+            const res = await postJSON(FORM_ENDPOINT, JSON.stringify(payload()), 12000);
             let data = null;
             try { data = await res.json(); } catch (e) { data = null; }
             if (!res.ok) throw new Error("HTTP " + res.status);
