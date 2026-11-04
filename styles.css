@@ -614,3 +614,28 @@ html.lang-pending body{visibility:hidden}
 .terms-note{margin:-0.75rem 0 0;padding-left:10px;border-left:2px solid rgba(0,229,255,.35);
   font-family:var(--mono);font-size:.78rem;letter-spacing:.04em;color:#8fd0e0;line-height:1.6}
 [dir="rtl"] .terms-note{padding-left:0;padding-right:10px;border-left:0;border-right:2px solid rgba(0,229,255,.35);letter-spacing:0}
+
+/* ---------- 产品页「相关产品」图文互链（2026-11-05） ---------- */
+.related-block{margin-top:2.8rem}
+.related-title{margin:0 0 1.1rem;font-size:1.32rem;color:var(--ink);letter-spacing:-.01em}
+.related-title::before{content:"";display:inline-block;width:6px;height:1em;margin-right:.6em;
+  background:linear-gradient(180deg,var(--accent),rgba(0,229,255,0));border-radius:2px;transform:translateY(.12em)}
+[dir="rtl"] .related-title::before{margin-right:0;margin-left:.6em}
+.related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.related-card{position:relative;display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);
+  border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);backdrop-filter:blur(6px);
+  transition:transform .25s,border-color .25s,box-shadow .25s}
+.related-card:hover{transform:translateY(-5px);border-color:var(--accent);box-shadow:var(--shadow)}
+.related-media{display:block;height:118px;overflow:hidden;background:var(--bg-soft);border-bottom:1px solid var(--line)}
+.related-media img{display:block;width:100%;height:100%;object-fit:cover;opacity:.88;transition:transform .5s,opacity .3s}
+.related-card:hover .related-media img{transform:scale(1.06);opacity:1}
+.related-body{display:flex;flex-direction:column;gap:6px;flex:1;padding:14px 16px 16px}
+.related-body h3{margin:0;font-size:.97rem;line-height:1.35;color:var(--ink)}
+.related-body p{margin:0;font-size:.79rem;line-height:1.55;color:var(--muted)}
+.related-card::after{content:"";position:absolute;top:10px;right:10px;width:12px;height:12px;z-index:2;
+  border:2px solid var(--accent);border-left:none;border-bottom:none;opacity:.45;transition:opacity .25s}
+.related-card:hover::after{opacity:.95}
+[dir="rtl"] .related-card::after{right:auto;left:10px;border-left:2px solid var(--accent);border-right:none}
+.related-arrow{margin-top:auto;padding-top:8px;font-family:var(--mono);font-size:.78rem;color:var(--accent);opacity:.75}
+@media(max-width:1040px){.related-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.related-grid{grid-template-columns:1fr;gap:12px}.related-media{height:150px}}
