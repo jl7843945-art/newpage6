@@ -15,7 +15,7 @@
       h.setAttribute("dir", l === "ar" ? "rtl" : "ltr");
       if (l !== "en") h.className += " lang-pending";
       // 只加载当前语言的正文词典包（英文页面正文即 HTML 原文，无需加载任何词典）
-      if (l !== "en") document.write('<script src="/i18n/' + l + '.js?v=20261104d"><\/script>');
+      if (l !== "en") document.write('<script src="/i18n/' + l + '.js?v=20261104e"><\/script>');
     } catch (e) {}
     // 兜底：万一 app.js 加载失败，4 秒后强制显示，避免页面永久空白
     setTimeout(function () {
@@ -31,7 +31,7 @@
   <meta name="theme-color" content="#0A1A3A">
   <link rel="canonical" href="https://www.alloyti.com/titanium-plate">
   <link rel="icon" type="image/png" href="assets/favicon-64.png">
-  <link rel="stylesheet" href="styles.css?v=20261104d">
+  <link rel="stylesheet" href="styles.css?v=20261104e">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="ALLOYTI">
@@ -275,6 +275,6 @@
     </div>
   </footer>
 
-    <script src="app.js?v=20261104d"></script>
+    <script src="app.js?v=20261104e"></script>
 </body>
 </html>
