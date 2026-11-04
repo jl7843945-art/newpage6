@@ -11,6 +11,8 @@
  *
  * 未配置 RESEND_API_KEY 时返回 503 + {ok:false,error:"not_configured"}，
  * 前端据此自动降级到邮件客户端。
+ *
+ * build: 2026-11-04-resend-env
  */
 
 const MAX_FILE_BYTES = 5 * 1024 * 1024; // 与页面标注的 ≤5MB 保持一致
