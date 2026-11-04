@@ -557,6 +557,7 @@ form: { title: "Anfrage senden", note: "Bitte zuerst die mit * markierten Felder
   /* 表单端点：填入 Formspree（https://formspree.io/f/xxxxxxx）或任意可接收 multipart/form-data 的地址即自动启用。
      留空 / 占位符时，表单改为打开本地邮件客户端并预填内容，避免询盘静默丢失。 */
   const FORM_ENDPOINT = "https://formsubmit.co/ajax/sales@alloyti.com"; // 留空则回到「邮件兜底」模式
+  const WEB3FORMS_KEY = ""; // 在 web3forms.com 用邮箱免费领取 access key 后填到这里；填了则优先走它
   const SALES_EMAIL = "sales@alloyti.com";
 
   const FORM_MSG = {
@@ -735,41 +736,83 @@ form: { title: "Anfrage senden", note: "Bitte zuerst die mit * markierten Felder
 
       const btn = inqForm.querySelector('button[type="submit"]');
 
-      if (!endpoint) { openMailFallback(); return; }
-
       const fileEl = inqForm.elements["drawing"];
       const hasFile = !!(fileEl && fileEl.files && fileEl.files[0]);
-      const isFormSubmit = /formsubmit\.co/.test(endpoint);
 
-      // 带附件：FormSubmit AJAX 不支持文件，改走原生 multipart
-      if (hasFile && isFormSubmit) { submitWithAttachment(btn); return; }
+      // 服务商容灾链：Web3Forms（若配置 key）→ FormSubmit → 邮件兜底
+      const providers = [];
+      if (WEB3FORMS_KEY) providers.push("web3forms");
+      if (endpoint) providers.push("formsubmit");
+      if (!providers.length) { openMailFallback(); return; }
 
       if (btn) btn.disabled = true;
       if (formStatus) { formStatus.className = "form-status is-loading"; formStatus.textContent = msg.sending; }
 
-      try {
-        const res = await fetch(endpoint, isFormSubmit ? {
-          method: "POST",
-          headers: { "Content-Type": "application/json", Accept: "application/json" },
-          body: JSON.stringify(payload())
-        } : {
-          method: "POST",
-          body: new FormData(inqForm),
-          headers: { Accept: "application/json" }
-        });
+      async function postJSON(url, body, timeoutMs) {
+        const ctrl = new AbortController();
+        const timer = window.setTimeout(function () { ctrl.abort(); }, timeoutMs || 12000);
+        try {
+          return await fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json", Accept: "application/json" },
+            body: body,
+            signal: ctrl.signal
+          });
+        } finally { window.clearTimeout(timer); }
+      }
 
-        let data = null;
-        try { data = await res.json(); } catch (e) { data = null; }
-        if (!res.ok) throw new Error("HTTP " + res.status);
-        if (data && (data.success === "false" || data.success === false)) throw new Error(data.message || "rejected");
+      let sent = false;
+      for (const provider of providers) {
+        try {
+          if (provider === "web3forms") {
+            // Web3Forms：multipart 直传，天然支持附件
+            const fd = new FormData(inqForm);
+            fd.set("access_key", WEB3FORMS_KEY);
+            fd.set("subject", "New ALLOYTI titanium enquiry");
+            fd.set("from_name", "ALLOYTI Website");
+            fd.set("botcheck", "");
+            const res = await fetch("https://api.web3forms.com/submit", {
+              method: "POST", body: fd, headers: { Accept: "application/json" }
+            });
+            let data = null; try { data = await res.json(); } catch (e) { data = null; }
+            if (!res.ok || !data || data.success !== true) throw new Error("web3forms HTTP " + res.status);
+          } else {
+            const isFormSubmit = /formsubmit\.co/.test(endpoint);
+            // 带附件：FormSubmit AJAX 不支持文件，改走原生 multipart（隐藏 iframe）
+            if (hasFile && isFormSubmit) { submitWithAttachment(btn); return; }
+            let res;
+            if (isFormSubmit) {
+              res = await postJSON(endpoint, JSON.stringify(payload()), 12000);
+            } else {
+              const ctrl = new AbortController();
+              const timer = window.setTimeout(function () { ctrl.abort(); }, 12000);
+              try {
+                res = await fetch(endpoint, {
+                  method: "POST",
+                  body: new FormData(inqForm),
+                  headers: { Accept: "application/json" },
+                  signal: ctrl.signal
+                });
+              } finally { window.clearTimeout(timer); }
+            }
+            let data = null;
+            try { data = await res.json(); } catch (e) { data = null; }
+            if (!res.ok) throw new Error("HTTP " + res.status);
+            if (data && (data.success === "false" || data.success === false)) throw new Error(data.message || "rejected");
+          }
+          sent = true;
+          break;
+        } catch (err) { /* 换下一个服务商 */ }
+      }
+
+      if (sent) {
         if (formStatus) { formStatus.className = "form-status is-ok"; formStatus.textContent = msg.ok; }
         inqForm.reset();
         stampForm();
-      } catch (err) {
+      } else {
         openMailFallback();
-      } finally {
-        if (btn) btn.disabled = false;
       }
+      if (btn) btn.disabled = false;
     });
   }
 
