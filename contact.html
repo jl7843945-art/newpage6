@@ -15,7 +15,7 @@
       h.setAttribute("dir", l === "ar" ? "rtl" : "ltr");
       if (l !== "en") h.className += " lang-pending";
       // 只加载当前语言的正文词典包（英文页面正文即 HTML 原文，无需加载任何词典）
-      if (l !== "en") document.write('<script src="/i18n/' + l + '.js?v=20261104c"><\/script>');
+      if (l !== "en") document.write('<script src="/i18n/' + l + '.js?v=20261104d"><\/script>');
     } catch (e) {}
     // 兜底：万一 app.js 加载失败，4 秒后强制显示，避免页面永久空白
     setTimeout(function () {
@@ -26,17 +26,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contact ALLOYTI — Titanium Enquiry | Plate, Bar, Tube</title>
-  <meta name="description" content="Titanium enquiries: MOQ 10 kg, 20-day lead time, FOB / CIF / EXW, 30% T/T deposit. Email sales@alloyti.com or WhatsApp +86 185 2328 3306.">
+  <meta name="description" content="Titanium enquiries: MOQ 50 kg stock / 500 kg custom, 20-day lead time, FOB / CIF / EXW, 30% T/T deposit. Email sales@alloyti.com or WhatsApp +86 185 2328 3306.">
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#0A1A3A">
   <link rel="canonical" href="https://www.alloyti.com/contact">
   <link rel="icon" type="image/png" href="assets/favicon-64.png">
-  <link rel="stylesheet" href="styles.css?v=20261104c">
+  <link rel="stylesheet" href="styles.css?v=20261104d">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="ALLOYTI">
   <meta property="og:title" content="Contact ALLOYTI — Titanium Enquiry | Plate, Bar, Tube">
-  <meta property="og:description" content="Titanium enquiries: MOQ 10 kg, 20-day lead time, FOB / CIF / EXW, 30% T/T deposit. Email sales@alloyti.com or WhatsApp +86 185 2328 3306.">
+  <meta property="og:description" content="Titanium enquiries: MOQ 50 kg stock / 500 kg custom, 20-day lead time, FOB / CIF / EXW, 30% T/T deposit. Email sales@alloyti.com or WhatsApp +86 185 2328 3306.">
   <meta property="og:url" content="https://www.alloyti.com/contact">
   <meta property="og:image" content="https://www.alloyti.com/assets/og-cover.jpg">
   <meta property="og:image:width" content="1200">
@@ -44,7 +44,7 @@
   <meta property="og:image:alt" content="Titanium mill products for industrial supply">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Contact ALLOYTI — Titanium Enquiry | Plate, Bar, Tube">
-  <meta name="twitter:description" content="Titanium enquiries: MOQ 10 kg, 20-day lead time, FOB / CIF / EXW, 30% T/T deposit. Email sales@alloyti.com or WhatsApp +86 185 2328 3306.">
+  <meta name="twitter:description" content="Titanium enquiries: MOQ 50 kg stock / 500 kg custom, 20-day lead time, FOB / CIF / EXW, 30% T/T deposit. Email sales@alloyti.com or WhatsApp +86 185 2328 3306.">
   <meta name="twitter:image" content="https://www.alloyti.com/assets/og-cover.jpg">
   <script type="application/ld+json">
 {
@@ -227,12 +227,13 @@
           <p data-i18n="s435">Standard terms for export orders. Any deviation is confirmed in writing in the quotation before you commit.</p>
           <table class="spec-table terms-table">
             <tbody>
-              <tr><th data-i18n="s436">Minimum order quantity</th><td><b><bdi>10 kg</bdi></b></td></tr>
+              <tr><th data-i18n="s436">Minimum order quantity</th><td data-i18n="s451">50 kg for stock items; 500 kg for custom sizes / alloys</td></tr>
               <tr><th data-i18n="s437">Lead time</th><td data-i18n="s442">About 20 days after order confirmation</td></tr>
               <tr><th data-i18n="s438">Incoterms</th><td data-i18n="s443">FOB / CIF / EXW &mdash; all available</td></tr>
               <tr><th data-i18n="s439">Payment</th><td data-i18n="s444">30% T/T deposit, 70% before shipment or against B/L copy</td></tr>
             </tbody>
           </table>
+          <p class="terms-note" data-i18n="s452">Negotiable for stock items and trial orders.</p>
         </div>
       </div>
     </section>
@@ -278,6 +279,6 @@
     </div>
   </footer>
 
-    <script src="app.js?v=20261104c"></script>
+    <script src="app.js?v=20261104d"></script>
 </body>
 </html>

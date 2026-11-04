@@ -15,7 +15,7 @@
       h.setAttribute("dir", l === "ar" ? "rtl" : "ltr");
       if (l !== "en") h.className += " lang-pending";
       // 只加载当前语言的正文词典包（英文页面正文即 HTML 原文，无需加载任何词典）
-      if (l !== "en") document.write('<script src="/i18n/' + l + '.js?v=20261104c"><\/script>');
+      if (l !== "en") document.write('<script src="/i18n/' + l + '.js?v=20261104d"><\/script>');
     } catch (e) {}
     // 兜底：万一 app.js 加载失败，4 秒后强制显示，避免页面永久空白
     setTimeout(function () {
@@ -31,7 +31,7 @@
   <meta name="theme-color" content="#0A1A3A">
   <link rel="canonical" href="https://www.alloyti.com/faq">
   <link rel="icon" type="image/png" href="assets/favicon-64.png">
-  <link rel="stylesheet" href="styles.css?v=20261104c">
+  <link rel="stylesheet" href="styles.css?v=20261104d">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="ALLOYTI">
@@ -138,7 +138,7 @@
           "name": "Is there a minimum order quantity?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Our minimum order quantity is 10 kg. That applies to plate, bar, tube, fasteners and forgings in standard grades and sizes, and a trial lot for a first order usually fits within the same limit. Tell us the quantity and the product form and we will confirm what is workable."
+            "text": "Stock items start at 50 kg: standard grades and sizes of plate, bar, tube, fasteners and forgings that we hold or produce regularly. Custom sizes and non-standard alloys start at 500 kg, because a dedicated melt or rolling pass has to be scheduled. Stock quantities and trial orders are negotiable, so tell us the grade, form and quantity you need and we will confirm what is workable."
           }
         },
         {
@@ -262,7 +262,7 @@
           <div class="faq-item"><h3 data-i18n="s082"><span data-i18n="s082">Which titanium grade do I need — Gr.2 or Gr.5 (TC4)?</span></h3><p data-i18n="s083"><span data-i18n="s083">Gr.2 (TA2) is commercially pure titanium: excellent corrosion resistance, good formability and weldability, and the usual choice for chemical, marine and desalination equipment. Gr.5 (TC4 / Ti-6Al-4V) is an α-β alloy with roughly twice the strength, used for aerospace structures, high-strength mechanical parts and weight-critical assemblies. Send us the service conditions and we will confirm the options.</span></p></div>
           <div class="faq-item"><h3 data-i18n="s084"><span data-i18n="s084">Which standards do you supply to?</span></h3><p data-i18n="s085"><span data-i18n="s085">ASTM standards are the most common reference: B265 for plate and sheet, B348 for bar, B338 / B861 / B862 for tube, B381 for forgings, plus DIN, ISO, ASME, GB and AMS requirements where specified. The applicable standard is confirmed in writing before the order is placed.</span></p></div>
           <div class="faq-item"><h3 data-i18n="s086"><span data-i18n="s086">What certificates come with the material?</span></h3><p data-i18n="s087"><span data-i18n="s087">Mill test certificates to EN 10204 3.1 are issued as standard, covering chemical composition, mechanical properties and heat-number traceability. EN 10204 3.2 and independent third-party inspection can be arranged when agreed in the order.</span></p></div>
-          <div class="faq-item"><h3 data-i18n="s088"><span data-i18n="s088">Is there a minimum order quantity?</span></h3><p data-i18n="s089"><span data-i18n="s089">Our minimum order quantity is 10 kg. That applies to plate, bar, tube, fasteners and forgings in standard grades and sizes, and a trial lot for a first order usually fits within the same limit. Tell us the quantity and the product form and we will confirm what is workable.</span></p></div>
+          <div class="faq-item"><h3 data-i18n="s088"><span data-i18n="s088">Is there a minimum order quantity?</span></h3><p data-i18n="s089"><span data-i18n="s089">Stock items start at 50 kg: standard grades and sizes of plate, bar, tube, fasteners and forgings that we hold or produce regularly. Custom sizes and non-standard alloys start at 500 kg, because a dedicated melt or rolling pass has to be scheduled. Stock quantities and trial orders are negotiable, so tell us the grade, form and quantity you need and we will confirm what is workable.</span></p></div>
           <div class="faq-item"><h3 data-i18n="s090"><span data-i18n="s090">How long does delivery take?</span></h3><p data-i18n="s091"><span data-i18n="s091">Standard lead time is about 20 days from order confirmation, covering production or stock release, inspection and export packing. Sizes held in stock usually move faster; special sizes, forgings and machined parts are confirmed line by line in the quotation.</span></p></div>
           <div class="faq-item"><h3 data-i18n="s446"><span data-i18n="s446">What payment terms do you accept?</span></h3><p data-i18n="s447"><span data-i18n="s447">Standard terms are 30% T/T deposit with the remaining 70% before shipment or against a copy of the bill of lading. For larger orders an irrevocable L/C at sight can be arranged. The exact terms are written into the proforma invoice before production starts.</span></p></div>
           <div class="faq-item"><h3 data-i18n="s448"><span data-i18n="s448">Which shipping terms can you quote — FOB, CIF or EXW?</span></h3><p data-i18n="s449"><span data-i18n="s449">All three. FOB and CIF are quoted from Chinese ports, usually Shanghai, Ningbo or Qingdao; EXW works if your own forwarder collects from Baoji. Port, vessel schedule and insurance cover are confirmed in the quotation, and shipping documents go out as soon as the goods are on board.</span></p></div>
@@ -322,6 +322,6 @@
     </div>
   </footer>
 
-    <script src="app.js?v=20261104c"></script>
+    <script src="app.js?v=20261104d"></script>
 </body>
 </html>
