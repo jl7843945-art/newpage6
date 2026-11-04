@@ -37,7 +37,7 @@ window.ALLOYTI_PAGE_I18N = {
     "s030": "TA15",
     "s031": "Sourcing and processing",
     "s032": "See our partner mills",
-    "s033": "Quality &amp; Compliance",
+    "s033": "Quality & Compliance",
     "s034": "EN 10204 3.1",
     "s035": "Third-party inspection",
     "s036": "Mill test certificates and inspection reports are provided with each shipment. Any further documentation is confirmed against your order before we commit.",
