@@ -567,6 +567,9 @@ form: { title: "Anfrage senden", note: "Bitte zuerst die mit * markierten Felder
   /* 表单端点：填入 Formspree（https://formspree.io/f/xxxxxxx）或任意可接收 multipart/form-data 的地址即自动启用。
      留空 / 占位符时，表单改为打开本地邮件客户端并预填内容，避免询盘静默丢失。 */
   const FORM_ENDPOINT = "https://formsubmit.co/ajax/sales@alloyti.com"; // 留空则回到「邮件兜底」模式
+  /* FormSubmit 源站 2026-11-04 起全线 522（Cloudflare 回源超时，owner_action_required），
+     激活邮件根本发不出来。暂将其从发送链中摘除，等其恢复把下面的开关改回 true 即可。 */
+  const FORM_ENDPOINT_ENABLED = false;
   const WEB3FORMS_KEY = ""; // 在 web3forms.com 用邮箱免费领取 access key 后填到这里；填了则优先走它
   const SALES_EMAIL = "sales@alloyti.com";
 
@@ -752,7 +755,7 @@ form: { title: "Anfrage senden", note: "Bitte zuerst die mit * markierten Felder
       // 服务商容灾链：Web3Forms（若配置 key）→ FormSubmit → 邮件兜底
       const providers = [];
       if (WEB3FORMS_KEY) providers.push("web3forms");
-      if (endpoint) providers.push("formsubmit");
+      if (endpoint && FORM_ENDPOINT_ENABLED) providers.push("formsubmit");
       if (!providers.length) { openMailFallback(); return; }
 
       if (btn) btn.disabled = true;
