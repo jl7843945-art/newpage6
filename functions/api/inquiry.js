@@ -15,6 +15,8 @@
  * build: 2026-11-04-resend-env
  */
 
+const BUILD = "2026-11-04b"; // 部署探测用，每次改函数顺手 bump
+
 const MAX_FILE_BYTES = 5 * 1024 * 1024; // 与页面标注的 ≤5MB 保持一致
 const MAX_TOTAL_BYTES = 8 * 1024 * 1024;
 const ALLOWED_EXT = ["pdf", "jpg", "jpeg", "png", "xls", "xlsx", "dwg", "dxf"];
@@ -27,6 +29,15 @@ const PRODUCT_LABELS = {
   "titanium-forgings": "Titanium forgings",
   "titanium-machined-parts": "Machined titanium parts",
   "other-to-drawing": "Other / built to drawing",
+  // 兼容按产品页文件名传入的旧值 / 手工调用
+  "titanium-plate": "Titanium plate / sheet",
+  "titanium-sheet": "Titanium plate / sheet",
+  "titanium-coil": "Titanium plate / sheet",
+  "titanium-bar": "Titanium bar / rod",
+  "titanium-rod": "Titanium bar / rod",
+  "titanium-wire": "Titanium bar / rod",
+  "titanium-pipe": "Titanium tube / pipe",
+  "titanium-fittings": "Titanium tube / pipe fittings",
 };
 
 const FIELD_LABELS = {
@@ -154,7 +165,7 @@ export async function onRequestPost(context) {
 }
 
 export async function onRequestGet() {
-  return json({ ok: false, error: "method_not_allowed" }, 405);
+  return json({ ok: false, error: "method_not_allowed", build: BUILD }, 405);
 }
 
 export async function onRequestOptions() {
