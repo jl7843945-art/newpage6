@@ -223,35 +223,35 @@ form: { title: "Anfrage senden", note: "Bitte zuerst die mit * markierten Felder
 
   /* ================= 语言无关数据（文本走 I18N） ================= */
   const PRODUCTS = [
-    { key: "sheet", index: "01 / 05", img: "assets/titanium-plate-astm-b265.png", w: 1200, h: 1200, tags: ["Gr.1", "Gr.2", "Gr.5"],
+    { key: "sheet", index: "01 / 05", img: "assets/titanium-plate-astm-b265.webp", w: 900, h: 900, tags: ["Gr.1", "Gr.2", "Gr.5"],
       specs: [
         { label: "grade", v: "Gr.1 / Gr.2 / Gr.5" },
         { label: "standard", v: "ASTM B265" },
         { label: "form", v: { zh: "板材 / 卷板 / 定尺剪切", en: "Sheet / Coil / Cut-to-size", ar: "ألواح / لفائف / قص بالمقاس", ru: "Листы / рулоны / резка в размер", de: "Blech / Coil / Zuschnitt" } },
         { label: "use", v: { zh: "容器、管板、衬里、结构件", en: "Vessels, tube sheets, linings, structural parts", ar: "أوعية، ألواح أنابيب، تبطين، أجزاء إنشائية", ru: "Сосуды, трубные решётки, футеровка, несущие детали", de: "Behälter, Rohrböden, Auskleidungen, Konstruktionsteile" } }
       ] },
-    { key: "bar", index: "02 / 05", img: "assets/titanium-bar-astm-b348.png", w: 497, h: 439, tags: ["Gr.2", "Gr.5", "Gr.7"],
+    { key: "bar", index: "02 / 05", img: "assets/titanium-bar-astm-b348.webp", w: 497, h: 439, tags: ["Gr.2", "Gr.5", "Gr.7"],
       specs: [
         { label: "grade", v: "Gr.2 / Gr.5 / Gr.7" },
         { label: "standard", v: "ASTM B348" },
         { label: "form", v: { zh: "圆棒 / 定尺 / 车光", en: "Round bar / Cut length / Peeled", ar: "قضبان مستديرة / أطوال مقطوعة / مصقولة", ru: "Пруток / мерная длина / обточка", de: "Rundstange / Zuschnitt / abgestreift" } },
         { label: "use", v: { zh: "轴类、机加工件、连接件", en: "Shafts, machined parts, connectors", ar: "أعمدة، أجزاء مشغولة، وصلات", ru: "Валы, обработанные детали, соединители", de: "Wellen, Drehteile, Verbinder" } }
       ] },
-    { key: "tube", index: "03 / 05", img: "assets/titanium-fittings-astm-b363.jpg", w: 1400, h: 847, tags: ["Gr.1", "Gr.2", "Gr.7"],
+    { key: "tube", index: "03 / 05", img: "assets/titanium-fittings-astm-b363.webp", w: 1200, h: 726, tags: ["Gr.1", "Gr.2", "Gr.7"],
       specs: [
         { label: "grade", v: "Gr.1 / Gr.2 / Gr.7" },
         { label: "standard", v: "ASTM B338 / B861 / B862" },
         { label: "form", v: { zh: "无缝 / 焊接 / 定尺", en: "Seamless / Welded / Cut length", ar: "بدون درزة / ملحوم / بالمقاس", ru: "Бесшовные / сварные / мерные", de: "Nahtlos / geschweißt / Längen" } },
         { label: "use", v: { zh: "换热器、冷凝器、工艺管道", en: "Heat exchangers, condensers, process piping", ar: "مبادلات حرارية، مكثفات، أنابيب عمليات", ru: "Теплообменники, конденсаторы, технологические трубопроводы", de: "Wärmeübertrager, Kondensatoren, Prozessleitungen" } }
       ] },
-    { key: "fasteners", index: "04 / 05", img: "assets/titanium-fasteners-din-iso.png", w: 2162, h: 727, tags: ["Gr.2", "Gr.5"],
+    { key: "fasteners", index: "04 / 05", img: "assets/titanium-fasteners-din-iso.webp", w: 1400, h: 471, tags: ["Gr.2", "Gr.5"],
       specs: [
         { label: "grade", v: "Gr.2 / Gr.5" },
         { label: "standard", v: "DIN / ISO / ASME" },
         { label: "form", v: { zh: "螺栓 / 螺母 / 螺钉 / 垫圈", en: "Bolts / Nuts / Screws / Washers", ar: "براغٍ / صواميل / براغي ملولبة / حلقات", ru: "Болты / гайки / винты / шайбы", de: "Schrauben / Muttern / Schrauben / Scheiben" } },
         { label: "use", v: { zh: "设备连接、海洋工程、轻量化装配", en: "Equipment joints, marine, lightweight assembly", ar: "وصلات معدات، أعمال بحرية، تجميع خفيف", ru: "Соединения оборудования, морские сооружения, лёгкие сборки", de: "Anlagenverbindungen, Meerestechnik, Leichtbau" } }
       ] },
-    { key: "forgings", index: "05 / 05", img: "assets/titanium-forgings-astm-b381.jpg", w: 1100, h: 1100, tags: ["TC4", "TA15"],
+    { key: "forgings", index: "05 / 05", img: "assets/titanium-forgings-astm-b381.webp", w: 900, h: 900, tags: ["TC4", "TA15"],
       specs: [
         { label: "grade", v: "TC4 / TA15 / TC11" },
         { label: "standard", v: "ASTM B381" },
@@ -261,11 +261,11 @@ form: { title: "Anfrage senden", note: "Bitte zuerst die mit * markierten Felder
   ];
 
   const SHOWCASE = [
-    { key: "straighten", code: "P·01", img: "assets/factory-straightening.jpg" },
-    { key: "discs", code: "P·02", img: "assets/factory-disc-warehouse.jpg" },
-    { key: "inspect", code: "P·03", img: "assets/factory-inspection.jpg" },
-    { key: "lathe", code: "P·04", img: "assets/factory-lathe.jpg" },
-    { key: "heat", code: "P·05", img: "assets/factory-heat-treatment.jpg" }
+    { key: "straighten", code: "P·01", img: "assets/factory-straightening.webp" },
+    { key: "discs", code: "P·02", img: "assets/factory-disc-warehouse.webp" },
+    { key: "inspect", code: "P·03", img: "assets/factory-inspection.webp" },
+    { key: "lathe", code: "P·04", img: "assets/factory-lathe.webp" },
+    { key: "heat", code: "P·05", img: "assets/factory-heat-treatment.webp" }
   ];
 
   const METRIC_NUMS = [5, 7, 3, 24];
@@ -362,7 +362,8 @@ form: { title: "Anfrage senden", note: "Bitte zuerst die mit * markierten Felder
   }
 
   /* ================= 页面正文多语言 =================
-     子页面静态英文文案（data-i18n="sNNN"）由 i18n-pages.js 提供 5 语言版本。
+     子页面静态英文文案（data-i18n="sNNN"）的译文按语言分包在 i18n/<lang>.js，
+     由 <head> 引导脚本按当前语言只加载一份；英文页不加载任何词典（HTML 原文即可）。
      HTML 中保留英文原文，爬虫 / 禁用 JS 时始终可读英文。 */
   function applyPageI18N() {
     const dict = (window.ALLOYTI_PAGE_I18N && window.ALLOYTI_PAGE_I18N[lang]) || {};
@@ -377,6 +378,15 @@ form: { title: "Anfrage senden", note: "Bitte zuerst die mit * markierten Felder
   }
 
   function applyLang(next) {
+    // 正文词典按语言分包：目标语言包未加载时带 ?lang= 重载（仅切换语言才触发，避免死循环）
+    if (next !== lang && !(window.ALLOYTI_PAGE_I18N && window.ALLOYTI_PAGE_I18N[next])) {
+      try { localStorage.setItem("ts-lang", next); } catch (e) { /* ignore */ }
+      try { sessionStorage.setItem("ts-scroll", String(window.pageYOffset || 0)); } catch (e) { /* ignore */ }
+      const u = new URL(location.href);
+      u.searchParams.set("lang", next);
+      location.replace(u.toString());
+      return;
+    }
     lang = next;
     try { localStorage.setItem("ts-lang", lang); } catch (e) { /* ignore */ }
     const html = document.documentElement;
@@ -822,4 +832,14 @@ form: { title: "Anfrage senden", note: "Bitte zuerst die mit * markierten Felder
 
   /* ================= 初始化语言 ================= */
   applyLang(lang);
+
+  // 语言切换引发重载后，恢复原来的滚动位置
+  try {
+    const keepY = sessionStorage.getItem("ts-scroll");
+    if (keepY !== null) {
+      sessionStorage.removeItem("ts-scroll");
+      const y = parseInt(keepY, 10) || 0;
+      if (y > 0) requestAnimationFrame(function () { window.scrollTo(0, y); });
+    }
+  } catch (e) { /* ignore */ }
 })();
