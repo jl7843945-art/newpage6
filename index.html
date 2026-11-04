@@ -15,7 +15,7 @@
       h.setAttribute("dir", l === "ar" ? "rtl" : "ltr");
       if (l !== "en") h.className += " lang-pending";
       // 只加载当前语言的正文词典包（英文页面正文即 HTML 原文，无需加载任何词典）
-      if (l !== "en") document.write('<script src="/i18n/' + l + '.js"><\/script>');
+      if (l !== "en") document.write('<script src="/i18n/' + l + '.js?v=20261104b"><\/script>');
     } catch (e) {}
     // 兜底：万一 app.js 加载失败，4 秒后强制显示，避免页面永久空白
     setTimeout(function () {
@@ -31,7 +31,7 @@
   <link rel="preload" as="image" href="assets/space-battleship-hero.webp" type="image/webp" fetchpriority="high">
   <title>Titanium Supply Partner &amp; Supplier — Plate, Bar, Tube | ALLOYTI</title>
   <link rel="icon" type="image/png" href="assets/favicon-64.png">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20261104b">
   <link rel="stylesheet" href="hitech.css">
   <!-- 技术 SEO：canonical + Open Graph + Twitter（域名占位 .example，上线前替换为真实域名；如需 hreflang 多语言 SEO，建议后续为每种语言提供独立 URL） -->
   <link rel="canonical" href="https://www.alloyti.com/">
@@ -451,6 +451,6 @@
   </dialog>
 
     <script src="hitech.js"></script>
-  <script src="app.js"></script>
+  <script src="app.js?v=20261104b"></script>
 </body>
 </html>
