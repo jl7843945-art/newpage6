@@ -595,3 +595,19 @@ body::before{
    等 app.js 把译文全部注入后再由 JS 移除该类显示出来，
    避免出现「先闪英文、再变中文」的跳动。脚本另有 4s 兜底强制显示，防止 JS 挂掉导致空白。 */
 html.lang-pending body{visibility:hidden}
+
+/* ---------- 商务条款表 / 公司地址（2026-11-04） ---------- */
+.terms-table{margin-top:1.2rem}
+.terms-table th{width:40%;font-family:var(--mono);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:#37f4ff;vertical-align:middle}
+.terms-table td{color:var(--ink-2);font-size:.95rem}
+.terms-table td b{color:var(--ink);font-weight:700;letter-spacing:.02em}
+.contact-addr{display:flex;gap:10px;align-items:baseline;margin:16px 0 4px;font-size:.9rem;line-height:1.5;color:var(--ink-2)}
+.contact-addr-label{flex:0 0 auto;font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#37f4ff}
+.footer-addr{display:block;color:#8ea7ba;font-size:.9rem;line-height:1.55;padding:5px 0}
+[dir="rtl"] .terms-table th,[dir="rtl"] .terms-table td{text-align:right}
+[dir="rtl"] .contact-addr-label{letter-spacing:0}
+@media(max-width:600px){.terms-table th{width:auto;white-space:normal}}
+.hero-terms{margin:18px 0 0;padding-left:12px;border-left:2px solid rgba(0,229,255,.5);
+  font-family:var(--mono);font-size:.8rem;letter-spacing:.05em;color:#8fd0e0;line-height:1.7}
+[dir="rtl"] .hero-terms{padding-left:0;padding-right:12px;border-left:0;border-right:2px solid rgba(0,229,255,.5);letter-spacing:0}
+@media(max-width:600px){.hero-terms{font-size:.74rem}}

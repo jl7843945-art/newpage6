@@ -1,0 +1,17 @@
+# 锁定文本文件为 UTF-8 + LF，避免 Windows Git 上传时编码/换行被改写导致
+# 多语言 JS（含中文/阿语/俄语）在 GitHub Pages 上乱码或语法损坏。
+* text=auto eol=lf
+
+*.html text eol=lf charset=utf-8
+*.css  text eol=lf charset=utf-8
+*.js   text eol=lf charset=utf-8
+*.json text eol=lf charset=utf-8
+*.xml  text eol=lf charset=utf-8
+
+# 二进制资源保持原样，不要被当文本处理
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.webp binary
+*.gif  binary
+*.ico  binary
