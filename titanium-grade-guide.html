@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- 本文只有英文版：带 ?lang= 的旧链接直接落到该语言的资源中心，避免 404 -->
+  <script>
+  (function () {
+    if (/[?&]gen=1/.test(location.search)) return;
+    try {
+      var q = new URLSearchParams(location.search).get("lang");
+      if (q && /^(zh|ar|ru|de)$/.test(q)) location.replace("/" + q + "/resources");
+    } catch (e) {}
+  })();
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Titanium Grades Explained: ASTM, GB and AMS Equivalents | ALLOYTI</title>
+  <meta name="description" content="Composition and minimum mechanical properties for titanium Gr.1 to Gr.12 and Ti-6Al-4V, how GB designations such as TA2, TA9, TA10 and TC4 map onto ASTM grades, and where the equivalence stops being exact.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0A1A3A">
+  <link rel="canonical" href="https://www.alloyti.com/titanium-grade-guide">
+  <link rel="alternate" hreflang="en" href="https://www.alloyti.com/titanium-grade-guide">
+  <link rel="alternate" hreflang="x-default" href="https://www.alloyti.com/titanium-grade-guide">
+  <link rel="icon" type="image/png" href="assets/favicon-64.png">
+  <link rel="stylesheet" href="styles.min.css?v=20261105d">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="ALLOYTI">
+  <meta property="og:title" content="Titanium Grades Explained: ASTM, GB and AMS Equivalents">
+  <meta property="og:description" content="What each titanium grade actually controls, the minimum properties behind the numbers, and where ASTM, GB and AMS grade equivalence stops being exact.">
+  <meta property="og:url" content="https://www.alloyti.com/titanium-grade-guide">
+  <meta property="og:image" content="https://www.alloyti.com/assets/og-titanium-bar.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Titanium bar and rod to ASTM B348">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Titanium Grades Explained: ASTM, GB and AMS Equivalents">
+  <meta name="twitter:description" content="What each titanium grade controls, minimum properties, and where ASTM, GB and AMS equivalence stops being exact.">
+  <meta name="twitter:image" content="https://www.alloyti.com/assets/og-titanium-bar.jpg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.alloyti.com/#organization",
+      "name": "ALLOYTI",
+      "url": "https://www.alloyti.com/",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "High-Tech Avenue",
+        "addressLocality": "Baoji",
+        "addressRegion": "Shaanxi",
+        "addressCountry": "CN"
+      },
+      "email": "sales@alloyti.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.alloyti.com/assets/logo-emblem.png",
+        "width": 144,
+        "height": 144
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.alloyti.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Technical library", "item": "https://www.alloyti.com/resources" },
+        { "@type": "ListItem", "position": 3, "name": "Titanium grades explained" }
+      ]
+    },
+    {
+      "@type": "TechArticle",
+      "@id": "https://www.alloyti.com/titanium-grade-guide#article",
+      "headline": "Titanium grades explained: ASTM, GB and AMS equivalents",
+      "description": "Composition and minimum mechanical properties for Gr.1 to Gr.12 and Ti-6Al-4V, the mapping between ASTM grades and Chinese GB designations, and the points where equivalence stops being exact.",
+      "inLanguage": "en",
+      "datePublished": "2026-11-05",
+      "dateModified": "2026-11-05",
+      "author": { "@id": "https://www.alloyti.com/#organization" },
+      "publisher": { "@id": "https://www.alloyti.com/#organization" },
+      "mainEntityOfPage": { "@id": "https://www.alloyti.com/titanium-grade-guide" },
+      "image": "https://www.alloyti.com/assets/og-titanium-bar.jpg",
+      "about": ["Titanium", "Titanium alloys", "ASTM B265", "ASTM B348", "GB/T 3620.1"]
+    }
+  ]
+}
+  </script>
+</head>
+<body data-light-header="1" data-lang-fallback="/resources">
+  <header class="site-header scrolled" id="siteHeader">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="/" aria-label="ALLOYTI home">
+        <img class="brand-mark" src="assets/logo-emblem.webp" alt="ALLOYTI logo" width="36" height="36"> <span class="brand-word">ALLOYTI</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="primaryNav" aria-label="Open navigation"><span></span><span></span><span></span></button>
+      <div class="nav-links" id="primaryNav">
+        <a href="/">Home</a>
+        <a href="/products">Products</a>
+        <a href="/about">About</a>
+        <a href="/quality">Quality &amp; Service</a>
+        <a href="/faq">FAQ</a>
+        <a href="/contact" class="nav-contact">Contact</a>
+        <div class="lang-switch" id="langSwitch">
+          <button class="lang-toggle" id="langToggle" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Switch language">
+            <svg class="lang-globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            <span class="lang-code" id="langCode">EN</span>
+            <svg class="lang-caret" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </button>
+          <ul class="lang-menu" id="langMenu" role="listbox" aria-label="Language">
+            <li role="option" data-lang="en" class="is-active" aria-selected="true"><span class="lc">EN</span><span class="ln">English</span></li>
+            <li role="option" data-lang="zh"><span class="lc">中文</span><span class="ln">简体中文</span></li>
+            <li role="option" data-lang="ar" dir="rtl"><span class="lc">AR</span><span class="ln">العربية</span></li>
+            <li role="option" data-lang="ru"><span class="lc">RU</span><span class="ln">Русский</span></li>
+            <li role="option" data-lang="de"><span class="lc">DE</span><span class="ln">Deutsch</span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/resources">Resources</a> › <span aria-current="page">Titanium grades</span></nav>
+        <h1>Titanium grades explained: ASTM, GB and AMS equivalents</h1>
+        <p class="page-lead">What a grade number actually controls, the minimum properties behind it, and why an "equivalent" grade on a Chinese mill certificate is not automatically the grade on your drawing.</p>
+        <div class="article-meta">
+          <span>Grades</span>
+          <span>9 min read</span>
+          <span>Updated November 2026</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="prose">
+          <p>Titanium is not one material. The same word covers commercially pure metal with four different oxygen ceilings, a half-dozen corrosion-resistant alloys with palladium or molybdenum, and structural alloys such as Ti-6Al-4V that behave nothing like the pure grades. Choosing the wrong one is rarely a small mistake: it shows up as a weld that cracks, a heat exchanger that pits in the second year, or a component that fails the purchaser's incoming inspection against the standard it was ordered to.</p>
+          <p>This guide covers the grades that actually move in industrial supply — plate, sheet, bar, tube, forgings and fasteners — and the three specification systems buyers most often mix: ASTM, Chinese GB, and AMS.</p>
+
+          <div class="article-toc">
+            <p>In this guide</p>
+            <ol>
+              <li><a href="#what-controls">What a grade number actually controls</a></li>
+              <li><a href="#cp-family">The commercially pure family: Gr.1 to Gr.4</a></li>
+              <li><a href="#alloys">The alloys: Gr.5, Gr.9, Gr.23 and the Pd / Ni-Mo grades</a></li>
+              <li><a href="#property-table">Minimum properties at a glance</a></li>
+              <li><a href="#gb-map">Mapping ASTM grades onto GB designations</a></li>
+              <li><a href="#where-it-breaks">Where the equivalence stops being exact</a></li>
+              <li><a href="#choose">Choosing in practice: four questions</a></li>
+              <li><a href="#mistakes">Mistakes that show up in enquiries</a></li>
+            </ol>
+          </div>
+
+          <h2 id="what-controls">What a grade number actually controls</h2>
+          <p>Two things, and only two, separate the commercially pure grades from each other: <strong>interstitial content</strong> — oxygen, nitrogen, carbon and iron — and therefore strength. Titanium at 99.5% purity is soft; oxygen dissolved in the lattice locks slip planes and raises strength while cutting ductility. Grade 1 has the lowest oxygen ceiling and is the most formable; Grade 4 has the highest and is the strongest of the pure grades, at roughly three times the yield strength of Grade 1.</p>
+          <p>In the alloy grades the mechanism is different: aluminium stabilises the alpha phase and raises strength and creep resistance, vanadium stabilises beta and improves hot workability, palladium and molybdenum-nickel change the electrochemistry of the surface film. That last point matters most for corrosion, and it is the one buyers most often overlook when they substitute "the same strength" material into a chemical duty.</p>
+
+          <h2 id="cp-family">The commercially pure family: Gr.1 to Gr.4</h2>
+          <p>Grade 2 is the default industrial grade and covers the large majority of chemical, marine, desalination and medical-support applications. Grade 1 is chosen when cold forming is severe — deep-drawn liners, expanded tube, complex sheet work — because the lower oxygen content buys ductility at the cost of strength. Grade 3 sits between. Grade 4 is used where pure titanium is required for corrosion reasons but the stress is high enough that Grade 2 would need a thicker wall; it is noticeably less forgiving in forming and welding.</p>
+          <div class="callout">
+            <p><strong>Rule of thumb:</strong> if the drawing says Gr.2 and the part is welded, do not "upgrade" to Gr.4 for strength without checking weld procedure and toughness. Higher interstitial content raises strength and lowers the tolerance for poor shielding gas.</p>
+          </div>
+
+          <h2 id="alloys">The alloys: Gr.5, Gr.9, Gr.23 and the Pd / Ni-Mo grades</h2>
+          <p><strong>Gr.5 (Ti-6Al-4V, Chinese TC4)</strong> is the workhorse structural alloy: roughly 828 MPa minimum yield against 275 MPa for Gr.2, and about twice the density-to-strength advantage over stainless steel. It is used for airframe fittings, high-load fasteners, compressor parts, medical instruments and any application where weight is the constraint. It is harder to form, requires more careful welding, and is not the right answer for a chemical vessel simply because it is stronger.</p>
+          <p><strong>Gr.9 (Ti-3Al-2.5V)</strong> sits between the pure grades and Ti-6Al-4V: about 483 MPa minimum yield with good cold formability, commonly used for hydraulic tube and bicycle frame tube.</p>
+          <p><strong>Gr.23 (Ti-6Al-4V ELI)</strong> is the extra-low-interstitial version of Gr.5: same strength level, better toughness and ductility, and the grade normally specified for surgical implants and cryogenic service.</p>
+          <p>The corrosion grades are where the specification is usually decided. <strong>Gr.7</strong> is Gr.2 with 0.12–0.25% palladium; the palladium shifts the corrosion potential and keeps the passive film stable in mildly reducing acids where plain Gr.2 would pit. <strong>Gr.11</strong> is the same idea on a lower-oxygen base. <strong>Gr.12</strong> (Ti-0.3Mo-0.8Ni) achieves a similar effect more cheaply with molybdenum and nickel, and is widely used in hot chloride and dilute acid service.</p>
+
+          <h2 id="property-table">Minimum properties at a glance</h2>
+          <p>Values below are the minimum requirements for annealed product under ASTM B265 (plate, sheet, strip) and B348 (bar, rod, billet). Tube under B338 and forgings under B381 carry their own tables; the grade logic is the same but always confirm the clause that applies to your product form.</p>
+          <table class="spec-table">
+            <thead>
+              <tr><th>Grade</th><th>UNS</th><th>Nominal composition</th><th>Rp0.2 / Rm (MPa, min)</th><th>Typical use</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Gr.1</td><td>R50250</td><td>CP Ti, O ≤ 0.18%</td><td>170 / 240</td><td>Deep drawing, expanded tube, liners</td></tr>
+              <tr><td>Gr.2</td><td>R50400</td><td>CP Ti, O ≤ 0.25%</td><td>275 / 345</td><td>Chemical plant, marine, desalination, general</td></tr>
+              <tr><td>Gr.3</td><td>R50550</td><td>CP Ti, O ≤ 0.35%</td><td>380 / 450</td><td>Moderate strength, pressure parts</td></tr>
+              <tr><td>Gr.4</td><td>R50700</td><td>CP Ti, O ≤ 0.40%</td><td>483 / 550</td><td>Higher-strength pure titanium, thicker walls</td></tr>
+              <tr><td>Gr.5</td><td>R56400</td><td>Ti-6Al-4V</td><td>828 / 895</td><td>Aerospace structures, fasteners, medical</td></tr>
+              <tr><td>Gr.7</td><td>R52400</td><td>Gr.2 + 0.12–0.25% Pd</td><td>275 / 345</td><td>Reducing acids, hot chlorides</td></tr>
+              <tr><td>Gr.9</td><td>R56320</td><td>Ti-3Al-2.5V</td><td>483 / 620</td><td>Hydraulic tube, cold-formed parts</td></tr>
+              <tr><td>Gr.11</td><td>R52250</td><td>Gr.1 + 0.12–0.25% Pd</td><td>170 / 240</td><td>Pd grade where formability is also needed</td></tr>
+              <tr><td>Gr.12</td><td>R53400</td><td>Ti-0.3Mo-0.8Ni</td><td>483 / 550</td><td>Hot brine, dilute acid, heat exchanger tube</td></tr>
+              <tr><td>Gr.23</td><td>R56407</td><td>Ti-6Al-4V ELI</td><td>828 / 860</td><td>Implants, cryogenic, fracture-critical parts</td></tr>
+            </tbody>
+          </table>
+          <figure class="article-figure">
+            <img src="assets/titanium-bar-astm-b348.webp" alt="Titanium bar and rod to ASTM B348, peeled and ground finish" width="900" height="900" loading="lazy" decoding="async">
+            <figcaption>Titanium bar to ASTM B348. Surface condition — as-rolled, peeled, turned or ground — is specified separately from the grade.</figcaption>
+          </figure>
+
+          <h2 id="gb-map">Mapping ASTM grades onto GB designations</h2>
+          <p>Chinese material is designated under GB/T 3620.1, and the designations look like a one-to-one translation of the ASTM system. In most purchasing documents they are treated as such. Strictly, they are equivalent families, not identical specifications.</p>
+          <table class="spec-table">
+            <thead>
+              <tr><th>GB designation</th><th>Nearest ASTM grade</th><th>What to check before accepting as a substitute</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>TA1</td><td>Gr.1</td><td>Oxygen ceiling and iron limit</td></tr>
+              <tr><td>TA2</td><td>Gr.2</td><td>Oxygen ceiling; tensile and yield minima</td></tr>
+              <tr><td>TA3</td><td>Gr.3</td><td>Oxygen ceiling; product form availability</td></tr>
+              <tr><td>TA9</td><td>Gr.7</td><td>Palladium range 0.12–0.25%</td></tr>
+              <tr><td>TA10</td><td>Gr.12</td><td>Mo and Ni ranges, annealing condition</td></tr>
+              <tr><td>TC4</td><td>Gr.5</td><td>Al and V ranges, oxygen ceiling, heat treatment</td></tr>
+              <tr><td>TC4 ELI</td><td>Gr.23</td><td>Interstitial limits (O, Fe, N)</td></tr>
+              <tr><td>TA15 (Ti-6.5Al-2Zr-1Mo-1V)</td><td>No direct ASTM grade</td><td>Near-alpha alloy; substitutions are engineering decisions, not paperwork</td></tr>
+              <tr><td>TC11 (Ti-6.5Al-3.5Mo-1.5Zr-0.3Si)</td><td>No direct ASTM grade</td><td>High-temperature alloy; no drop-in equivalent</td></tr>
+            </tbody>
+          </table>
+          <p>AMS sits above both as a tighter system. AMS 4911 covers Ti-6Al-4V sheet, strip and plate; AMS 4928 covers Ti-6Al-4V bar, wire, forgings and rings; the AMS 4900 series covers the commercially pure grades. AMS requirements typically add microstructure control, tighter chemistry windows and additional testing on top of the ASTM baseline, which is why aerospace buyers quote AMS rather than ASTM.</p>
+
+          <h2 id="where-it-breaks">Where the equivalence stops being exact</h2>
+          <p>Three things bite in practice.</p>
+          <p><strong>Chemistry windows differ.</strong> The oxygen ceiling that separates one pure grade from another is not identical in every system, and oxygen is exactly what sets strength and ductility. A certificate that satisfies a GB designation may still miss the ASTM limit on a specific element — or satisfy it by a margin so thin that a re-test on a second sample fails.</p>
+          <p><strong>Tolerances and condition are separate clauses.</strong> Grade says nothing about whether the plate is hot rolled or cold rolled, annealed or stress relieved, pickled or ground, or how much crown and camber is acceptable. Two suppliers can both sell "Gr.2 plate to B265" and deliver material that machines completely differently.</p>
+          <p><strong>Test requirements differ.</strong> Which tests are mandatory, how often they are taken, and whether the certificate is a 3.1 or a 3.2 are all separate from the grade. A certificate can be perfectly valid for the grade and still be rejected by the purchaser's incoming inspection because the standard clause it cites is the wrong one for the product form.</p>
+
+          <h2 id="choose">Choosing in practice: four questions</h2>
+          <p><strong>1. What is the medium and the temperature?</strong> This decides whether you are in the pure-titanium family at all, and whether you need palladium or molybdenum-nickel. A grade chosen on strength and then asked to survive hydrochloric acid will fail regardless of its mechanical properties.</p>
+          <p><strong>2. Is strength actually the constraint, or is it stiffness and corrosion allowance?</strong> Most chemical equipment fails by corrosion or by wall loss allowance, not by yield. Gr.2 is usually right; Gr.5 is usually the expensive answer to the wrong question.</p>
+          <p><strong>3. How is it being fabricated?</strong> Welded, deep drawn, machined, or threaded? Grade 1 and Gr.9 form better than Gr.4 and Gr.5; Gr.5 machines better than the pure grades but needs sharp tooling and generous coolant; fasteners in Gr.5 gall badly without a dry-film lubricant.</p>
+          <p><strong>4. What does the approving authority accept?</strong> If the end user is aerospace or medical, the answer is usually AMS or an ASTM implant standard (F67, F136), plus a traceability chain back to the melt. No equivalence argument survives an auditor.</p>
+
+          <h2 id="mistakes">Mistakes that show up in enquiries</h2>
+          <ul>
+            <li><strong>Ordering Gr.5 because it is "better".</strong> Twice the strength, half the weldability, and no benefit to a corrosion-limited wall.</li>
+            <li><strong>Using plain Gr.2 in hot chloride brine.</strong> Above roughly 70 °C, crevice attack under gaskets and tube-to-tubesheet joints becomes the design case, and Gr.7 or Gr.12 is the usual answer.</li>
+            <li><strong>Treating TA2 as Gr.2 on paper.</strong> Ask for the chemistry table, not just the designation, and compare it element by element with the ASTM clause you are buying to.</li>
+            <li><strong>Quoting a standard without a condition.</strong> "ASTM B265 Gr.2" does not specify annealed versus cold rolled, edge condition, or surface finish — all of which change price and lead time.</li>
+            <li><strong>Assuming a Pd grade is always the upgrade.</strong> Palladium helps in reducing conditions; in strongly oxidising media it buys nothing and costs a lot.</li>
+          </ul>
+          <div class="callout">
+            <p><strong>Engineering guidance only.</strong> This article summarises published standard requirements and common practice. Final grade selection remains the buyer's engineering decision, and the applicable standard, condition and test requirements are confirmed per order in the quotation and contract.</p>
+          </div>
+          <p>Material for each of these families is available as <a href="/titanium-plate">plate and sheet</a>, <a href="/titanium-bar">bar and rod</a>, <a href="/titanium-tube">tube and pipe</a>, <a href="/titanium-fasteners">fasteners</a> and <a href="/titanium-forgings">forgings or machined parts</a>. If you have a grade question tied to a specific medium or drawing, send it with the service conditions and we will answer it against the standard you are working to.</p>
+        </div>
+
+        <div class="cta-band">
+          <div>
+            <h2>Need a quote for titanium?</h2>
+            <p>Send the product form, grade, dimensions and destination — we confirm availability, standards and documents before you commit.</p>
+          </div>
+          <a class="button button-primary" href="/contact">Request a Quotation <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="/" aria-label="ALLOYTI home">
+          <img class="brand-mark" src="assets/logo-emblem.webp" alt="ALLOYTI logo" width="36" height="36"> <span class="brand-word">ALLOYTI</span>
+        </a>
+        <p class="footer-slogan">Built on Titanium. Driven by Technology.</p>
+        <p>Titanium and titanium alloy sourcing, supply and technical support — plate, bar, tube, fasteners and precision forgings to ASTM, GB and AMS standards, exported to North America, Europe, the Middle East and Southeast Asia.</p>
+      </div>
+      <nav class="footer-col" aria-label="Product links">
+        <p class="footer-col-title">Products</p>
+        <a href="/titanium-plate">Titanium Plate &amp; Sheet</a>
+        <a href="/titanium-bar">Titanium Bar &amp; Rod</a>
+        <a href="/titanium-tube">Titanium Tube & Pipe</a>
+        <a href="/titanium-fasteners">Titanium Fasteners</a>
+        <a href="/titanium-forgings">Forgings &amp; Machined Parts</a>
+      </nav>
+      <nav class="footer-col" aria-label="Company links">
+        <p class="footer-col-title">Company</p>
+        <a href="/about">About</a>
+        <a href="/quality">Quality &amp; Service</a>
+        <a href="/faq">FAQ</a>
+        <a href="/resources">Resources</a>
+        <a href="/#showcase">Sourcing</a>
+      </nav>
+      <div class="footer-col">
+        <p class="footer-col-title">Contact</p>
+        <a href="mailto:sales@alloyti.com">sales@alloyti.com</a>
+        <a href="https://wa.me/8618523283306" target="_blank" rel="noopener noreferrer">WhatsApp +86 185 2328 3306</a>
+        <a href="/contact">Send an enquiry ↗</a>
+        <span class="footer-addr">High-Tech Avenue, Baoji, Shaanxi, China</span>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year">2026</span> ALLOYTI</p>
+      <p>TITANIUM · ASTM / DIN / ISO · Confirmed per order</p>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/">Back to top ↑</a>
+    </div>
+  </footer>
+  <script src="app.min.js?v=20261105d"></script>
+</body>
+</html>

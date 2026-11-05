@@ -421,6 +421,66 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.alloyti.com/resources</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.alloyti.com/resources"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.alloyti.com/zh/resources"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.alloyti.com/ar/resources"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.alloyti.com/ru/resources"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.alloyti.com/de/resources"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.alloyti.com/resources"/>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.alloyti.com/zh/resources</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.alloyti.com/resources"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.alloyti.com/zh/resources"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.alloyti.com/ar/resources"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.alloyti.com/ru/resources"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.alloyti.com/de/resources"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.alloyti.com/resources"/>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.alloyti.com/ar/resources</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.alloyti.com/resources"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.alloyti.com/zh/resources"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.alloyti.com/ar/resources"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.alloyti.com/ru/resources"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.alloyti.com/de/resources"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.alloyti.com/resources"/>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.alloyti.com/ru/resources</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.alloyti.com/resources"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.alloyti.com/zh/resources"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.alloyti.com/ar/resources"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.alloyti.com/ru/resources"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.alloyti.com/de/resources"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.alloyti.com/resources"/>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.alloyti.com/de/resources</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.alloyti.com/resources"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://www.alloyti.com/zh/resources"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.alloyti.com/ar/resources"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.alloyti.com/ru/resources"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.alloyti.com/de/resources"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.alloyti.com/resources"/>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.alloyti.com/about</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.alloyti.com/about"/>
     <xhtml:link rel="alternate" hreflang="zh" href="https://www.alloyti.com/zh/about"/>
@@ -719,5 +779,29 @@
     <lastmod>2026-11-05</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.alloyti.com/titanium-grade-guide</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.alloyti.com/titanium-grade-guide"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.alloyti.com/titanium-grade-guide"/>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.alloyti.com/titanium-corrosion-guide</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.alloyti.com/titanium-corrosion-guide"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.alloyti.com/titanium-corrosion-guide"/>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.alloyti.com/titanium-specification-guide</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.alloyti.com/titanium-specification-guide"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.alloyti.com/titanium-specification-guide"/>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

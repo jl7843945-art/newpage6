@@ -401,11 +401,16 @@ form: { title: "Anfrage senden", note: "Bitte zuerst die mit * markierten Felder
     });
   }
 
-  /* 静态语言页之间的互跳地址：/zh/products → /ar/products；en 无前缀 */
+  /* 静态语言页之间的互跳地址：/zh/products → /ar/products；en 无前缀。
+     只有英文版的页面（如技术文章）用 body[data-lang-fallback] 指定回落路径，
+     切到其它语言时落到该语言的资源中心，避免 404。 */
   function staticLangUrl(next) {
     const pre = { zh: "/zh", ar: "/ar", ru: "/ru", de: "/de", en: "" }[next] || "";
     let p = location.pathname.replace(/^\/(zh|ar|ru|de)(?=\/|$)/, "");
     if (!p || p.charAt(0) !== "/") p = "/" + (p || "");
+    if (next === "en") return p;
+    const fb = document.body && document.body.getAttribute("data-lang-fallback");
+    if (fb) return pre + fb;
     return pre + p;
   }
 
