@@ -1,26 +1,24 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- 防语言闪跳(FOUC)：在外部 CSS/JS 之前先确定语言；非英文时暂隐正文，译文注入完成后再显示 -->
+  <!-- 语言由 URL 决定：英文在根路径，其余语言是 /zh/ /ar/ /ru/ /de 独立静态页。
+       旧链接 /path?lang=zh 在这里直接跳转到对应语言页，避免 ?lang= 变体被重复收录。 -->
   <script>
   (function () {
-    var LANGS = ["zh", "en", "ar", "ru", "de"], l = "en";
+    var h = document.documentElement;
+    if (h.getAttribute("data-static-lang")) return;
+    if (/[?&]gen=1/.test(location.search)) {
+      // 构建期渲染译文：临时加载对应语言包，供生成静态语言页使用
+      var g = new URLSearchParams(location.search).get("lang");
+      if (g && /^(zh|ar|ru|de)$/.test(g)) document.write('<script src="/i18n/' + g + '.js"><\/script>');
+      return;
+    }
     try {
-      var s = localStorage.getItem("ts-lang");
-      if (s && LANGS.indexOf(s) > -1) l = s;
       var q = new URLSearchParams(location.search).get("lang");
-      if (q && LANGS.indexOf(q) > -1) l = q;
-      var h = document.documentElement;
-      h.setAttribute("lang", l);
-      h.setAttribute("dir", l === "ar" ? "rtl" : "ltr");
-      if (l !== "en") h.className += " lang-pending";
-      // 只加载当前语言的正文词典包（英文页面正文即 HTML 原文，无需加载任何词典）
-      if (l !== "en") document.write('<script src="/i18n/' + l + '.js?v=20261104f"><\/script>');
+      if (q && /^(zh|ar|ru|de)$/.test(q)) {
+        location.replace("/" + q + (location.pathname === "/" ? "/" : location.pathname));
+      }
     } catch (e) {}
-    // 兜底：万一 app.js 加载失败，4 秒后强制显示，避免页面永久空白
-    setTimeout(function () {
-      try { document.documentElement.classList.remove("lang-pending"); } catch (e) {}
-    }, 4000);
   })();
   </script>
   <meta charset="utf-8">
@@ -30,6 +28,12 @@
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#0A1A3A">
   <link rel="canonical" href="https://www.alloyti.com/titanium-forgings">
+  <link rel="alternate" hreflang="en" href="https://www.alloyti.com/titanium-forgings">
+  <link rel="alternate" hreflang="zh" href="https://www.alloyti.com/zh/titanium-forgings">
+  <link rel="alternate" hreflang="ar" href="https://www.alloyti.com/ar/titanium-forgings">
+  <link rel="alternate" hreflang="ru" href="https://www.alloyti.com/ru/titanium-forgings">
+  <link rel="alternate" hreflang="de" href="https://www.alloyti.com/de/titanium-forgings">
+  <link rel="alternate" hreflang="x-default" href="https://www.alloyti.com/titanium-forgings">
   <link rel="icon" type="image/png" href="assets/favicon-64.png">
   <link rel="stylesheet" href="styles.css?v=20261105a">
   <meta property="og:type" content="website">
@@ -312,6 +316,6 @@
     </div>
   </footer>
 
-    <script src="app.js?v=20261104f"></script>
+    <script src="app.js?v=20261105b"></script>
 </body>
 </html>

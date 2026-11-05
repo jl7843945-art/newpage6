@@ -1,26 +1,24 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- 防语言闪跳(FOUC)：在外部 CSS/JS 之前先确定语言；非英文时暂隐正文，译文注入完成后再显示 -->
+  <!-- 语言由 URL 决定：英文在根路径，其余语言是 /zh/ /ar/ /ru/ /de 独立静态页。
+       旧链接 /path?lang=zh 在这里直接跳转到对应语言页，避免 ?lang= 变体被重复收录。 -->
   <script>
   (function () {
-    var LANGS = ["zh", "en", "ar", "ru", "de"], l = "en";
+    var h = document.documentElement;
+    if (h.getAttribute("data-static-lang")) return;
+    if (/[?&]gen=1/.test(location.search)) {
+      // 构建期渲染译文：临时加载对应语言包，供生成静态语言页使用
+      var g = new URLSearchParams(location.search).get("lang");
+      if (g && /^(zh|ar|ru|de)$/.test(g)) document.write('<script src="/i18n/' + g + '.js"><\/script>');
+      return;
+    }
     try {
-      var s = localStorage.getItem("ts-lang");
-      if (s && LANGS.indexOf(s) > -1) l = s;
       var q = new URLSearchParams(location.search).get("lang");
-      if (q && LANGS.indexOf(q) > -1) l = q;
-      var h = document.documentElement;
-      h.setAttribute("lang", l);
-      h.setAttribute("dir", l === "ar" ? "rtl" : "ltr");
-      if (l !== "en") h.className += " lang-pending";
-      // 只加载当前语言的正文词典包（英文页面正文即 HTML 原文，无需加载任何词典）
-      if (l !== "en") document.write('<script src="/i18n/' + l + '.js?v=20261104f"><\/script>');
+      if (q && /^(zh|ar|ru|de)$/.test(q)) {
+        location.replace("/" + q + (location.pathname === "/" ? "/" : location.pathname));
+      }
     } catch (e) {}
-    // 兜底：万一 app.js 加载失败，4 秒后强制显示，避免页面永久空白
-    setTimeout(function () {
-      try { document.documentElement.classList.remove("lang-pending"); } catch (e) {}
-    }, 4000);
   })();
   </script>
   <meta charset="utf-8">
@@ -33,7 +31,6 @@
   <link rel="icon" type="image/png" href="assets/favicon-64.png">
   <link rel="stylesheet" href="styles.css?v=20261105a">
   <link rel="stylesheet" href="hitech.css?v=20261104f">
-  <!-- 技术 SEO：canonical + Open Graph + Twitter（域名占位 .example，上线前替换为真实域名；如需 hreflang 多语言 SEO，建议后续为每种语言提供独立 URL） -->
   <link rel="canonical" href="https://www.alloyti.com/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
@@ -241,7 +238,7 @@
         </ul>
       </section>
       <div class="hero-band">
-        <div class="hero-metrics container" id="heroMetrics" aria-label="Company capability figures"></div>
+        <div class="hero-metrics container" id="heroMetrics" aria-label="Company capability figures" data-static="1"><div class="metric"><b data-to="5">5</b><span>Product categories</span></div><div class="metric"><b data-to="7">7</b><span>Titanium grades</span></div><div class="metric"><b data-to="3">3</b><span>Standard systems</span></div><div class="metric"><b data-to="24">24</b><span>h quotation response</span></div></div>
       </div>
     </section>
 
@@ -254,7 +251,52 @@
           </div>
           <p data-i18n="products.intro"><span data-i18n="s351">Five product lines covering the common industrial buying cases — plate and sheet, bar and rod, tube and pipe, fasteners, and precision forgings. Open a card for grades, standards and supply forms, or visit the full product page.</span></p>
         </div>
-        <div class="product-grid" id="productGrid"></div>
+        <div class="product-grid" id="productGrid" data-static="1"><article class="product-card" data-key="sheet" tabindex="0" role="button" aria-label="View details: Titanium Sheet &amp; Plate">
+      <div class="product-media"><img src="assets/titanium-plate-astm-b265.webp" alt="Titanium Sheet &amp; Plate — titanium mill product" width="900" height="900" loading="lazy"></div>
+      <span class="product-index">01 / 05</span>
+      <div class="product-body">
+        <h3>Titanium Sheet &amp; Plate</h3>
+        <div class="product-tags"><span>Gr.1</span><span>Gr.2</span><span>Gr.5</span></div>
+        <p>For chemical equipment, heat exchangers, marine and general industry. Thickness, width, length and surface finish confirmed per order.</p>
+        <span class="product-more">View details <span aria-hidden="true">→</span></span>
+      </div>
+    </article><article class="product-card" data-key="bar" tabindex="0" role="button" aria-label="View details: Titanium Bar &amp; Rod">
+      <div class="product-media"><img src="assets/titanium-bar-astm-b348.webp" alt="Titanium Bar &amp; Rod — titanium mill product" width="497" height="439" loading="lazy"></div>
+      <span class="product-index">02 / 05</span>
+      <div class="product-body">
+        <h3>Titanium Bar &amp; Rod</h3>
+        <div class="product-tags"><span>Gr.2</span><span>Gr.5</span><span>Gr.7</span></div>
+        <p>Round bar and cut lengths for machined parts, fastener blanks and corrosion-resistant components. Dimensions and tolerances confirmed before supply.</p>
+        <span class="product-more">View details <span aria-hidden="true">→</span></span>
+      </div>
+    </article><article class="product-card" data-key="tube" tabindex="0" role="button" aria-label="View details: Titanium Tube &amp; Pipe">
+      <div class="product-media"><img src="assets/titanium-fittings-astm-b363.webp" alt="Titanium Tube &amp; Pipe — titanium mill product" width="1200" height="726" loading="lazy"></div>
+      <span class="product-index">03 / 05</span>
+      <div class="product-body">
+        <h3>Titanium Tube &amp; Pipe</h3>
+        <div class="product-tags"><span>Gr.1</span><span>Gr.2</span><span>Gr.7</span></div>
+        <p>For heat exchange, fluid transport and corrosive service — seamless or welded tube, wall thickness and inspection confirmed per inquiry.</p>
+        <span class="product-more">View details <span aria-hidden="true">→</span></span>
+      </div>
+    </article><article class="product-card" data-key="fasteners" tabindex="0" role="button" aria-label="View details: Titanium Fasteners">
+      <div class="product-media"><img src="assets/titanium-fasteners-din-iso.webp" alt="Titanium Fasteners — titanium mill product" width="1400" height="471" loading="lazy"></div>
+      <span class="product-index">04 / 05</span>
+      <div class="product-body">
+        <h3>Titanium Fasteners</h3>
+        <div class="product-tags"><span>Gr.2</span><span>Gr.5</span></div>
+        <p>For lightweight, corrosion-resistant joints. Bolts, nuts, screws and washers with head style, thread and length per DIN, ISO or ASME.</p>
+        <span class="product-more">View details <span aria-hidden="true">→</span></span>
+      </div>
+    </article><article class="product-card" data-key="forgings" tabindex="0" role="button" aria-label="View details: Titanium Forgings &amp; Machined Parts">
+      <div class="product-media"><img src="assets/titanium-forgings-astm-b381.webp" alt="Titanium Forgings &amp; Machined Parts — titanium mill product" width="900" height="900" loading="lazy"></div>
+      <span class="product-index">05 / 05</span>
+      <div class="product-body">
+        <h3>Titanium Forgings &amp; Machined Parts</h3>
+        <div class="product-tags"><span>TC4</span><span>TA15</span></div>
+        <p>Forged discs, rings, blocks and parts machined to drawing for aerospace structures, energy equipment and corrosion-resistant pressure parts. Dimensions, heat-treatment condition and inspection are confirmed before order.</p>
+        <span class="product-more">View details <span aria-hidden="true">→</span></span>
+      </div>
+    </article></div>
         <div class="section-foot reveal">
           <h3 data-i18n="ui.footTitle"><span data-i18n="s352">Turning material requirements into every delivery.</span></h3>
           <a class="button-link" href="#quality"><span data-i18n="ui.footLink"><span data-i18n="s353">See Quality &amp; Documents</span></span> <span aria-hidden="true">→</span></a>
@@ -272,7 +314,22 @@
           </div>
           <p data-i18n="showcase.intro"><span data-i18n="s355">From straightening, coil slitting and heat treatment to turning, dimensional inspection and warehousing — real shots of each stage of titanium processing and delivery.</span></p>
         </div>
-        <div class="showcase-grid" id="showcaseGrid"></div>
+        <div class="showcase-grid" id="showcaseGrid" data-static="1"><div class="app-card">
+      <img src="assets/factory-straightening.webp" alt="Bar &amp; Tube Straightening — titanium production site" loading="lazy" width="1200" height="800">
+      <div class="app-text"><span class="app-code">P·01</span><h3>Bar &amp; Tube Straightening</h3><p>Straightening line keeps straightness within delivery tolerances.</p></div>
+    </div><div class="app-card">
+      <img src="assets/factory-disc-warehouse.webp" alt="Disc &amp; Ring Inventory — titanium production site" loading="lazy" width="1200" height="800">
+      <div class="app-text"><span class="app-code">P·02</span><h3>Disc &amp; Ring Inventory</h3><p>Bulk storage of titanium discs and rings — wide size range, stock available.</p></div>
+    </div><div class="app-card">
+      <img src="assets/factory-inspection.webp" alt="Dimensional Inspection — titanium production site" loading="lazy" width="1200" height="800">
+      <div class="app-text"><span class="app-code">P·03</span><h3>Dimensional Inspection</h3><p>Each bar and tube measured for diameter and tolerance before shipment.</p></div>
+    </div><div class="app-card">
+      <img src="assets/factory-lathe.webp" alt="Turning &amp; Machining — titanium production site" loading="lazy" width="1200" height="800">
+      <div class="app-text"><span class="app-code">P·04</span><h3>Turning &amp; Machining</h3><p>Lathe machining of bars and forgings to drawing, with controlled finish and tolerance.</p></div>
+    </div><div class="app-card">
+      <img src="assets/factory-heat-treatment.webp" alt="Heat Treatment — titanium production site" loading="lazy" width="1200" height="800">
+      <div class="app-text"><span class="app-code">P·05</span><h3>Heat Treatment</h3><p>Heating and treatment lines ensure the required microstructure and delivery condition.</p></div>
+    </div></div>
         <p class="illustration-note" data-i18n="showcase.note"><span data-i18n="s356">Photos above are taken at the mills and warehouses we work with.</span></p>
       </div>
     </section>
@@ -301,7 +358,7 @@
           <p data-i18n="about.p"><span data-i18n="s365">Across aerospace, marine engineering, medical and new-energy applications, titanium alloys combine strength, corrosion resistance, light weight and biocompatibility. ALLOYTI focuses on the sourcing, supply and technical support of titanium and titanium alloys, covering mainstream grades such as TA1, TC4 (Gr.5) and TA15, and delivering one-stop solutions in plate, bar, tube and precision forgings to ASTM, GB and AMS standards. Our products are exported to North America, Europe, the Middle East and Southeast Asia. We supply more than material — we provide grade selection advice, process support and fast response.</span></p>
           <a class="button-link" href="#contact"><span data-i18n="about.link"><span data-i18n="s366">Start a project conversation</span></span> <span aria-hidden="true">→</span></a>
         </div>
-        <ul class="about-points reveal" id="aboutPoints"></ul>
+        <ul class="about-points reveal" id="aboutPoints" data-static="1"><li><h3>Specs confirmed per order</h3><p>Grades, standards, dimensions and document needs are confirmed item by item before ordering.</p></li><li><h3>Mill certificates on request</h3><p>EN 10204 certificates and third-party inspection can be arranged as needed.</p></li><li><h3>Cross-border document support</h3><p>Support for packing lists, shipping documents and destination compliance.</p></li><li><h3>Confidential &amp; responsive</h3><p>Project information kept confidential, with proactive updates at key milestones.</p></li></ul>
       </div>
     </section>
 
@@ -314,7 +371,7 @@
           <p data-i18n="quality.p"><span data-i18n="s369">We confirm grades, dimensions, standards and document requirements, then coordinate inspection, packing and logistics — verifying delivery content against the order. Certificates (EN 10204) and third-party inspection are agreed before production starts.</span></p>
           <a class="button-link quality-more" href="#contact"><span data-i18n="quality.link"><span data-i18n="s370">Ask about order service</span></span> <span aria-hidden="true">→</span></a>
         </div>
-        <ol class="quality-list" id="qualityList"></ol>
+        <ol class="quality-list" id="qualityList" data-static="1"><li><h3>Requirement Confirmation</h3><p>Grades, standards, dimensions, quantity, service conditions and target delivery.</p></li><li><h3>Supply Verification</h3><p>Availability, supply condition and special requirements confirmed with the supplier.</p></li><li><h3>Documents &amp; Inspection</h3><p>Mill certificates and any third-party inspection agreed in advance.</p></li><li><h3>Delivery Follow-up</h3><p>Packing, marking, shipping documents and dispatch milestones tracked.</p></li></ol>
       </div>
     </section>
 
@@ -326,7 +383,7 @@
           <h2 id="checklistTitle" data-i18n-html="checklist.title"><span data-i18n="s371">The more complete your inquiry,</span><br><span data-i18n="s372">the more accurate our answer.</span></h2>
           <p data-i18n="checklist.p"><span data-i18n="s373">The following helps us respond faster with a confirmable supply and document plan. Inspection and document scope follow the agreed order.</span></p>
         </div>
-        <ol class="checklist-items reveal" id="checklistItems"></ol>
+        <ol class="checklist-items reveal" id="checklistItems" data-static="1"><li>Product, grade and standard</li><li>Dimensions, quantity and drawings (if any)</li><li>Media, temperature, pressure and service conditions</li><li>Surface, length, tolerances and packing</li><li>Mill certificates and required tests from the supplier</li><li>Destination, target delivery and trade documents</li></ol>
       </div>
     </section>
 
@@ -451,6 +508,6 @@
   </dialog>
 
     <script src="hitech.js"></script>
-  <script src="app.js?v=20261104f"></script>
+  <script src="app.js?v=20261105b"></script>
 </body>
 </html>

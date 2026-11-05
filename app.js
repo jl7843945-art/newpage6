@@ -9,16 +9,22 @@
 
   /* ================= 语言 ================= */
   const LANGS = ["zh", "en", "ar", "ru", "de"];
-  let lang = "en";
-  try {
-    const saved = localStorage.getItem("ts-lang");
-    if (saved && LANGS.includes(saved)) lang = saved;
-  } catch (e) { /* ignore */ }
-  try {
-    // ?lang=xx 优先于 localStorage：可分享指定语言的链接
-    const q = new URLSearchParams(location.search).get("lang");
-    if (q && LANGS.includes(q)) lang = q;
-  } catch (e) { /* ignore */ }
+  /* 静态多语言页（/zh/ /ar/ /ru/ /de/）在 <html data-static-lang> 上锁定语言：
+     正文已是目标语言译文，不再读 localStorage，避免访客上次选的语言把译文页改掉。 */
+  const STATIC_LANG = (function () {
+    const v = document.documentElement.getAttribute("data-static-lang");
+    return LANGS.indexOf(v) > -1 ? v : "";
+  })();
+  /* 语言完全由 URL 决定：英文页 = 根路径，其余 = /zh/ /ar/ /ru/ /de/ 独立静态页。
+     不再读 localStorage / ?lang=，否则会和静态页的正文打架（标题英文、导航中文）。 */
+  let lang = STATIC_LANG || "en";
+  if (!STATIC_LANG) {
+    try {
+      // 仅用于构建期渲染译文（带 &gen=1）；线上访客由 <head> 脚本先跳到独立语言页
+      const q = new URLSearchParams(location.search).get("lang");
+      if (q && LANGS.indexOf(q) > -1) lang = q;
+    } catch (e) { /* ignore */ }
+  }
 
   /* ================= 多语言词典 ================= */
   const I18N = {
@@ -275,6 +281,9 @@ form: { title: "Anfrage senden", note: "Bitte zuerst die mit * markierten Felder
     const P = L().products;
     const gridEl = document.getElementById("productGrid");
     if (!gridEl) return;
+    // 首页静态内容已在 HTML 中：英文直接使用，避免重复渲染；切换语言时重建
+    if (gridEl.dataset.static === "1" && lang === "en") return;
+    gridEl.dataset.static = "0";
     gridEl.innerHTML = PRODUCTS.map((p) => {
       const it = P.items[p.key];
       return `<article class="product-card" data-key="${p.key}" tabindex="0" role="button" aria-label="${L().ui.viewMore}: ${it.title}">
@@ -294,6 +303,9 @@ form: { title: "Anfrage senden", note: "Bitte zuerst die mit * markierten Felder
     const S = L().showcase;
     const scEl = document.getElementById("showcaseGrid");
     if (!scEl) return;
+    // 首页静态内容已在 HTML 中：英文直接使用，避免重复渲染；切换语言时重建
+    if (scEl.dataset.static === "1" && lang === "en") return;
+    scEl.dataset.static = "0";
     scEl.innerHTML = SHOWCASE.map((a) => {
       const it = S.items[a.key];
       return `<div class="app-card">
@@ -306,6 +318,9 @@ form: { title: "Anfrage senden", note: "Bitte zuerst die mit * markierten Felder
   function renderQuality() {
     const qEl = document.getElementById("qualityList");
     if (!qEl) return;
+    // 首页静态内容已在 HTML 中：英文直接使用，避免重复渲染；切换语言时重建
+    if (qEl.dataset.static === "1" && lang === "en") return;
+    qEl.dataset.static = "0";
     qEl.innerHTML = L().quality.steps.map((q) =>
       `<li><h3>${q.t}</h3><p>${q.d}</p></li>`).join("");
   }
@@ -313,6 +328,9 @@ form: { title: "Anfrage senden", note: "Bitte zuerst die mit * markierten Felder
   function renderChecklist() {
     const cEl = document.getElementById("checklistItems");
     if (!cEl) return;
+    // 首页静态内容已在 HTML 中：英文直接使用，避免重复渲染；切换语言时重建
+    if (cEl.dataset.static === "1" && lang === "en") return;
+    cEl.dataset.static = "0";
     cEl.innerHTML = L().checklist.items.map((c) =>
       `<li>${c}</li>`).join("");
   }
@@ -320,6 +338,9 @@ form: { title: "Anfrage senden", note: "Bitte zuerst die mit * markierten Felder
   function renderAbout() {
     const aEl = document.getElementById("aboutPoints");
     if (!aEl) return;
+    // 首页静态内容已在 HTML 中：英文直接使用，避免重复渲染；切换语言时重建
+    if (aEl.dataset.static === "1" && lang === "en") return;
+    aEl.dataset.static = "0";
     aEl.innerHTML = L().about.points.map((p) =>
       `<li><h3>${p.t}</h3><p>${p.d}</p></li>`).join("");
   }
@@ -328,6 +349,9 @@ form: { title: "Anfrage senden", note: "Bitte zuerst die mit * markierten Felder
     const M = L().hero.metrics;
     const mEl = document.getElementById("heroMetrics");
     if (!mEl) return;
+    // 首页静态内容已在 HTML 中：英文直接使用，避免重复渲染；切换语言时重建
+    if (mEl.dataset.static === "1" && lang === "en") return;
+    mEl.dataset.static = "0";
     mEl.innerHTML = METRIC_NUMS.map((n, i) =>
       `<div class="metric"><b data-to="${n}">0</b><span>${M[i]}</span></div>`).join("");
   }
@@ -377,16 +401,25 @@ form: { title: "Anfrage senden", note: "Bitte zuerst die mit * markierten Felder
     });
   }
 
+  /* 静态语言页之间的互跳地址：/zh/products → /ar/products；en 无前缀 */
+  function staticLangUrl(next) {
+    const pre = { zh: "/zh", ar: "/ar", ru: "/ru", de: "/de", en: "" }[next] || "";
+    let p = location.pathname.replace(/^\/(zh|ar|ru|de)(?=\/|$)/, "");
+    if (!p || p.charAt(0) !== "/") p = "/" + (p || "");
+    return pre + p;
+  }
+
   function applyLang(next) {
-    // 正文词典按语言分包：目标语言包未加载时带 ?lang= 重载（仅切换语言才触发，避免死循环）
-    if (next !== lang && !(window.ALLOYTI_PAGE_I18N && window.ALLOYTI_PAGE_I18N[next])) {
-      try { localStorage.setItem("ts-lang", next); } catch (e) { /* ignore */ }
-      try { sessionStorage.setItem("ts-scroll", String(window.pageYOffset || 0)); } catch (e) { /* ignore */ }
-      const u = new URL(location.href);
-      u.searchParams.set("lang", next);
-      location.replace(u.toString());
+    // 静态语言页：正文已是该语言译文，切换语言就是跳到对应语言的独立 URL
+    if (STATIC_LANG) {
+      if (next !== STATIC_LANG) { location.href = staticLangUrl(next); return; }
+      document.documentElement.setAttribute("lang", STATIC_LANG);
+      document.documentElement.setAttribute("dir", STATIC_LANG === "ar" ? "rtl" : "ltr");
+      syncLangUI();
       return;
     }
+    // 英文页切语言：直接跳到该语言的独立静态页，避免 ?lang= 生成重复内容
+    if (next !== lang) { location.href = staticLangUrl(next); return; }
     lang = next;
     try { localStorage.setItem("ts-lang", lang); } catch (e) { /* ignore */ }
     const html = document.documentElement;
@@ -395,14 +428,17 @@ form: { title: "Anfrage senden", note: "Bitte zuerst die mit * markierten Felder
     syncLangUI();
     const formLangEl = document.getElementById("formLang");
     if (formLangEl) formLangEl.value = lang;
-    renderStatic();
-    applyPageI18N();
-    renderProducts();
-    renderShowcase();
-    renderQuality();
-    renderChecklist();
-    renderAbout();
-    renderMetrics();
+    // 静态语言页的正文/渲染块已经是目标语言，不能再被词典覆盖一遍
+    if (!STATIC_LANG) {
+      renderStatic();
+      applyPageI18N();
+      renderProducts();
+      renderShowcase();
+      renderQuality();
+      renderChecklist();
+      renderAbout();
+      renderMetrics();
+    }
     // 译文已全部注入，解除 <head> 脚本设置的暂隐，正式显示翻译后的正文
     document.documentElement.classList.remove("lang-pending");
   }
