@@ -9,11 +9,16 @@
 /assets/*
   Cache-Control: public, max-age=604800
 
+# 静态资源都带 ?v=YYYYMMDDx 版本串，改内容必须同时改版本串，因此可放心长缓存
 /*.css
-  Cache-Control: public, max-age=3600
+  Cache-Control: public, max-age=31536000, immutable
 
 /*.js
-  Cache-Control: public, max-age=3600
+  Cache-Control: public, max-age=31536000, immutable
+
+# i18n 语言包只在生成脚本时按需加载，不参与长缓存
+/i18n/*.js
+  Cache-Control: public, max-age=600
 
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
