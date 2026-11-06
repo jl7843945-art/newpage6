@@ -1,6 +1,6 @@
 /* =========================================================
    ALLOYTI — 交互逻辑（多语言版）
-   5 语种：zh / en / ar(RTL) / ru / de
+   6 语种：zh / en / ko / ar(RTL) / ru / de
    产品/应用/消费类/流程数据渲染 + 弹窗 + 移动端菜单 + 滚动揭示 + 语言切换
    数据为示例占位，请按实际业务替换；图片素材上线前请替换为自有授权素材。
    ========================================================= */
@@ -8,7 +8,7 @@
   "use strict";
 
   /* ================= 语言 ================= */
-  const LANGS = ["zh", "en", "ar", "ru", "de"];
+  const LANGS = ["zh", "en", "ko", "ar", "ru", "de"];
   /* 静态多语言页（/zh/ /ar/ /ru/ /de/）在 <html data-static-lang> 上锁定语言：
      正文已是目标语言译文，不再读 localStorage，避免访客上次选的语言把译文页改掉。 */
   const STATIC_LANG = (function () {
@@ -65,6 +65,45 @@
       contact: { title: "有项目需求？<br>从规格开始沟通。", intro: "不必等全部信息齐备。告诉我们产品形态、牌号、规格及交付目的地，我们会先梳理需要确认的问题。", cardLabel: "询价建议包含", cardItems: ["产品与牌号、执行标准", "规格、数量及图纸（如有）", "文件要求、目的地和目标交期"], small: "具体供应与文件范围以双方确认为准" },
 form: { title: "发送询价需求", note: "先填写带 * 的必填项即可，我们会据此梳理需要进一步确认的问题。", company: "公司名称", name: "联系人 *", email: "电子邮箱 *", country: "国家 / 地区", product: "产品形态 *", grade: "牌号", spec: "规格、数量与尺寸公差", dest: "目的地与目标交期", message: "工况、文件要求及补充说明", file: "图纸附件（可选，≤5MB）", consent: "我同意 ALLOYTI 处理上述联系信息，用于回复本次询盘。", submit: "发送询盘", privacy: "所填信息仅用于本次询盘沟通，不用于其他用途。", productOptions: ["钛板 / 钛卷", "钛棒 / 钛丝", "钛管 / 钛管件", "钛材紧固件", "钛锻件", "钛加工件", "其他 / 来图定制"] },
             footer: { brandDesc: "专注钛及钛合金采购、供应与技术支持——板材、棒材、管材及精密锻件一站式供应，符合 ASTM、GB、AMS 标准，远销北美、欧洲、中东及东南亚。", colProducts: "产品", colAbout: "关于", colContact: "联系" }
+    },
+
+    ko: {
+      meta: { title: "티타늄 공급 파트너 및 공급업체 — 판재·봉재·관재 | ALLOYTI", desc: "ALLOYTI는 검증된 제강소에서 조달한 TA1, TC4(Gr.5), TA15 티타늄 판재, 봉재, 관재, 패스너, 정밀 단조품을 ASTM, GB, AMS 규격으로 공급합니다." },
+      ui: { skip: "본문으로 건너뛰기", navAria: "주 메뉴", openNav: "메뉴 열기", brandTag: "티타늄 공급", slogan: "티타늄으로 세우고, 기술로 이끕니다.", closeDialog: "제품 상세 닫기", metricsAria: "기업 역량 지표", langLabel: "언어 변경", viewMore: "상세 보기", backTop: "맨 위로 ↑", bottomTag: "티타늄 · ASTM / DIN / ISO · 주문별 확정", dialogContact: "요구사항 정리", footTitle: "소재 요구사항을 모든 납품까지 이어갑니다.", footLink: "품질 및 서비스 보기" },
+      nav: { home: "홈", products: "제품", showcase: "협력 제강소", quality: "품질 및 서비스", about: "회사 소개", faq: "자주 묻는 질문", contact: "문의" },
+      hero: { h1a: "티타늄 합금: 특성, 등급 및 응용", h1b: "", intro: "티타늄 합금은 약 4.5 g/cm³의 낮은 밀도와 높은 비강도를 가지며, 우수한 내식성, 내열성, 생체 적합성을 겸비해 항공우주, 해양 엔지니어링, 의료, 신에너지 분야의 핵심 구조 소재로 사용됩니다. ALLOYTI는 산업용 순수 티타늄 TA1/TA2와 TC4(Ti-6Al-4V), TA15, TC11 등의 합금을 판재, 봉재, 관재, 단조품, 패스너로 ASTM, GB, AMS 규격에 맞춰 공급하며, 주문 가공과 수출 납품을 지원합니다.", btn1: "티타늄 제품 보기", btn2: "견적 요청", nodes: ["등급", "ASTM", "ISO", "DIN"], metrics: ["제품 카테고리", "티타늄 등급", "규격 체계", "시간 이내 견적 회신"] },
+      products: { title: "다섯 가지 제품군", intro: "일반적인 산업 구매 수요를 아우르는 다섯 가지 제품군입니다. 제품 카드를 클릭하면 등급, 규격, 공급 형태를 확인할 수 있습니다.", items: {
+        sheet: { title: "티타늄 판재 / 코일", en: "TITANIUM SHEET & PLATE", desc: "화학 설비, 열교환기, 해양 엔지니어링 및 일반 산업용. 두께, 폭, 길이, 표면 처리는 주문별로 확정합니다." },
+        bar: { title: "티타늄 봉재 / 와이어", en: "TITANIUM BAR & ROD", desc: "가공 부품, 패스너 소재, 내식 부품용 환봉과 정척재. 치수와 공차는 공급 전에 확정합니다." },
+        tube: { title: "티타늄 관재", en: "TITANIUM TUBE & PIPE", desc: "열교환, 유체 이송 및 부식 환경용 — 이음매 없는 관 또는 용접관, 벽 두께와 필요한 검사는 문의 시 확정합니다." },
+        fasteners: { title: "티타늄 패스너", en: "TITANIUM FASTENERS", desc: "경량·내식 체결용. 볼트, 너트, 나사, 와셔를 DIN, ISO 또는 ASME 요구에 따라 머리 형상, 나사산, 길이를 지정할 수 있습니다." },
+        forgings: { title: "티타늄 단조품 / 가공품", en: "TITANIUM FORGINGS", desc: "디스크, 링, 블록 및 도면 가공 부품으로 항공우주 구조물, 에너지 설비, 내식 압력 부품에 사용됩니다. 외형 치수, 열처리 상태, 검사 요구사항은 주문 전에 항목별로 확인합니다." }
+      } },
+      specLabels: { grade: "주요 등급", standard: "규격", form: "공급 형태", use: "대표 용도" },
+      promise: { titleA: "소재 확인부터 선적 서류까지, ", titleB: "모든 단계", titleC: "를 검증할 수 있습니다.", p1: "등급, 치수, 적용 규격에서 시작해 시험 기록을 주문 항목과 하나씩 대조합니다. 그래서 해외 구매 과정이 명확하고 따라가기 쉽습니다.", p2: "실제로 확정 가능한 공급 옵션, 명확한 서류 요구사항, 적시 소통을 바탕으로 산업 소재 소싱을 지속적으로 지원합니다.", link: "주문 서비스 안내" },
+      showcase: { title: "협력 제강소 현장", intro: "교정, 선삭부터 검사와 창고 보관까지, 티타늄 가공과 납품의 각 단계를 실제 현장으로 기록했습니다.", note: "위 사진은 당사가 협력하는 제강소와 창고에서 촬영한 것입니다.", items: {
+        straighten: { title: "봉·관 교정", desc: "교정 설비로 봉재와 관재의 직선도를 납품 공차에 맞춥니다." },
+        discs: { title: "디스크·링 재고", desc: "티타늄 디스크와 링을 규격별로 보관하며 재고 확인이 가능합니다." },
+        inspect: { title: "치수 검사", desc: "봉재와 관재를 개별 측정하여 출하 전 항목별로 확인합니다." },
+        lathe: { title: "선삭 가공", desc: "도면에 따라 봉재와 단조품을 선삭하며 표면 조도와 공차를 관리합니다." },
+        heat: { title: "열처리 설비", desc: "가열 및 열처리 라인으로 소재 조직과 성능 상태를 확보합니다." }
+      } },
+      about: { title: "티타늄 및 티타늄 합금:<br>소싱, 공급 및 기술 지원.", p: "항공우주, 해양 엔지니어링, 의료, 신에너지 분야에서 티타늄 합금은 강도, 내식성, 경량성, 생체 적합성을 결합합니다. ALLOYTI는 티타늄 및 티타늄 합금의 소싱, 공급, 기술 지원에 집중하며 TA1, TC4(Gr.5), TA15 등 주요 등급을 ASTM, GB, AMS 규격의 판재, 봉재, 관재, 정밀 단조품 원스톱 솔루션으로 공급합니다. 제품은 북미, 유럽, 중동, 동남아시아로 수출됩니다. 소재만 공급하는 것이 아니라 등급 선정 자문, 공정 지원, 신속한 대응을 제공합니다.", link: "프로젝트 상담 시작", points: [
+        { t: "주문별 사양 확정", d: "등급, 규격, 치수, 서류 요구사항을 주문 전에 항목별로 확인합니다." },
+        { t: "재질 성적서 협의 가능", d: "필요 시 EN 10204 성적서와 제3자 검사를 준비할 수 있습니다." },
+        { t: "해외 서류 지원", d: "포장 명세서, 선적 서류, 도착지 규정 자료를 지원합니다." },
+        { t: "비밀 유지 및 신속 소통", d: "프로젝트 정보는 필요에 따라 비밀로 유지하고 주요 시점에 진행 상황을 공유합니다." }
+      ] },
+      quality: { title: "요구사항 확인에서<br>납기 추적까지.", p: "등급, 규격, 서류 요구사항을 확인하고 공급사, 검사 기관, 포장, 물류 정보를 조율하며 납품 내용을 주문과 대조해 확인합니다.", link: "주문 서비스 문의", steps: [
+        { t: "요구사항 확인", d: "등급, 규격, 치수, 수량, 사용 조건, 희망 납기를 확인합니다." },
+        { t: "공급 검증", d: "공급사와 공급 가능 여부, 공급 상태, 특별 요구사항을 확인합니다." },
+        { t: "서류 및 검사", d: "재질 성적서와 필요한 제3자 검사를 사전에 합의합니다." },
+        { t: "납기 추적", d: "포장, 표기, 선적 서류, 발송 일정을 추적합니다." }
+      ] },
+      checklist: { title: "문의가 구체적일수록<br>더 정확하게 답변드립니다.", p: "아래 정보를 주시면 확정 가능한 공급·서류 계획을 더 빠르게 안내해 드릴 수 있습니다. 검사 및 서류 범위는 합의된 주문을 따릅니다.", items: ["제품, 등급 및 규격", "치수, 수량 및 도면(있는 경우)", "매체, 온도, 압력 등 사용 조건", "표면, 길이, 공차 및 포장", "공급사 성적서 및 필요한 시험", "도착지, 희망 납기 및 무역 서류"] },
+      contact: { title: "프로젝트가 있으신가요?<br>사양부터 상담하세요.", intro: "모든 정보가 확정될 때까지 기다리지 않으셔도 됩니다. 제품 형태, 등급, 치수, 도착지를 알려주시면 먼저 확인해야 할 사항을 정리해 드립니다.", cardLabel: "문의 시 포함할 내용", cardItems: ["제품, 등급 및 규격", "치수, 수량 및 도면(있는 경우)", "서류 요구사항, 도착지 및 희망 납기"], small: "실제 공급 및 서류 범위는 상호 확인 후 결정됩니다" },
+form: { title: "문의 보내기", note: "필수 항목(*)만 작성해 주세요. 추가 확인이 필요한 사항을 회신해 드립니다.", company: "회사명", name: "담당자 *", email: "이메일 *", country: "국가 / 지역", product: "제품 형태 *", grade: "등급", spec: "치수, 수량 및 공차", dest: "도착지 및 희망 납기", message: "사용 조건, 서류 요구사항 및 추가 설명", file: "도면 첨부 (선택, 5MB 이하)", consent: "위 연락처 정보를 이번 문의 회신 목적으로 ALLOYTI가 처리하는 데 동의합니다.", submit: "문의 보내기", privacy: "작성하신 정보는 이번 문의 응대에만 사용됩니다.", productOptions: ["티타늄 판재 / 코일", "티타늄 봉재 / 와이어", "티타늄 관재", "티타늄 패스너", "티타늄 단조품", "티타늄 가공품", "기타 / 도면 맞춤"] },
+            footer: { brandDesc: "티타늄 및 티타늄 합금 소싱·공급·기술 지원 — 판재, 봉재, 관재, 정밀 단조품을 ASTM, GB, AMS 규격으로 원스톱 공급하며 북미, 유럽, 중동, 동남아시아로 수출합니다.", colProducts: "제품", colAbout: "회사", colContact: "문의" }
     },
 
     en: {
@@ -406,7 +445,7 @@ form: { title: "Anfrage senden", note: "Bitte zuerst die mit * markierten Felder
      切到其它语言时落到该语言的资源中心，避免 404。 */
   function staticLangUrl(next) {
     const pre = { zh: "/zh", ar: "/ar", ru: "/ru", de: "/de", en: "" }[next] || "";
-    let p = location.pathname.replace(/^\/(zh|ar|ru|de)(?=\/|$)/, "");
+    let p = location.pathname.replace(/^\/(zh|ko|ar|ru|de)(?=\/|$)/, "");
     if (!p || p.charAt(0) !== "/") p = "/" + (p || "");
     if (next === "en") return p;
     const fb = document.body && document.body.getAttribute("data-lang-fallback");
@@ -449,7 +488,7 @@ form: { title: "Anfrage senden", note: "Bitte zuerst die mit * markierten Felder
   }
 
   /* ================= 语言切换器（自定义下拉面板） ================= */
-  const LANG_CODE = { en: "EN", zh: "中文", ar: "AR", ru: "RU", de: "DE" };
+  const LANG_CODE = { en: "EN", zh: "中文", ko: "한국", ar: "AR", ru: "RU", de: "DE" };
   const langSwitch = document.getElementById("langSwitch");
   const langToggle = document.getElementById("langToggle");
   const langMenu = document.getElementById("langMenu");

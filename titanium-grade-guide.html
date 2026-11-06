@@ -7,7 +7,7 @@
     if (/[?&]gen=1/.test(location.search)) return;
     try {
       var q = new URLSearchParams(location.search).get("lang");
-      if (q && /^(zh|ar|ru|de)$/.test(q)) location.replace("/" + q + "/resources");
+      if (q && /^(zh|ko|ar|ru|de)$/.test(q)) location.replace("/" + q + "/resources");
     } catch (e) {}
   })();
   </script>
@@ -21,7 +21,7 @@
   <link rel="alternate" hreflang="en" href="https://www.alloyti.com/titanium-grade-guide">
   <link rel="alternate" hreflang="x-default" href="https://www.alloyti.com/titanium-grade-guide">
   <link rel="icon" type="image/png" href="assets/favicon-64.png">
-  <link rel="stylesheet" href="styles.min.css?v=20261105d">
+  <link rel="stylesheet" href="styles.min.css?v=20261106a">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="ALLOYTI">
@@ -294,6 +294,6 @@
       <a href="/">Back to top ↑</a>
     </div>
   </footer>
-  <script src="app.min.js?v=20261105d"></script>
+  <script src="app.min.js?v=20261106a"></script>
 </body>
 </html>
