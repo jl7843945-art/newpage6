@@ -444,7 +444,7 @@ form: { title: "Anfrage senden", note: "Bitte zuerst die mit * markierten Felder
      只有英文版的页面（如技术文章）用 body[data-lang-fallback] 指定回落路径，
      切到其它语言时落到该语言的资源中心，避免 404。 */
   function staticLangUrl(next) {
-    const pre = { zh: "/zh", ar: "/ar", ru: "/ru", de: "/de", en: "" }[next] || "";
+    const pre = { zh: "/zh", ko: "/ko", ar: "/ar", ru: "/ru", de: "/de", en: "" }[next] || "";
     let p = location.pathname.replace(/^\/(zh|ko|ar|ru|de)(?=\/|$)/, "");
     if (!p || p.charAt(0) !== "/") p = "/" + (p || "");
     if (next === "en") return p;
