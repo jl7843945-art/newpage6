@@ -33,11 +33,12 @@
       ui: { skip: "跳到主要内容", navAria: "主导航", openNav: "打开导航", brandTag: "钛材供应 · TITANIUM", slogan: "以钛为材，以技为芯", closeDialog: "关闭产品详情", metricsAria: "企业能力数据", langLabel: "切换语言", viewMore: "查看详情", backTop: "返回顶部 ↑", bottomTag: "TITANIUM · ASTM / DIN / ISO · 按订单确认", dialogContact: "整理产品需求", footTitle: "把材料要求，落实到每一次交付。", footLink: "查看质量与服务" },
       nav: { home: "首页", products: "产品中心", showcase: "合作工厂", quality: "质量与服务", about: "关于我们", faq: "常见问题", contact: "联系我们" },
       hero: { h1a: "钛合金：性能、牌号与应用", h1b: "", intro: "钛合金以约 4.5 g/cm³ 的低密度与高比强度著称，兼具优异的耐腐蚀性、耐热性与生物相容性，是航空航天、海洋工程、医疗与新能源领域的关键结构材料。ALLOYTI 供应 TA1/TA2 工业纯钛及 TC4（Ti-6Al-4V）、TA15、TC11 等牌号的板材、棒材、管材、锻件与紧固件，符合 ASTM、GB、AMS 标准，支持定制加工与出口交付。", btn1: "浏览产品中心", btn2: "获取询价支持", nodes: ["牌号", "ASTM", "ISO", "DIN"], metrics: ["大产品分类", "种常用钛牌号", "类执行标准体系", "小时询价响应"] },
-      products: { title: "五大产品分类", intro: "五个重点产品分类覆盖常见工业采购需求。点击产品卡片可查看牌号、执行标准与供应形态说明。", items: {
+      products: { title: "六大产品分类", intro: "六条产品线覆盖常见工业采购场景——板材与钛卷、棒材与钛丝、钛管/钛管件、紧固件、钛制生活用品及精密锻件。打开卡片查看牌号、标准与供应形态，或访问完整产品页。", items: {
         sheet: { title: "钛板 / 钛卷", en: "TITANIUM SHEET & PLATE", desc: "用于化工设备、换热器、海洋工程及一般工业。厚度、宽度、长度与表面处理按订单确认。" },
         bar: { title: "钛棒 / 钛丝", en: "TITANIUM BAR & ROD", desc: "圆棒与定尺料，用于机加工零件、紧固件坯料及耐蚀部件。尺寸与公差在供货前确认。" },
         tube: { title: "钛管 / 钛管件", en: "TITANIUM TUBE & PIPE", desc: "用于换热、流体输送及腐蚀工况——无缝或焊接钛管，壁厚与所需检验按询价确认。" },
         fasteners: { title: "钛材紧固件", en: "TITANIUM FASTENERS", desc: "用于轻量化与耐蚀连接。螺栓、螺母、螺钉及垫圈等可按 DIN、ISO 或 ASME 要求指定头部形式、螺纹与长度。" },
+        daily: { title: "钛制生活用品", en: "TITANIUM DAILY GOODS", desc: "轻量化、耐腐蚀的钛制水杯、餐具与锅具，适用于日常使用——采用工业纯钛，表面处理与包装按订单确认。" },
         forgings: { title: "钛锻件 / 加工件", en: "TITANIUM FORGINGS", desc: "钛饼、钛环、方块及按图纸加工的零件，用于航空结构、能源装备与耐蚀承压部件。外形尺寸、热处理状态与检测要求在订单前逐项确认。" }
       } },
       specLabels: { grade: "常用牌号", standard: "执行标准", form: "供应形态", use: "典型应用" },
@@ -72,11 +73,12 @@ form: { title: "发送询价需求", note: "先填写带 * 的必填项即可，
       ui: { skip: "본문으로 건너뛰기", navAria: "주 메뉴", openNav: "메뉴 열기", brandTag: "티타늄 공급", slogan: "티타늄으로 세우고, 기술로 이끕니다.", closeDialog: "제품 상세 닫기", metricsAria: "기업 역량 지표", langLabel: "언어 변경", viewMore: "상세 보기", backTop: "맨 위로 ↑", bottomTag: "티타늄 · ASTM / DIN / ISO · 주문별 확정", dialogContact: "요구사항 정리", footTitle: "소재 요구사항을 모든 납품까지 이어갑니다.", footLink: "품질 및 서비스 보기" },
       nav: { home: "홈", products: "제품", showcase: "협력 제강소", quality: "품질 및 서비스", about: "회사 소개", faq: "자주 묻는 질문", contact: "문의" },
       hero: { h1a: "티타늄 합금: 특성, 등급 및 응용", h1b: "", intro: "티타늄 합금은 약 4.5 g/cm³의 낮은 밀도와 높은 비강도를 가지며, 우수한 내식성, 내열성, 생체 적합성을 겸비해 항공우주, 해양 엔지니어링, 의료, 신에너지 분야의 핵심 구조 소재로 사용됩니다. ALLOYTI는 산업용 순수 티타늄 TA1/TA2와 TC4(Ti-6Al-4V), TA15, TC11 등의 합금을 판재, 봉재, 관재, 단조품, 패스너로 ASTM, GB, AMS 규격에 맞춰 공급하며, 주문 가공과 수출 납품을 지원합니다.", btn1: "티타늄 제품 보기", btn2: "견적 요청", nodes: ["등급", "ASTM", "ISO", "DIN"], metrics: ["제품 카테고리", "티타늄 등급", "규격 체계", "시간 이내 견적 회신"] },
-      products: { title: "다섯 가지 제품군", intro: "일반적인 산업 구매 수요를 아우르는 다섯 가지 제품군입니다. 제품 카드를 클릭하면 등급, 규격, 공급 형태를 확인할 수 있습니다.", items: {
+      products: { title: "여섯 가지 제품군", intro: "일반적인 산업 구매 사례를 아우르는 여섯 가지 제품군 — 판재, 봉재, 관재, 패스너, 티타늄 생활용품, 정밀 단조품. 카드를 열면 등급, 규격, 공급 형태를 확인할 수 있으며, 제품 페이지에서 자세한 내용을 볼 수 있습니다.", items: {
         sheet: { title: "티타늄 판재 / 코일", en: "TITANIUM SHEET & PLATE", desc: "화학 설비, 열교환기, 해양 엔지니어링 및 일반 산업용. 두께, 폭, 길이, 표면 처리는 주문별로 확정합니다." },
         bar: { title: "티타늄 봉재 / 와이어", en: "TITANIUM BAR & ROD", desc: "가공 부품, 패스너 소재, 내식 부품용 환봉과 정척재. 치수와 공차는 공급 전에 확정합니다." },
         tube: { title: "티타늄 관재", en: "TITANIUM TUBE & PIPE", desc: "열교환, 유체 이송 및 부식 환경용 — 이음매 없는 관 또는 용접관, 벽 두께와 필요한 검사는 문의 시 확정합니다." },
         fasteners: { title: "티타늄 패스너", en: "TITANIUM FASTENERS", desc: "경량·내식 체결용. 볼트, 너트, 나사, 와셔를 DIN, ISO 또는 ASME 요구에 따라 머리 형상, 나사산, 길이를 지정할 수 있습니다." },
+        daily: { title: "티타늄 생활용품", en: "TITANIUM DAILY GOODS", desc: "가볍고 내식성이 뛰어난 티타늄 물병, 식기, 조리기구로 일상에 사용됩니다. 상업용 순티타늄이며 마감과 포장은 주문별로 확인합니다." },
         forgings: { title: "티타늄 단조품 / 가공품", en: "TITANIUM FORGINGS", desc: "디스크, 링, 블록 및 도면 가공 부품으로 항공우주 구조물, 에너지 설비, 내식 압력 부품에 사용됩니다. 외형 치수, 열처리 상태, 검사 요구사항은 주문 전에 항목별로 확인합니다." }
       } },
       specLabels: { grade: "주요 등급", standard: "규격", form: "공급 형태", use: "대표 용도" },
@@ -111,11 +113,12 @@ form: { title: "문의 보내기", note: "필수 항목(*)만 작성해 주세�
       ui: { skip: "Skip to main content", navAria: "Main navigation", openNav: "Open navigation", brandTag: "TITANIUM SUPPLY", slogan: "Built on Titanium. Driven by Technology.", closeDialog: "Close product details", metricsAria: "Company capability figures", langLabel: "Switch language", viewMore: "View details", backTop: "Back to top ↑", bottomTag: "TITANIUM · ASTM / DIN / ISO · Confirmed per order", dialogContact: "Outline your requirement", footTitle: "Turning material requirements into every delivery.", footLink: "See Quality & Service" },
       nav: { home: "Home", products: "Products", showcase: "Sourcing", quality: "Quality & Service", about: "About", faq: "FAQ", contact: "Contact" },
       hero: { h1a: "Titanium Alloys: Properties, Grades & Applications", h1b: "", intro: "Titanium alloys combine low density (about 4.5 g/cm³) with high specific strength, excellent corrosion and heat resistance, and biocompatibility — key structural materials for aerospace, marine engineering, medical and new-energy applications. ALLOYTI supplies commercially pure titanium TA1/TA2 and alloys such as TC4 (Ti-6Al-4V), TA15 and TC11 in plate, bar, tube, forgings and fasteners, to ASTM, GB and AMS standards, with made-to-order processing and export delivery.", btn1: "Browse Titanium Products", btn2: "Request a Quotation", nodes: ["Grade", "ASTM", "ISO", "DIN"], metrics: ["Product categories", "Titanium grades", "Standard systems", "h quotation response"] },
-      products: { title: "Five Product Categories", intro: "Five key categories covering common industrial sourcing needs. Click a product card to view grades, standards and supply forms.", items: {
+      products: { title: "Six Product Categories", intro: "Six product lines covering the common industrial buying cases — plate and sheet, bar and rod, tube and pipe, fasteners, titanium daily goods, and precision forgings. Open a card for grades, standards and supply forms, or visit the full product page.", items: {
         sheet: { title: "Titanium Sheet & Plate", en: "TITANIUM SHEET & PLATE", desc: "For chemical equipment, heat exchangers, marine and general industry. Thickness, width, length and surface finish confirmed per order." },
         bar: { title: "Titanium Bar & Rod", en: "TITANIUM BAR & ROD", desc: "Round bar and cut lengths for machined parts, fastener blanks and corrosion-resistant components. Dimensions and tolerances confirmed before supply." },
         tube: { title: "Titanium Tube & Pipe", en: "TITANIUM TUBE & PIPE", desc: "For heat exchange, fluid transport and corrosive service — seamless or welded tube, wall thickness and inspection confirmed per inquiry." },
         fasteners: { title: "Titanium Fasteners", en: "TITANIUM FASTENERS", desc: "For lightweight, corrosion-resistant joints. Bolts, nuts, screws and washers with head style, thread and length per DIN, ISO or ASME." },
+        daily: { title: "Titanium Daily Goods", en: "TITANIUM DAILY GOODS", desc: "Lightweight, corrosion-resistant titanium drinkware, cutlery and cookware for everyday use — commercially pure titanium, finish and packing confirmed per order." },
         forgings: { title: "Titanium Forgings & Machined Parts", en: "TITANIUM FORGINGS", desc: "Forged discs, rings, blocks and parts machined to drawing for aerospace structures, energy equipment and corrosion-resistant pressure parts. Dimensions, heat-treatment condition and inspection are confirmed before order." }
       } },
       specLabels: { grade: "Common grades", standard: "Standards", form: "Supply forms", use: "Typical uses" },
@@ -150,11 +153,12 @@ form: { title: "Send an enquiry", note: "Fill in the essentials marked with * �
       ui: { skip: "الانتقال إلى المحتوى الرئيسي", navAria: "التنقل الرئيسي", openNav: "فتح القائمة", brandTag: "توريد التيتانيوم", slogan: "التيتانيوم مادتنا، والتقنية جوهرنا", closeDialog: "إغلاق تفاصيل المنتج", metricsAria: "مؤشرات قدرات الشركة", langLabel: "تغيير اللغة", viewMore: "عرض التفاصيل", backTop: "العودة إلى الأعلى ↑", bottomTag: "تيتانيوم · ASTM / DIN / ISO · تأكيد لكل طلب", dialogContact: "حدّد متطلباتك", footTitle: "نحوّل متطلبات المواد إلى كل عملية تسليم.", footLink: "اطّلع على الجودة والخدمة" },
       nav: { home: "الرئيسية", products: "المنتجات", showcase: "موردونا", quality: "الجودة والخدمة", about: "من نحن", faq: "الأسئلة الشائعة", contact: "اتصل بنا" },
       hero: { h1a: "سبائك التيتانيوم: الخواص والدرجات والتطبيقات", h1b: "", intro: "تجمع سبائك التيتانيوم بين الكثافة المنخفضة (نحو 4.5 جم/سم³) والمقاومة النوعية العالية ومقاومة التآكل والحرارة الممتازة والتوافق الحيوي — وهي مواد إنشائية أساسية لتطبيقات الطيران والفضاء والهندسة البحرية والطب والطاقة الجديدة. تورّد ALLOYTI التيتانيوم النقي صناعياً TA1/TA2 وسبائك مثل TC4 (Ti-6Al-4V) وTA15 وTC11 على شكل ألواح وقضبان وأنابيب ومطروقات ووصلات تثبيت وفق معايير ASTM وGB وAMS، مع توريد حسب الطلب وتسليم للتصدير.", btn1: "تصفّح المنتجات", btn2: "اطلب دعم عرض السعر", nodes: ["الدرجة", "ASTM", "ISO", "DIN"], metrics: ["فئات منتجات", "درجات تيتانيوم", "أنظمة معايير", "ساعة للاستجابة"] },
-      products: { title: "خمس فئات من المنتجات", intro: "خمس فئات رئيسية تغطي احتياجات التوريد الصناعية الشائعة. انقر على بطاقة المنتج لعرض الدرجات والمعايير وأشكال التوريد.", items: {
+      products: { title: "ست فئات من المنتجات", intro: "ستة خطوط إنتاج تغطي حالات الشراء الصناعية الشائعة — ألواح وصفائح، وقضبان وأسلاك، وأنابيب ومواسير، ومثبتات، وسلع يومية من التيتانيوم، ومطروقات دقيقة. افتح بطاقة للاطلاع على الدرجات والمعايير وأشكال التوريد، أو زر صفحة المنتج الكاملة.", items: {
         sheet: { title: "ألواح ولفائف التيتانيوم", en: "TITANIUM SHEET & PLATE", desc: "لمعدات الكيماويات والمبادلات الحرارية والتطبيقات البحرية والصناعة العامة. تُؤكد السماكة والعرض والطول والتشطيب السطحي لكل طلب." },
         bar: { title: "قضبان وأسلاك التيتانيوم", en: "TITANIUM BAR & ROD", desc: "قضبان مستديرة وأطوال مقطوعة للأجزاء المشغولة وفراغات المثبتات والمكونات المقاومة للتآكل. تُؤكد الأبعاد والتفاوتات قبل التوريد." },
         tube: { title: "أنابيب وتجهيزات التيتانيوم", en: "TITANIUM TUBE & PIPE", desc: "للتبادل الحراري ونقل السوائل وظروف التآكل — أنابيب بدون درزة أو ملحومة، وتُؤكد سماكة الجدار والفحوصات حسب الاستفسار." },
         fasteners: { title: "مثبتات التيتانيوم", en: "TITANIUM FASTENERS", desc: "للوصلات خفيفة الوزن المقاومة للتآكل. براغٍ وصواميل وبراغي ملولبة وحلقات وفق DIN أو ISO أو ASME مع تحديد شكل الرأس واللولب والطول." },
+        daily: { title: "السلع اليومية من التيتانيوم", en: "TITANIUM DAILY GOODS", desc: "أدوات شرب وأوانٍ وأدوات مائدة من التيتانيوم، خفيفة ومقاومة للتآكل للاستخدام اليومي — من التيتانيوم التجاري النقي، ويُؤكد التشطيب والتغليف لكل طلب." },
         forgings: { title: "مطروقات التيتانيوم والأجزاء المشغولة", en: "TITANIUM FORGINGS", desc: "أقراص وحلقات وقوالب مطروقة وأجزاء مشغولة حسب الرسم، لاستخدامات الإنشاءات الفضائية ومعدات الطاقة وأجزاء الضغط المقاومة للتآكل. تُؤكد الأبعاد وحالة المعالجة الحرارية ومتطلبات الفحص قبل الطلب." }
       } },
       specLabels: { grade: "الدرجات الشائعة", standard: "المعايير", form: "أشكال التوريد", use: "تطبيقات نموذجية" },
@@ -189,11 +193,12 @@ form: { title: "إرسال طلب عرض سعر", note: "املأ الحقول �
       ui: { skip: "Перейти к основному содержанию", navAria: "Основная навигация", openNav: "Открыть меню", brandTag: "ПОСТАВКИ ТИТАНА", slogan: "Титан как материал. Технология как ядро.", closeDialog: "Закрыть описание", metricsAria: "Показатели компании", langLabel: "Сменить язык", viewMore: "Подробнее", backTop: "Наверх ↑", bottomTag: "ТИТАН · ASTM / DIN / ISO · подтверждается заказом", dialogContact: "Сформулировать запрос", footTitle: "Требования к материалу — в каждой поставке.", footLink: "Качество и сервис" },
       nav: { home: "Главная", products: "Продукция", showcase: "Поставки", quality: "Качество и сервис", about: "О нас", faq: "Вопросы и ответы", contact: "Контакты" },
       hero: { h1a: "Титановые сплавы: свойства, марки и применение", h1b: "", intro: "Титановые сплавы сочетают низкую плотность (около 4,5 г/см³) с высокой удельной прочностью, отличной коррозионной стойкостью, жаропрочностью и биосовместимостью — это ключевые конструкционные материалы для авиакосмической отрасли, морской техники, медицины и новой энергетики. ALLOYTI поставляет технически чистый титан TA1/TA2 и сплавы TC4 (Ti-6Al-4V), TA15 и TC11 в виде плит, прутков, труб, поковок и крепежа по стандартам ASTM, GB и AMS, с обработкой под заказ и экспортной поставкой.", btn1: "Смотреть продукцию", btn2: "Запросить расчёт", nodes: ["Марка", "ASTM", "ISO", "DIN"], metrics: ["категорий продукции", "марок титана", "систем стандартов", "ч на ответ"] },
-      products: { title: "Пять категорий продукции", intro: "Пять ключевых категорий для типовых промышленных закупок. Нажмите на карточку, чтобы увидеть марки, стандарты и формы поставки.", items: {
+      products: { title: "Шесть категорий продукции", intro: "Шесть линеек, покрывающих типовые промышленные закупки — плиты и листы, прутки и проволока, трубы и трубки, крепёж, титановые изделия для быта и точные поковки. Откройте карточку, чтобы увидеть марки, стандарты и формы поставки, или посетите полную страницу продукта.", items: {
         sheet: { title: "Титановые листы и рулоны", en: "TITANIUM SHEET & PLATE", desc: "Для химического оборудования, теплообменников, морской и общей промышленности. Толщина, ширина, длина и отделка подтверждаются по заказу." },
         bar: { title: "Титановые прутки и проволока", en: "TITANIUM BAR & ROD", desc: "Круглые прутки и мерные длины для обрабатываемых деталей, заготовок крепежа и коррозионностойких узлов. Размеры и допуски — до поставки." },
         tube: { title: "Титановые трубы и фитинги", en: "TITANIUM TUBE & PIPE", desc: "Для теплообмена, транспортировки жидкостей и коррозионных сред — бесшовные или сварные трубы; толщина стенки и объём контроля по запросу." },
         fasteners: { title: "Титановый крепёж", en: "TITANIUM FASTENERS", desc: "Для лёгких коррозионностойких соединений. Болты, гайки, винты и шайбы; форма головки, резьба и длина по DIN, ISO или ASME." },
+        daily: { title: "Титановые изделия для быта", en: "TITANIUM DAILY GOODS", desc: "Лёгкие и коррозионностойкие титановые бутылки, столовые приборы и посуда для повседневного применения — технически чистый титан, отделка и упаковка подтверждаются по заказу." },
         forgings: { title: "Титановые поковки и обработанные детали", en: "TITANIUM FORGINGS", desc: "Кованые диски, кольца, бруски и детали по чертежу для авиационных конструкций, энергетического оборудования и коррозионностойких деталей под давлением. Размеры, состояние термообработки и объём контроля подтверждаются до заказа." }
       } },
       specLabels: { grade: "Марки", standard: "Стандарты", form: "Формы поставки", use: "Применение" },
@@ -228,11 +233,12 @@ form: { title: "Отправить запрос", note: "Заполните по
       ui: { skip: "Zum Hauptinhalt springen", navAria: "Hauptnavigation", openNav: "Navigation öffnen", brandTag: "TITAN-LIEFERUNG", slogan: "Titan als Werkstoff. Technologie als Kern.", closeDialog: "Produktdetails schließen", metricsAria: "Unternehmenskennzahlen", langLabel: "Sprache wechseln", viewMore: "Details ansehen", backTop: "Nach oben ↑", bottomTag: "TITAN · ASTM / DIN / ISO · auftragsbezogen bestätigt", dialogContact: "Bedarf formulieren", footTitle: "Materialanforderungen in jeder Lieferung umsetzen.", footLink: "Qualität & Service ansehen" },
       nav: { home: "Start", products: "Produkte", showcase: "Lieferung", quality: "Qualität & Service", about: "Über uns", faq: "FAQ", contact: "Kontakt" },
       hero: { h1a: "Titanlegierungen: Eigenschaften, Güten & Anwendungen", h1b: "", intro: "Titanlegierungen verbinden geringe Dichte (ca. 4,5 g/cm³) mit hoher spezifischer Festigkeit, ausgezeichneter Korrosions- und Warmbeständigkeit sowie Biokompatibilität — Schlüsselwerkstoffe für Luft- und Raumfahrt, Meerestechnik, Medizintechnik und neue Energien. ALLOYTI liefert Reintitan TA1/TA2 sowie Legierungen wie TC4 (Ti-6Al-4V), TA15 und TC11 als Bleche, Stangen, Rohre, Schmiedestücke und Verbindungselemente nach ASTM, GB und AMS — mit Bearbeitung nach Zeichnung und Exportlieferung.", btn1: "Produkte ansehen", btn2: "Angebot anfragen", nodes: ["Güte", "ASTM", "ISO", "DIN"], metrics: ["Produktkategorien", "Titan-Güten", "Normsysteme", "Std. Angebotsantwort"] },
-      products: { title: "Fünf Produktkategorien", intro: "Fünf Kernkategorien für typische Industriebedarfe. Klicken Sie auf eine Produktkarte für Güten, Normen und Lieferformen.", items: {
+      products: { title: "Sechs Produktkategorien", intro: "Sechs Produktlinien decken die typischen industriellen Beschaffungsfälle ab — Bleche und Platten, Stangen und Drähte, Rohre & Formstücke, Verbindungselemente, Titan-Produkte für den Alltag und Präzisionsschmiedestücke. Öffnen Sie eine Karte für Güten, Normen und Lieferformen oder besuchen Sie die vollständige Produktseite.", items: {
         sheet: { title: "Titanblech & Platten", en: "TITANIUM SHEET & PLATE", desc: "Für Chemieanlagen, Wärmeübertrager, Meerestechnik und allgemeine Industrie. Dicke, Breite, Länge und Oberflächenausführung auftragsbezogen." },
         bar: { title: "Titanstangen & -draht", en: "TITANIUM BAR & ROD", desc: "Rundstangen und Zuschnittslängen für bearbeitete Teile, Befestigungsrohlinge und korrosionsbeständige Komponenten. Maße und Toleranzen werden vor Lieferung bestätigt." },
         tube: { title: "Titanrohre & Formstücke", en: "TITANIUM TUBE & PIPE", desc: "Für Wärmeübertragung, Fluidtransport und korrosive Medien — nahtlose oder geschweißte Rohre; Wanddicke und Prüfumfang anfragebezogen." },
         fasteners: { title: "Titan-Befestigungsteile", en: "TITANIUM FASTENERS", desc: "Für leichte, korrosionsbeständige Verbindungen. Schrauben, Muttern und Unterlegscheiben mit Kopfform, Gewinde und Länge nach DIN, ISO oder ASME." },
+        daily: { title: "Titan-Produkte für den Alltag", en: "TITANIUM DAILY GOODS", desc: "Leichte, korrosionsbeständige Titan-Trinkflaschen, Bestecke und Kochgeschirr für den Alltag — handelsreines Titan, Oberfläche und Verpackung auftragsbezogen bestätigt." },
         forgings: { title: "Titan-Schmiedestücke & zerspante Teile", en: "TITANIUM FORGINGS", desc: "Geschmiedete Scheiben, Ringe, Blöcke und nach Zeichnung bearbeitete Teile für Luftfahrtstrukturen, Energieanlagen und korrosionsbeständige Druckteile. Maße, Wärmebehandlungszustand und Prüfanforderungen werden vor Auftrag bestätigt." }
       } },
       specLabels: { grade: "Übliche Güten", standard: "Normen", form: "Lieferformen", use: "Typische Anwendungen" },
@@ -268,35 +274,42 @@ form: { title: "Anfrage senden", note: "Bitte zuerst die mit * markierten Felder
 
   /* ================= 语言无关数据（文本走 I18N） ================= */
   const PRODUCTS = [
-    { key: "sheet", index: "01 / 05", img: "assets/titanium-plate-astm-b265.webp", w: 900, h: 900, tags: ["Gr.1", "Gr.2", "Gr.5"],
+    { key: "sheet", index: "01 / 06", img: "assets/titanium-plate-astm-b265.webp", w: 900, h: 900, tags: ["Gr.1", "Gr.2", "Gr.5"],
       specs: [
         { label: "grade", v: "Gr.1 / Gr.2 / Gr.5" },
         { label: "standard", v: "ASTM B265" },
         { label: "form", v: { zh: "板材 / 卷板 / 定尺剪切", en: "Sheet / Coil / Cut-to-size", ar: "ألواح / لفائف / قص بالمقاس", ru: "Листы / рулоны / резка в размер", de: "Blech / Coil / Zuschnitt" } },
         { label: "use", v: { zh: "容器、管板、衬里、结构件", en: "Vessels, tube sheets, linings, structural parts", ar: "أوعية، ألواح أنابيب، تبطين، أجزاء إنشائية", ru: "Сосуды, трубные решётки, футеровка, несущие детали", de: "Behälter, Rohrböden, Auskleidungen, Konstruktionsteile" } }
       ] },
-    { key: "bar", index: "02 / 05", img: "assets/titanium-bar-astm-b348.webp", w: 497, h: 439, tags: ["Gr.2", "Gr.5", "Gr.7"],
+    { key: "bar", index: "02 / 06", img: "assets/titanium-bar-astm-b348.webp", w: 497, h: 439, tags: ["Gr.2", "Gr.5", "Gr.7"],
       specs: [
         { label: "grade", v: "Gr.2 / Gr.5 / Gr.7" },
         { label: "standard", v: "ASTM B348" },
         { label: "form", v: { zh: "圆棒 / 定尺 / 车光", en: "Round bar / Cut length / Peeled", ar: "قضبان مستديرة / أطوال مقطوعة / مصقولة", ru: "Пруток / мерная длина / обточка", de: "Rundstange / Zuschnitt / abgestreift" } },
         { label: "use", v: { zh: "轴类、机加工件、连接件", en: "Shafts, machined parts, connectors", ar: "أعمدة، أجزاء مشغولة، وصلات", ru: "Валы, обработанные детали, соединители", de: "Wellen, Drehteile, Verbinder" } }
       ] },
-    { key: "tube", index: "03 / 05", img: "assets/titanium-fittings-astm-b363.webp", w: 1200, h: 726, tags: ["Gr.1", "Gr.2", "Gr.7"],
+    { key: "tube", index: "03 / 06", img: "assets/titanium-fittings-astm-b363.webp", w: 1200, h: 726, tags: ["Gr.1", "Gr.2", "Gr.7"],
       specs: [
         { label: "grade", v: "Gr.1 / Gr.2 / Gr.7" },
         { label: "standard", v: "ASTM B338 / B861 / B862" },
         { label: "form", v: { zh: "无缝 / 焊接 / 定尺", en: "Seamless / Welded / Cut length", ar: "بدون درزة / ملحوم / بالمقاس", ru: "Бесшовные / сварные / мерные", de: "Nahtlos / geschweißt / Längen" } },
         { label: "use", v: { zh: "换热器、冷凝器、工艺管道", en: "Heat exchangers, condensers, process piping", ar: "مبادلات حرارية، مكثفات، أنابيب عمليات", ru: "Теплообменники, конденсаторы, технологические трубопроводы", de: "Wärmeübertrager, Kondensatoren, Prozessleitungen" } }
       ] },
-    { key: "fasteners", index: "04 / 05", img: "assets/titanium-fasteners-din-iso.webp", w: 1400, h: 471, tags: ["Gr.2", "Gr.5"],
+    { key: "fasteners", index: "04 / 06", img: "assets/titanium-fasteners-din-iso.webp", w: 1400, h: 471, tags: ["Gr.2", "Gr.5"],
       specs: [
         { label: "grade", v: "Gr.2 / Gr.5" },
         { label: "standard", v: "DIN / ISO / ASME" },
         { label: "form", v: { zh: "螺栓 / 螺母 / 螺钉 / 垫圈", en: "Bolts / Nuts / Screws / Washers", ar: "براغٍ / صواميل / براغي ملولبة / حلقات", ru: "Болты / гайки / винты / шайбы", de: "Schrauben / Muttern / Schrauben / Scheiben" } },
         { label: "use", v: { zh: "设备连接、海洋工程、轻量化装配", en: "Equipment joints, marine, lightweight assembly", ar: "وصلات معدات، أعمال بحرية، تجميع خفيف", ru: "Соединения оборудования, морские сооружения, лёгкие сборки", de: "Anlagenverbindungen, Meerestechnik, Leichtbau" } }
       ] },
-    { key: "forgings", index: "05 / 05", img: "assets/titanium-forgings-astm-b381.webp", w: 900, h: 900, tags: ["TC4", "TA15"],
+    { key: "daily", index: "05 / 06", img: "assets/titanium-daily-bottle.webp", w: 1024, h: 900, tags: ["Gr.1", "Gr.2"],
+      specs: [
+        { label: "grade", v: "Gr.1 / Gr.2" },
+        { label: "standard", v: "ASTM B265 / B348 (base material)" },
+        { label: "form", v: { zh: "水杯 / 餐具 / 锅具", en: "Bottles / Cutlery / Cookware", ar: "قوارير / أدوات مائدة / أوانٍ", ru: "Бутылки / приборы / посуда", de: "Flaschen / Besteck / Kochgeschirr" } },
+        { label: "use", v: { zh: "日常轻量耐蚀用品", en: "Lightweight corrosion-resistant everyday use", ar: "استخدام يومي خفيف ومقاوم للتآكل", ru: "Лёгкие коррозионностойкие изделия для быта", de: "Leichte korrosionsbeständige Alltagsprodukte" } }
+      ] },
+    { key: "forgings", index: "06 / 06", img: "assets/titanium-forgings-astm-b381.webp", w: 900, h: 900, tags: ["TC4", "TA15"],
       specs: [
         { label: "grade", v: "TC4 / TA15 / TC11" },
         { label: "standard", v: "ASTM B381" },
