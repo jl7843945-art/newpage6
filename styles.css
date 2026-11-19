@@ -1043,3 +1043,9 @@ h1,h2,h3{color:var(--ink)!important}
 .cert-item p{color:#415472!important;font-size:13.5px;line-height:1.7;margin:0}
 .cert-note{color:#5b6c84!important;font-size:13px;line-height:1.65;margin:14px 0 0}
 @media(max-width:900px){.cert-grid{grid-template-columns:1fr}}
+
+
+/* === HERO BACKGROUND v1 (2026-11-19) === */
+.hero{background-image:linear-gradient(90deg,rgba(8,26,50,.97) 0%,rgba(8,26,50,.94) 28%,rgba(8,26,50,.62) 60%,rgba(8,26,50,.20) 100%),url("/assets/hero-titanium-bg.svg")!important;background-size:cover!important;background-position:center center!important;background-repeat:no-repeat!important}
+[dir="rtl"] .hero{background-image:linear-gradient(270deg,rgba(8,26,50,.97) 0%,rgba(8,26,50,.94) 28%,rgba(8,26,50,.62) 60%,rgba(8,26,50,.20) 100%),url("/assets/hero-titanium-bg-rtl.svg")!important}
+@media(max-width:700px){.hero{background-image:linear-gradient(90deg,rgba(8,26,50,.96),rgba(8,26,50,.84)),url("/assets/hero-titanium-bg.svg")!important}[dir="rtl"] .hero{background-image:linear-gradient(270deg,rgba(8,26,50,.96),rgba(8,26,50,.84)),url("/assets/hero-titanium-bg-rtl.svg")!important}}
