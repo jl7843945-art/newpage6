@@ -673,3 +673,326 @@ html.lang-pending body{visibility:hidden}
   text-transform:uppercase;color:var(--accent);opacity:.85}
 .article-read{display:inline-block;margin-top:12px;font-family:var(--mono);font-size:.76rem;color:var(--accent);opacity:.8}
 @media(min-width:880px){.article-item{padding:24px 28px}}
+
+/* =========================================================
+   ALLOYTI — 浅色专业风皮肤（2026-11-19，参考 qqa.titanium.com 的信息架构）
+   以覆盖层形式追加在 styles.css / hitech.css 末尾：不改动任何原有规则，
+   需要回退时整段删除即可。hero 与页脚保留深蓝（模板站同样为深色页头/页尾），
+   中间内容区改为白底 + 深蓝文字 + 浅灰边框，关闭全部 HUD/霓虹/星点特效。
+   ========================================================= */
+
+/* ---------- 1. 调色板：深空 → 浅色专业 ---------- */
+:root{
+  --bg:#ffffff;
+  --bg-soft:#f3f6fa;
+  --panel:#ffffff;
+  --panel-solid:#ffffff;
+  --ink:#0a1f3c;          /* 深蓝主文字 */
+  --ink-2:#334155;
+  --muted:#5b6b7f;
+  --line:#e2e8f0;
+  --accent:#185fa5;       /* 专业蓝（替带电光青） */
+  --accent-2:#1b365d;
+  --accent-gold:#185fa5;  /* 主按钮统一深蓝 */
+  --accent-soft:rgba(24,95,165,.07);
+  --dark:#0a1f3c;         /* 深色块改为深蓝，不再是近黑 */
+  --dark-2:#12294d;
+  --dark-line:rgba(255,255,255,.16);
+  --radius:12px;
+  --radius-sm:8px;
+  --shadow:0 14px 34px -22px rgba(10,31,60,.28);
+  --shadow-sm:0 4px 16px -10px rgba(10,31,60,.18);
+}
+
+/* ---------- 2. 页面底 & 关闭星点栅格 ---------- */
+body{
+  background:#ffffff;color:var(--ink);
+  background-image:none;background-attachment:scroll;
+}
+body::before{display:none!important;content:none!important}
+html.lang-pending body{visibility:hidden}
+
+/* ---------- 3. 品牌字标：纯深蓝，关闭能量环/渐变扫光 ---------- */
+.brand{color:var(--ink)}
+.brand-mark{box-shadow:0 0 0 1px rgba(24,95,165,.22)!important;filter:none}
+.brand:hover .brand-mark{box-shadow:0 0 0 2px rgba(24,95,165,.4)!important;transform:none}
+.brand::before,.brand::after{display:none!important;content:none!important;animation:none!important}
+.brand-word{
+  background:none!important;-webkit-text-fill-color:var(--ink)!important;color:var(--ink)!important;
+  filter:none!important;animation:none!important;letter-spacing:1.4px;font-weight:800
+}
+.brand-word::before{color:var(--accent)!important;-webkit-text-fill-color:var(--accent)!important;opacity:1}
+.brand:hover .brand-word{filter:none!important;animation:none!important}
+
+/* ---------- 4. 头部：白底深字，关闭扫描线 ---------- */
+.site-header{
+  background:#ffffff!important;border-bottom:1px solid var(--line)!important;
+  backdrop-filter:none!important;box-shadow:none!important
+}
+.site-header::after{display:none!important;content:none!important;animation:none!important}
+.site-header.scrolled{
+  background:#ffffff!important;border-color:var(--line)!important;
+  box-shadow:0 6px 18px -14px rgba(10,31,60,.3)!important;backdrop-filter:none!important
+}
+.nav-links a,.site-header.scrolled .nav-links a{color:var(--ink-2)!important}
+.nav-links a.is-active,.nav-links a:hover,
+.site-header.scrolled .nav-links a.is-active,.site-header.scrolled .nav-links a:hover{color:var(--accent)!important}
+.nav-links a:not(.nav-contact)::after{box-shadow:none!important;background:var(--accent)}
+.nav-contact,.nav-contact:hover{
+  background:var(--accent)!important;color:#fff!important;border-radius:6px!important;
+  padding:9px 18px;font-weight:700
+}
+.menu-toggle span,.site-header.scrolled .menu-toggle span{background:var(--ink)!important}
+
+/* ---------- 5. 语言切换：浅底深字 ---------- */
+.lang-toggle{
+  background:#f8fafc!important;border-color:var(--line)!important;color:var(--ink)!important;
+  box-shadow:none!important
+}
+.lang-toggle:hover{border-color:var(--accent)!important;box-shadow:none!important;color:var(--accent)!important}
+.lang-caret{color:var(--muted)!important}
+.lang-menu{background:#fff!important;border-color:var(--line)!important;box-shadow:var(--shadow)!important;backdrop-filter:none!important}
+.lang-menu li{color:var(--ink-2)!important}
+.lang-menu li:hover{background:var(--bg-soft)!important;color:var(--accent)!important}
+.lang-menu li.is-active{background:var(--accent-soft)!important;color:var(--accent)!important}
+.lang-menu li.is-active::after{box-shadow:none!important}
+
+/* ---------- 6. Hero：保留深蓝渐变，去掉战舰/粒子/雷达/扫描线 ---------- */
+.hero{background:linear-gradient(120deg,#0a1f3c 0%,#123257 55%,#1b365d 100%)!important;min-height:auto;padding:76px 0 0}
+.hero::before,.hero::after{display:none!important;content:none!important}
+.hero-bg{background:none!important}
+.hero-bg img,.scene-ghost,.ship-glow,.mesh-canvas,
+.holo-system,.holo-ring,.holo-sweep,.holo-core,.holo-chip,
+.geo-stage,.geo-hex,.geo-core,.geo-orbit,.geo-node{display:none!important}
+.hero-overlay{
+  background:linear-gradient(100deg,rgba(10,31,60,.0),rgba(10,31,60,.0))!important
+}
+.hero .kicker{color:#7fc4ff!important}
+.hero .kicker::before{box-shadow:none!important;background:#7fc4ff!important}
+.hero-copy h1,.hero-copy h1 span{color:#fff!important;text-shadow:none!important}
+.hero-copy h1 span{color:#9fd0ff!important}
+.hero-slogan{
+  background:none!important;-webkit-text-fill-color:#bfe0ff!important;color:#bfe0ff!important;
+  text-shadow:none!important;font-weight:600
+}
+.hero-intro,.hero-sectors{color:#c6d8e4!important}
+.hero-sectors span{color:#9fd0ff!important}
+.hero-region{display:inline-block!important;background:rgba(255,255,255,.08)!important;color:#dbeafe!important;box-shadow:none!important;border:1px solid rgba(255,255,255,.14)!important;border-radius:6px!important;padding:5px 12px!important;line-height:1.4!important}
+.hero-trust li{
+  color:#dbeafe!important;border-color:rgba(255,255,255,.28)!important;
+  background:rgba(255,255,255,.08)!important;box-shadow:none!important
+}
+.hero-actions .button-link{color:#fff!important}
+.hero-terms{border-left-color:rgba(255,255,255,.4)!important;color:#c6d8e4!important}
+[dir="rtl"] .hero-terms{border-left:0!important;border-right-color:rgba(255,255,255,.4)!important}
+.hero-visual{display:none!important}
+.hero-grid{grid-template-columns:1fr!important;min-height:auto}
+
+/* ---------- 7. 应用场景条（在 hero 内，深底白字） ---------- */
+.hero-scenes .section-heading h2,.hero-scenes h2{color:#fff!important;text-shadow:none!important}
+.hero-scenes .section-heading p{color:#c6d8e4!important}
+.hero-scenes .section-heading::before,.hero-scenes .section-heading::after{display:none!important;content:none!important}
+.scene-card{background:#12294d!important;border-color:rgba(255,255,255,.18)!important;box-shadow:var(--shadow-sm)!important}
+.scene-card::before{background:linear-gradient(180deg,rgba(2,9,16,.05) 0%,rgba(2,9,16,.35) 50%,rgba(2,9,16,.86) 100%)!important}
+.scene-card::after{border-color:rgba(159,208,255,.7)!important;box-shadow:none!important}
+.scene-label{color:#fff!important;text-shadow:0 1px 6px rgba(0,0,0,.6)!important}
+.scene-label::before{box-shadow:none!important;background:#7fc4ff!important}
+.scene-card:hover{box-shadow:0 14px 30px -18px rgba(0,0,0,.5)!important;border-color:rgba(159,208,255,.5)!important}
+
+/* ---------- 8. 数据条（深蓝，去霓虹） ---------- */
+.hero-band,.hero .hero-band{background:#0a1f3c!important;border-top:1px solid rgba(255,255,255,.1);margin-top:28px}
+.metric b{color:#9fd0ff!important;font-family:var(--font)!important;text-shadow:none!important}
+.metric span{color:#c6d8e4!important}
+.metric{border-right-color:rgba(255,255,255,.14)!important}
+@media(max-width:760px){.metric{border-bottom-color:rgba(255,255,255,.14)!important}}
+
+/* ---------- 9. 内容区：白底 + 深蓝字 + 浅边框 ---------- */
+.section{background:#fff}
+.section-heading::before,.section-heading::after,.section-heading>div::before{display:none!important;content:none!important}
+.section-heading{padding-left:0!important}
+.section-heading h2,.about-intro h2,.quality-intro h2,.checklist-grid h2,.contact h2,.page-hero h1{color:var(--ink)!important;text-shadow:none!important;letter-spacing:0}
+.section-heading p{color:var(--muted)!important}
+.kicker,.kicker-light{color:var(--accent)!important}
+.kicker::before{box-shadow:none!important}
+h1,h2,h3{color:var(--ink)!important}
+.prose h2,.prose h3,.prose p,.prose li{color:var(--ink-2)!important}
+.prose a{color:var(--accent)!important;border-color:rgba(24,95,165,.35)!important}
+.prose a:hover{color:var(--accent-2)!important}
+
+/* ---------- 10. 卡片：白底浅边，关闭扫描线/HUD角标 ---------- */
+.link-card,.product-card,.quality-list li,.checklist-items li,.about-points li,
+.contact-card,.section-foot,.cta-band,.inquiry-form,.dialog,
+.article-toc,.article-item,.related-card,.callout{
+  background:#fff!important;border:1px solid var(--line)!important;
+  box-shadow:var(--shadow-sm)!important;backdrop-filter:none!important;
+  color:var(--ink-2)!important
+}
+.link-card::before,.product-card::before,.about-points li::before,.contact-card::before,
+.inquiry-form::before,.cta-band::before,.dialog::before,
+.quality-list li::after,.checklist-items li::after,
+.link-card::after,.product-card::after,.about-points li::after,.contact-card::after,
+.cta-band::after,.related-card::after,.dialog::after{
+  display:none!important;content:none!important;animation:none!important
+}
+.product-card:hover,.link-card:hover,.about-points li:hover,.contact-card:hover,
+.article-item:hover,.related-card:hover{
+  border-color:var(--accent)!important;
+  box-shadow:0 14px 30px -18px rgba(10,31,60,.3)!important
+}
+.product-media,.dialog-media,.related-media{background:var(--bg-soft)!important}
+.product-index{background:var(--accent)!important;color:#fff!important;box-shadow:none!important;font-family:var(--font)!important}
+.product-tags span{color:var(--accent)!important;background:var(--accent-soft)!important;font-family:var(--font)!important}
+.product-body h3,.link-card h3,.about-points h3,.quality-list h3,.dialog-content h2,.related-body h3{
+  color:var(--ink)!important
+}
+.product-more,.related-arrow,.article-tag,.article-read,.spec-list dt,.terms-table th,.contact-addr-label{
+  color:var(--accent)!important;font-family:var(--font)!important;box-shadow:none!important
+}
+.quality-list li::before{color:var(--accent)!important}
+.checklist-items li::before{background:var(--accent-soft)!important;color:var(--accent)!important;font-family:var(--font)!important}
+
+/* ---------- 11. 图片应用卡：保留图片，文字白字可读 ---------- */
+.app-card{border-color:var(--line)!important}
+.app-card::after{background:linear-gradient(180deg,rgba(2,9,16,0) 30%,rgba(2,9,16,.82) 100%)!important}
+.app-card .app-text{color:#fff!important}
+.app-card p{color:#d4dde4!important}
+.app-code{color:#9fd0ff!important}
+.illustration-note{color:var(--muted)!important}
+
+/* ---------- 12. 交替区块：浅灰 ---------- */
+.quality,.promise,.contact,.section.contact{background:var(--bg-soft)!important;color:var(--ink)!important}
+.promise-lead h2 span{color:var(--accent)!important}
+.promise-body p{color:var(--ink-2)!important}
+.contact-intro,.contact-card ol,.contact-card small,.contact-card p{color:var(--ink-2)!important}
+.contact-card-label{color:var(--accent)!important;font-family:var(--font)!important}
+.contact-mail,.contact-wa{color:var(--accent)!important;font-family:var(--font)!important}
+.contact-mail:hover,.contact-wa:hover{color:var(--accent-2)!important}
+.contact-addr{color:var(--ink-2)!important}
+.footer-addr{color:var(--muted)!important}
+
+/* ---------- 13. 内页页头：浅灰底深蓝字 ---------- */
+.page-hero{
+  background:#f3f6fa!important;color:var(--ink)!important;
+  border-bottom:1px solid var(--line)!important;
+  background-image:none!important
+}
+.page-hero::before,.page-hero::after{display:none!important;content:none!important;animation:none!important}
+.page-hero .container{position:static}
+.breadcrumb,.breadcrumb a{color:var(--muted)!important}
+.breadcrumb a:hover,.breadcrumb span{color:var(--accent)!important}
+.page-hero h1{color:var(--ink)!important}
+.page-lead{color:var(--ink-2)!important}
+
+/* ---------- 14. 表格 / FAQ / CTA ---------- */
+.spec-table{background:#fff!important;border-color:var(--line)!important}
+.spec-table th{background:var(--bg-soft)!important;color:var(--ink)!important;font-family:var(--font)!important}
+.spec-table td{color:var(--ink-2)!important}
+.faq-item{border-color:var(--line)!important}
+.faq-item h3,.faq-item p{color:var(--ink-2)!important}
+.cta-band{background:var(--accent-soft)!important;border-color:rgba(24,95,165,.28)!important}
+.cta-band h2{color:var(--ink)!important}
+.cta-band p{color:var(--ink-2)!important}
+.callout{background:var(--accent-soft)!important;border-left-color:var(--accent)!important}
+.callout p,.callout strong{color:var(--ink-2)!important}
+[dir="rtl"] .callout{border-right-color:var(--accent)!important}
+
+/* ---------- 15. 按钮：深蓝实心 + 白字，无霓虹 ---------- */
+.button,.button-primary,.button:hover,.button-primary:hover,
+.nav-contact,.fab-inquiry{
+  background:var(--accent)!important;color:#fff!important;
+  border:1px solid var(--accent)!important;border-radius:8px!important;
+  box-shadow:none!important;text-shadow:none!important;filter:none!important
+}
+.button:hover,.button-primary:hover,.nav-contact:hover,.fab-inquiry:hover{
+  background:var(--accent-2)!important;border-color:var(--accent-2)!important;
+  transform:translateY(-2px);box-shadow:0 8px 18px -10px rgba(10,31,60,.45)!important
+}
+.button-link,.button-link-light{color:var(--accent)!important;font-family:var(--font)!important}
+.button-link:hover{color:var(--accent-2)!important}
+.fab-inquiry svg{color:#fff}
+
+/* ---------- 16. 表单：白底浅边 ---------- */
+.field>span{font-family:var(--font)!important;color:var(--ink-2)!important}
+.field input,.field select,.field textarea,.file-field input[type="file"]{
+  background:#fff!important;border-color:var(--line)!important;color:var(--ink)!important;
+  font-family:var(--font)!important
+}
+.field input:focus,.field select:focus,.field textarea:focus{
+  border-color:var(--accent)!important;box-shadow:0 0 0 3px rgba(24,95,165,.12)!important
+}
+.field select option{background:#fff!important;color:var(--ink)!important}
+.consent,.form-note,.form-actions small{color:var(--ink-2)!important}
+.inquiry-form h2,.inquiry-form h3{color:var(--ink)!important}
+.form-status.is-loading{color:var(--muted)!important}
+.form-status.is-ok{color:#0f6e56!important;text-shadow:none!important}
+.form-status.is-error{color:#a32d2d!important;text-shadow:none!important}
+.form-status.is-warn{color:#854f0b!important}
+.hp{position:absolute!important;left:0!important;top:0!important;width:1px!important;height:1px!important;overflow:hidden!important;opacity:0!important;pointer-events:none!important}
+
+/* ---------- 17. 页脚：深蓝（与模板一致），关闭发光 ---------- */
+.site-footer{background:#0a1f3c!important;color:#b9c7d8!important;border-top:0!important}
+.footer-col h3,.footer-col-title,.footer-brand p{color:#fff!important}
+.footer-col a,.footer-bottom,.footer-bottom a,.footer-addr{color:#b9c7d8!important}
+.footer-col a:hover,.footer-bottom a:hover{color:#9fd0ff!important}
+.footer-slogan{color:#9fd0ff!important;font-family:var(--font)!important}
+.footer-grid{border-bottom-color:rgba(255,255,255,.14)!important}
+
+/* ---------- 18. 弹窗 ---------- */
+.product-dialog{background:#fff!important;color:var(--ink)!important;box-shadow:var(--shadow)!important}
+.product-dialog::backdrop{background:rgba(10,31,60,.5)!important;backdrop-filter:none!important}
+.dialog-close{background:var(--bg-soft)!important;color:var(--ink)!important}
+.dialog-close:hover{background:var(--line)!important;color:var(--accent)!important}
+.dialog-en{color:var(--muted)!important}
+.dialog-content p,.spec-list dd{color:var(--ink-2)!important}
+.spec-list div{border-bottom-color:var(--line)!important}
+
+/* ---------- 19. 步骤条 / 分类卡（新模块） ---------- */
+.quote-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:8px 0 34px}
+.quote-step{
+  position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px 22px 22px 66px;box-shadow:var(--shadow-sm)
+}
+.quote-step-num{
+  position:absolute;left:20px;top:20px;width:32px;height:32px;border-radius:8px;
+  display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);
+  font-weight:800;font-size:.92rem
+}
+.quote-step h3{margin:0 0 4px;font-size:1.02rem;color:var(--ink)}
+.quote-step p{margin:0;font-size:.88rem;color:var(--muted);line-height:1.6}
+.quote-steps-head{margin:0 0 12px;color:var(--ink);font-size:1.15rem;font-weight:700}
+[dir="rtl"] .quote-step{padding:22px 66px 22px 22px}
+[dir="rtl"] .quote-step-num{left:auto;right:20px}
+@media(max-width:760px){.quote-steps{grid-template-columns:1fr;gap:12px}}
+
+.quickbar{
+  background:#0a1f3c;color:#c6d8e4;font-size:.8rem;letter-spacing:.01em
+}
+.quickbar .container{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:34px;flex-wrap:wrap}
+.quickbar a{color:#fff;font-weight:700}
+.quickbar a:hover{color:#9fd0ff}
+.quickbar-contact{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.quickbar-cta{
+  display:inline-flex;align-items:center;gap:6px;background:#185fa5;color:#fff!important;
+  padding:4px 14px;border-radius:5px;font-weight:700
+}
+.quickbar-cta:hover{background:#1b365d;color:#fff!important}
+[dir="rtl"] .quickbar .container{direction:rtl}
+
+/* ---------- 20. 首页产品区：模板式分类卡 ---------- */
+.category-card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:6px 0 8px}
+.category-card{
+  display:flex;align-items:center;gap:14px;padding:16px;background:#fff;
+  border:1px solid var(--line);border-radius:10px;text-decoration:none;
+  transition:border-color .2s,transform .2s,box-shadow .2s
+}
+.category-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:var(--shadow-sm)}
+.category-card img{width:52px;height:52px;object-fit:cover;border-radius:8px;background:var(--bg-soft);flex:0 0 auto}
+.category-card b{display:block;color:var(--ink);font-size:.94rem;line-height:1.3}
+.category-card small{display:block;color:var(--muted);font-size:.78rem;margin-top:3px}
+.category-card .cat-arrow{margin-inline-start:auto;color:var(--accent);font-weight:700}
+
+/* ---------- 21. 降低动效 ---------- */
+@media (prefers-reduced-motion:reduce){
+  .brand-word,.site-header::after,.page-hero::after{animation:none!important}
+  .product-card,.link-card,.scene-card{transform:none!important}
+}
