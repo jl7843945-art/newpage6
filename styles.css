@@ -1063,3 +1063,27 @@ h1,h2,h3{color:var(--ink)!important}
 [dir="rtl"] .hero-media::after{background:linear-gradient(270deg,rgba(6,20,42,.95) 0%,rgba(6,20,42,.88) 28%,rgba(6,20,42,.55) 56%,rgba(6,20,42,.22) 100%)}
 .hero-scenes,.hero-band{position:relative;z-index:1}
 @media(prefers-reduced-motion:reduce){.hero-media .hero-slide{animation:none!important;opacity:0!important}.hero-media .hero-slide:nth-child(2){opacity:1!important}.hero-media .hero-slide-video{display:none!important}}
+
+/* === TRUST LAYER v1 (2026-11-20): datasheet bar / application grid / WhatsApp float === */
+.datasheet-bar{padding:16px 0 0}
+.datasheet-bar .ds-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 18px;border:1px solid #dfe7ec;border-radius:10px;padding:11px 16px;background:#f7fafc}
+.datasheet-bar .ds-link{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14.5px;color:#0a6c7d;text-decoration:none}
+.datasheet-bar .ds-link:hover{text-decoration:underline}
+.datasheet-bar .ds-link svg{width:17px;height:17px;flex:0 0 auto}
+.datasheet-bar .ds-note{color:#5b7386;font-size:13px;line-height:1.5}
+.usecase-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:18px;margin-top:26px}
+.usecase-card{border:1px solid #dfe7ec;border-radius:12px;padding:20px 22px;background:#fff}
+.usecase-card h3{margin:0 0 8px;font-size:1.02rem;color:#0a1f3c}
+.usecase-card p{margin:0;color:#5b7386;font-size:14.5px;line-height:1.68}
+.usecase-card .usecase-tag{display:inline-block;margin-top:12px;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:#0a6c7d;font-weight:700}
+.wa-float{position:fixed;right:18px;bottom:18px;z-index:60;width:54px;height:54px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(6,20,42,.28);transition:transform .18s ease,box-shadow .18s ease}
+.wa-float:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(6,20,42,.34)}
+.wa-float svg{width:30px;height:30px;fill:#fff}
+[dir="rtl"] .wa-float{right:auto;left:18px}
+@media(max-width:640px){.wa-float{width:48px;height:48px;right:14px;bottom:14px}[dir="rtl"] .wa-float{right:auto;left:14px}}
+@media print{.wa-float{display:none}}
+
+/* 对比度修复：浅色皮肤下导航 Contact 按钮与页脚字标颜色过深 */
+.site-header .nav-links a.nav-contact,.site-header .nav-links a.nav-contact:hover{color:#fff!important;flex:0 0 auto;white-space:nowrap;padding:9px 18px}
+.site-footer .brand-word{color:#fff!important;-webkit-text-fill-color:#fff!important}
+.usecase-grid + .terms-note{margin-top:18px}

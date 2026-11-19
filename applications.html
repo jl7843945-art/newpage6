@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- 语言由 URL 决定：英文在根路径，其余语言是 /zh/ /ar/ /ru/ /de 独立静态页。
+       旧链接 /path?lang=zh 在这里直接跳转到对应语言页，避免 ?lang= 变体被重复收录。 -->
+  <script>
+  (function () {
+    var h = document.documentElement;
+    if (h.getAttribute("data-static-lang")) return;
+    if (/[?&]gen=1/.test(location.search)) {
+      // 构建期渲染译文：临时加载对应语言包，供生成静态语言页使用
+      var g = new URLSearchParams(location.search).get("lang");
+      if (g && /^(zh|ko|ar|ru|de)$/.test(g)) document.write('<script src="/i18n/' + g + '.js"><\/script>');
+      return;
+    }
+    try {
+      var q = new URLSearchParams(location.search).get("lang");
+      if (q && /^(zh|ko|ar|ru|de)$/.test(q)) {
+        location.replace("/" + q + (location.pathname === "/" ? "/" : location.pathname));
+      }
+    } catch (e) {}
+  })();
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Titanium Applications | Chemical, Marine, Aerospace, Medical | ALLOYTI</title>
+  <meta name="description" content="Where titanium earns its cost — the industries, grades and product forms we supply most often, and what each application actually requires.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0A1A3A">
+  <link rel="canonical" href="https://www.alloyti.com/applications">
+  <link rel="alternate" hreflang="en" href="https://www.alloyti.com/applications">
+  <link rel="alternate" hreflang="zh" href="https://www.alloyti.com/zh/privacy">
+  <link rel="alternate" hreflang="ar" href="https://www.alloyti.com/ar/privacy">
+  <link rel="alternate" hreflang="ru" href="https://www.alloyti.com/ru/privacy">
+  <link rel="alternate" hreflang="de" href="https://www.alloyti.com/de/privacy">
+  <link rel="alternate" hreflang="ko" href="https://www.alloyti.com/ko/privacy">
+  <link rel="alternate" hreflang="x-default" href="https://www.alloyti.com/applications">
+  <link rel="icon" type="image/png" href="assets/favicon-64.png">
+  <link rel="stylesheet" href="styles.min.css?v=20261120e">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="ALLOYTI">
+  <meta property="og:title" content="Titanium Applications | Chemical, Marine, Aerospace, Medical | ALLOYTI">
+  <meta property="og:description" content="Where titanium earns its cost — the industries, grades and product forms we supply most often, and what each application actually requires.">
+  <meta property="og:url" content="https://www.alloyti.com/applications">
+  <meta property="og:image" content="https://www.alloyti.com/assets/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Titanium mill products for industrial supply">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Titanium Applications | Chemical, Marine, Aerospace, Medical | ALLOYTI">
+  <meta name="twitter:description" content="Where titanium earns its cost — the industries, grades and product forms we supply most often, and what each application actually requires.">
+  <meta name="twitter:image" content="https://www.alloyti.com/assets/og-cover.jpg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.alloyti.com/#organization",
+      "name": "ALLOYTI",
+      "url": "https://www.alloyti.com/",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "High-Tech Avenue",
+        "addressLocality": "Baoji",
+        "addressRegion": "Shaanxi",
+        "addressCountry": "CN"
+      },
+      "email": "sales@alloyti.com",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "email": "sales@alloyti.com",
+        "availableLanguage": [
+          "en",
+          "zh",
+          "ar",
+          "ru",
+          "de",
+          "ko"
+        ]
+      },
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.alloyti.com/assets/logo-emblem.png",
+        "width": 144,
+        "height": 144
+      },
+      "telephone": "+86-185-2328-3306",
+      "areaServed": [
+        "North America",
+        "Europe",
+        "Middle East",
+        "Southeast Asia"
+      ],
+      "knowsAbout": [
+        "Titanium",
+        "Titanium alloys",
+        "Ti-6Al-4V (TC4 / Grade 5)",
+        "Commercially pure titanium (TA1 / TA2)",
+        "ASTM B265",
+        "ASTM B348",
+        "ASTM B338",
+        "AMS 4911",
+        "Titanium forging",
+        "Titanium fasteners"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.alloyti.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Applications"
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "url": "https://www.alloyti.com/applications",
+      "name": "Titanium Applications | Chemical, Marine, Aerospace, Medical | ALLOYTI",
+      "isPartOf": {
+        "@id": "https://www.alloyti.com/#website"
+      },
+      "inLanguage": "en"
+    }
+  ]
+}
+  </script>
+</head>
+<body data-light-header="1">
+  <div class="quickbar" id="quickbar">
+    <div class="container">
+      <span data-i18n="s486">Need a fast quote?</span>
+      <div class="quickbar-contact">
+        <span data-i18n="s487">Call / WhatsApp</span>
+        <a href="https://wa.me/8618523283306" target="_blank" rel="noopener noreferrer">+86 185 2328 3306</a>
+        <span data-i18n="s529">Email</span>
+        <a class="quickbar-email" href="mailto:sales@alloyti.com">sales@alloyti.com</a>
+        <a class="quickbar-cta" href="/contact" data-i18n="s488">Get a quote</a>
+      </div>
+    </div>
+  </div>
+  <header class="site-header scrolled" id="siteHeader">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="/" aria-label="ALLOYTI home">
+        <img class="brand-mark" src="assets/logo-emblem.webp" alt="ALLOYTI logo" width="36" height="36"> <span class="brand-word" data-i18n="s001">ALLOYTI</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="primaryNav" aria-label="Open navigation"><span></span><span></span><span></span></button>
+      <div class="nav-links" id="primaryNav">
+        <a href="/" data-i18n="nav.home"><span data-i18n="s004">Home</span></a>
+        <a href="/products" data-i18n="nav.products"><span data-i18n="s008">Products</span></a>
+        <a href="/about" data-i18n="nav.about"><span data-i18n="s023">About</span></a>
+        <a href="/quality" data-i18n="nav.quality"><span data-i18n="s043">Quality &amp; Service</span></a>
+        <a href="/faq" data-i18n="nav.faq"><span data-i18n="s010">FAQ</span></a>
+        <a href="/resources" data-i18n="s453"><span data-i18n="s453">Resources</span></a>
+        <a href="/contact" class="nav-contact" data-i18n="nav.contact"><span data-i18n="s012">Contact</span></a>        <div class="lang-switch" id="langSwitch">
+          <button class="lang-toggle" id="langToggle" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Switch language">
+            <svg class="lang-globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            <span class="lang-code" id="langCode">EN</span>
+            <svg class="lang-caret" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </button>
+          <ul class="lang-menu" id="langMenu" role="listbox" aria-label="Language">
+            <li role="option" data-lang="en" class="is-active" aria-selected="true"><span class="lc">EN</span><span class="ln">English</span></li>
+            <li role="option" data-lang="zh"><span class="lc">中文</span><span class="ln">简体中文</span></li>
+            <li role="option" data-lang="ar" dir="rtl"><span class="lc">AR</span><span class="ln">العربية</span></li>
+            <li role="option" data-lang="ru"><span class="lc">RU</span><span class="ln">Русский</span></li>
+            <li role="option" data-lang="de"><span class="lc">DE</span><span class="ln">Deutsch</span></li>
+            <li role="option" data-lang="ko"><span class="lc">한국</span><span class="ln">한국어</span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/" data-i18n="s004"><span data-i18n="s004">Home</span></a> › <span aria-current="page" data-i18n="s584"><span data-i18n="s584">Applications</span></span></nav>
+        <h1 data-i18n="s584"><span data-i18n="s584">Applications</span></h1>
+        <p class="page-lead" data-i18n="s585"><span data-i18n="s585">Where titanium earns its cost — the industries, grades and product forms we supply most often, and what each application actually requires.</span></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="usecase-grid">
+        <article class="usecase-card">
+          <h3 data-i18n="s586"><span data-i18n="s586">Chemical processing</span></h3>
+          <p data-i18n="s587"><span data-i18n="s587">Heat exchangers, reactor vessels, columns and piping in chloride and oxidising service. Grade 2 for general duty; Grade 7 (Ti-0.15Pd) where reducing acids attack the metal.</span></p>
+          <span class="usecase-tag">Gr.2 · Gr.7</span>
+        </article>
+        <article class="usecase-card">
+          <h3 data-i18n="s588"><span data-i18n="s588">Desalination and marine</span></h3>
+          <p data-i18n="s589"><span data-i18n="s589">Tube bundles, tube sheets and waterbox linings for multi-stage flash and reverse-osmosis plants. Seawater resistance and a low-fouling surface matter more here than high strength.</span></p>
+          <span class="usecase-tag">Gr.2 · ASTM B338</span>
+        </article>
+        <article class="usecase-card">
+          <h3 data-i18n="s590"><span data-i18n="s590">Aerospace and defence</span></h3>
+          <p data-i18n="s591"><span data-i18n="s591">Structural plate, bar and fasteners in Ti-6Al-4V (Grade 5), supplied to AMS specifications with heat-lot traceability and ultrasonic inspection where called for.</span></p>
+          <span class="usecase-tag">Ti-6Al-4V · AMS</span>
+        </article>
+        <article class="usecase-card">
+          <h3 data-i18n="s592"><span data-i18n="s592">Medical and dental</span></h3>
+          <p data-i18n="s593"><span data-i18n="s593">Grade 5 ELI and Grade 2 bar for implants and instruments, where biocompatibility and consistent mechanical properties matter more than the price per kilogram.</span></p>
+          <span class="usecase-tag">Gr.5 ELI · Gr.2</span>
+        </article>
+        <article class="usecase-card">
+          <h3 data-i18n="s594"><span data-i18n="s594">Power generation</span></h3>
+          <p data-i18n="s595"><span data-i18n="s595">Condenser tubing and turbine components where cooling water is saline or chlorinated. Grade 2 tube to ASTM B338 is the usual starting point.</span></p>
+          <span class="usecase-tag">Gr.2 · ASTM B338</span>
+        </article>
+        <article class="usecase-card">
+          <h3 data-i18n="s596"><span data-i18n="s596">Consumer and daily goods</span></h3>
+          <p data-i18n="s597"><span data-i18n="s597">Drinkware, cutlery and cookware in Grade 1 and Grade 2 — lightweight, corrosion-free and safe in contact with food and drink.</span></p>
+          <span class="usecase-tag">Gr.1 · Gr.2</span>
+        </article>
+        </div>
+        <p class="terms-note" data-i18n="s598"><span data-i18n="s598">Project references and anonymised case summaries are available on request.</span></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="/" aria-label="ALLOYTI home">
+          <img class="brand-mark" src="assets/logo-emblem.webp" alt="ALLOYTI logo" width="36" height="36"> <span class="brand-word" data-i18n="s001">ALLOYTI</span>
+        </a>
+        <p class="footer-slogan" data-i18n="ui.slogan"><span data-i18n="s326">Built on Titanium. Driven by Technology.</span></p>
+        <p data-i18n="footer.brandDesc"><span data-i18n="s327">Titanium and titanium alloy sourcing, supply and technical support — plate, bar, tube, fasteners and precision forgings to ASTM, GB and AMS standards, exported to North America, Europe, the Middle East and Southeast Asia.</span></p>
+      </div>
+      <nav class="footer-col" aria-label="Product links">
+        <p class="footer-col-title" data-i18n="s008"><span data-i18n="s008">Products</span></p>
+        <a href="/titanium-plate" data-i18n="s014"><span data-i18n="s014">Titanium Plate &amp; Sheet</span></a>
+        <a href="/titanium-bar" data-i18n="s015"><span data-i18n="s015">Titanium Bar &amp; Rod</span></a>
+        <a href="/titanium-tube" data-i18n="s016"><span data-i18n="s016">Titanium Tube & Pipe</span></a>
+        <a href="/titanium-fasteners" data-i18n="s017"><span data-i18n="s017">Titanium Fasteners</span></a>
+        <a href="/titanium-daily-goods" data-i18n="s530"><span data-i18n="s530">Titanium Daily Goods</span></a>
+        <a href="/titanium-forgings" data-i18n="s018"><span data-i18n="s018">Forgings &amp; Machined Parts</span></a>
+      </nav>
+      <nav class="footer-col" aria-label="Company links">
+        <p class="footer-col-title" data-i18n="footer.colAbout"><span data-i18n="s057">Company</span></p>
+        <a href="/about" data-i18n="nav.about"><span data-i18n="s023">About</span></a>
+        <a href="/quality" data-i18n="nav.quality"><span data-i18n="s043">Quality &amp; Service</span></a>
+        <a href="/faq" data-i18n="nav.faq"><span data-i18n="s010">FAQ</span></a>
+        <a href="/resources" data-i18n="s453"><span data-i18n="s453">Resources</span></a>
+        <a href="/applications" data-i18n="s584"><span data-i18n="s584">Applications</span></a>
+        <a href="/#showcase" data-i18n="nav.showcase"><span data-i18n="s328">Sourcing</span></a>
+      </nav>
+      <div class="footer-col">
+        <p class="footer-col-title" data-i18n="footer.colContact"><span data-i18n="s012">Contact</span></p>
+        <a href="mailto:sales@alloyti.com" data-i18n="s019"><span data-i18n="s019">sales@alloyti.com</span></a>
+        <a href="https://wa.me/8618523283306" target="_blank" rel="noopener noreferrer" data-i18n="s020"><span data-i18n="s020">WhatsApp +86 185 2328 3306</span></a>
+        <a href="/contact" data-i18n="s021"><span data-i18n="s021">Send an enquiry ↗</span></a>
+        <span class="footer-addr" data-i18n="s445">High-Tech Avenue, Baoji, Shaanxi, China</span>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year">2026</span> <span data-i18n="s001">ALLOYTI</span></p>
+      <p data-i18n="ui.bottomTag"><span data-i18n="s329">TITANIUM · ASTM / DIN / ISO · Confirmed per order</span></p>
+      <a href="/privacy" data-i18n="s022"><span data-i18n="s022">Privacy Policy</span></a>
+      <a href="/terms" data-i18n="s557"><span data-i18n="s557">Terms of Sale</span></a>
+      <a href="/" data-i18n="ui.backTop"><span data-i18n="s330">Back to top ↑</span></a>
+    </div>
+  </footer>
+
+    <script src="app.min.js?v=20261120e"></script>
+  <!-- WA FLOAT v1 -->
+  <a class="wa-float" href="https://wa.me/8618523283306" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15h-.01c-1.52 0-3.01-.41-4.31-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.83 2.41a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23z"/><path d="M16.53 14.09c-.25-.12-1.47-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.79.97-.15.16-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05s.88 2.38 1 2.54c.12.16 1.73 2.64 4.19 3.7.59.25 1.04.4 1.4.51.59.19 1.12.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.11-.23-.17-.48-.29z"/></svg>
+  </a>
+</body>
+</html>
