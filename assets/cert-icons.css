@@ -1,0 +1,7 @@
+/* === CERT ICONS v1 (2026-11-19) === */
+.cert-icon{width:52px;height:52px;display:block;flex:none}
+.cert-item{display:grid;grid-template-columns:52px minmax(0,1fr);column-gap:16px;row-gap:0;align-items:start}
+.cert-item>.cert-icon{grid-column:1;grid-row:1 / span 2}
+.cert-item h3,.cert-item p{grid-column:2}
+.cert-item h3{margin-top:1px}
+@media(max-width:600px){.cert-icon{width:44px;height:44px}.cert-item{grid-template-columns:44px minmax(0,1fr);column-gap:12px}}
