@@ -664,3 +664,17 @@ h1,h2,h3{color:var(--ink)!important}
 .hero{background-image:linear-gradient(90deg,rgba(8,26,50,.97) 0%,rgba(8,26,50,.94) 28%,rgba(8,26,50,.62) 60%,rgba(8,26,50,.20) 100%),url("/assets/hero-titanium-bg.svg")!important;background-size:cover!important;background-position:center center!important;background-repeat:no-repeat!important}
 [dir="rtl"] .hero{background-image:linear-gradient(270deg,rgba(8,26,50,.97) 0%,rgba(8,26,50,.94) 28%,rgba(8,26,50,.62) 60%,rgba(8,26,50,.20) 100%),url("/assets/hero-titanium-bg-rtl.svg")!important}
 @media(max-width:700px){.hero{background-image:linear-gradient(90deg,rgba(8,26,50,.96),rgba(8,26,50,.84)),url("/assets/hero-titanium-bg.svg")!important}[dir="rtl"] .hero{background-image:linear-gradient(270deg,rgba(8,26,50,.96),rgba(8,26,50,.84)),url("/assets/hero-titanium-bg-rtl.svg")!important}}
+
+
+/* === HERO MEDIA SLIDESHOW v1 (2026-11-19) === */
+.hero-media{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.hero-media .hero-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:heroMediaFade 32s infinite}
+.hero-media .hero-slide:nth-child(1){animation-delay:0s}
+.hero-media .hero-slide:nth-child(2){animation-delay:8s}
+.hero-media .hero-slide:nth-child(3){animation-delay:16s}
+.hero-media .hero-slide:nth-child(4){animation-delay:24s}
+@keyframes heroMediaFade{0%{opacity:0}2%{opacity:1}23%{opacity:1}25%{opacity:0}100%{opacity:0}}
+.hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,20,42,.95) 0%,rgba(6,20,42,.88) 28%,rgba(6,20,42,.55) 56%,rgba(6,20,42,.22) 100%)}
+[dir="rtl"] .hero-media::after{background:linear-gradient(270deg,rgba(6,20,42,.95) 0%,rgba(6,20,42,.88) 28%,rgba(6,20,42,.55) 56%,rgba(6,20,42,.22) 100%)}
+.hero-scenes,.hero-band{position:relative;z-index:1}
+@media(prefers-reduced-motion:reduce){.hero-media .hero-slide{animation:none!important;opacity:0!important}.hero-media .hero-slide:nth-child(2){opacity:1!important}.hero-media .hero-slide-video{display:none!important}}
