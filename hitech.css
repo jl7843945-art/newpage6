@@ -649,3 +649,12 @@ h1,h2,h3{color:var(--ink)!important}
 [dir="rtl"] .calc-results strong,[dir="rtl"] .calc-meta select{direction:ltr;unicode-bidi:isolate}
 @media(max-width:900px){.tools-grid{grid-template-columns:1fr}.tools-head{text-align:left}}
 @media(max-width:560px){.calc-fields,.calc-meta,.calc-results{grid-template-columns:1fr}.tool-card,.resource-cards{padding:20px}}
+
+
+/* === CERT BLOCK v1 (2026-11-19) === */
+.cert-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:20px 0 8px}
+.cert-item{background:#fff!important;border:1px solid #dbe4f0!important;border-radius:12px!important;padding:20px 22px;box-shadow:0 5px 18px rgba(10,31,60,.05)!important}
+.cert-item h3{color:#0a1f3c!important;font-size:16px;line-height:1.45;margin:0 0 10px;font-weight:700}
+.cert-item p{color:#415472!important;font-size:13.5px;line-height:1.7;margin:0}
+.cert-note{color:#5b6c84!important;font-size:13px;line-height:1.65;margin:14px 0 0}
+@media(max-width:900px){.cert-grid{grid-template-columns:1fr}}
