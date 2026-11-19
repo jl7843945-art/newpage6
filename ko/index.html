@@ -10,8 +10,8 @@
   <link rel="preload" as="image" href="/assets/space-battleship-hero.webp" type="image/webp" fetchpriority="high">
   <title>티타늄 공급 파트너 및 공급업체 — 판재·봉재·관재 | ALLOYTI</title>
   <link rel="icon" type="image/png" href="/assets/favicon-64.png">
-  <link rel="stylesheet" href="/styles.min.css?v=20261119c">
-  <link rel="stylesheet" href="/hitech.min.css?v=20261119c">
+  <link rel="stylesheet" href="/styles.min.css?v=20261119f">
+  <link rel="stylesheet" href="/hitech.min.css?v=20261119f">
   <link rel="canonical" href="https://www.alloyti.com/ko/">
   <link rel="alternate" hreflang="en" href="https://www.alloyti.com/">
   <link rel="alternate" hreflang="zh" href="https://www.alloyti.com/zh/">
@@ -205,7 +205,7 @@
         <img class="scene-ghost scene-ghost-2" src="/assets/app-aerospace.webp" alt="" width="512" height="512">
         <img class="scene-ghost scene-ghost-3" src="/assets/app-marine.webp" alt="" width="512" height="512">
         <div class="ship-glow" aria-hidden="true"></div>
-        <canvas class="mesh-canvas" id="meshCanvas" width="749" height="1370" style="width: 749px; height: 1370.05px;"></canvas>
+        <canvas class="mesh-canvas" id="meshCanvas" width="749" height="1042" style="width: 749px; height: 1042.23px;"></canvas>
         <div class="hero-overlay"></div>
       </div>
       <div class="hero-grid container">
@@ -229,7 +229,7 @@
             <div class="holo-ring holo-ring-1"></div>
             <div class="holo-sweep"></div>
             <div class="holo-core">
-              <canvas class="droplet-canvas" id="dropletCanvas" aria-hidden="true" width="360" height="360"></canvas>
+              <canvas class="droplet-canvas" id="dropletCanvas" aria-hidden="true" width="1" height="1"></canvas>
               <div class="holo-label"><small>22 · 47.867</small></div>
             </div>
             <span class="holo-chip holo-chip-a" data-i18n="hero.nodes.0">등급</span>
@@ -467,16 +467,71 @@
       </form>
     </section>
 
-    <section class="section">
+    <section class="section tools-section" id="tools" aria-labelledby="toolsTitle">
       <div class="container">
-        <div class="prose">
-          <h2 data-i18n="s485">관련 기술 가이드</h2>
-          <ul>
-            <li><a href="/ko/titanium-grade-guide" data-i18n="s457">티타늄 등급 해설: ASTM, GB, AMS 대응표</a></li>
-            <li><a href="/ko/titanium-corrosion-guide" data-i18n="s459">매체별 티타늄 내식성</a></li>
-            <li><a href="/ko/titanium-specification-guide" data-i18n="s461">티타늄 사양 지정: 성적서, 공차 및 시험</a></li>
-          </ul>
-          <p><a href="/ko/resources" data-i18n="s453">기술 자료</a> →</p>
+        <div class="tools-head">
+          <h2 id="toolsTitle" data-i18n="s500">도구 및 기술 자료</h2>
+          <p data-i18n="s501">문의 전에 재료 중량을 추정하고, 등급·내식 수명·발주서 작성을 결정하는 가이드를 확인하세요.</p>
+        </div>
+        <div class="tools-grid">
+          <div class="tool-card" id="weightCalculator">
+            <h3 data-i18n="s502">티타늄 중량 계산기</h3>
+            <p class="tool-note" data-i18n="s503">제품 형태를 선택하고 치수와 수량을 입력하세요. 공칭 밀도로 추정하며 최종 중량은 밀 인증서로 확인하세요.</p>
+            <div class="calc-tabs" role="tablist" aria-label="Product form">
+              <button type="button" class="calc-tab is-active" data-shape="plate" aria-selected="true" data-i18n="s504">판재</button>
+              <button type="button" class="calc-tab" data-shape="bar" aria-selected="false" data-i18n="s505">봉재</button>
+              <button type="button" class="calc-tab" data-shape="tube" aria-selected="false" data-i18n="s506">관재</button>
+            </div>
+            <div class="calc-fields" data-shape-fields="plate">
+              <label><span data-i18n="s507">길이 (mm)</span><input type="number" data-dim="length" min="0" step="any" inputmode="decimal" placeholder="1000"></label>
+              <label><span data-i18n="s508">폭 (mm)</span><input type="number" data-dim="width" min="0" step="any" inputmode="decimal" placeholder="1000"></label>
+              <label><span data-i18n="s509">두께 (mm)</span><input type="number" data-dim="thickness" min="0" step="any" inputmode="decimal" placeholder="3"></label>
+            </div>
+            <div class="calc-fields" data-shape-fields="bar" hidden="">
+              <label><span data-i18n="s510">지름 (mm)</span><input type="number" data-dim="diameter" min="0" step="any" inputmode="decimal" placeholder="50"></label>
+              <label><span data-i18n="s507">길이 (mm)</span><input type="number" data-dim="length" min="0" step="any" inputmode="decimal" placeholder="1000"></label>
+            </div>
+            <div class="calc-fields" data-shape-fields="tube" hidden="">
+              <label><span data-i18n="s511">외경 (mm)</span><input type="number" data-dim="outer" min="0" step="any" inputmode="decimal" placeholder="50"></label>
+              <label><span data-i18n="s512">벽 두께 (mm)</span><input type="number" data-dim="wall" min="0" step="any" inputmode="decimal" placeholder="3"></label>
+              <label><span data-i18n="s507">길이 (mm)</span><input type="number" data-dim="length" min="0" step="any" inputmode="decimal" placeholder="1000"></label>
+            </div>
+            <div class="calc-meta">
+              <label><span data-i18n="s513">등급 / 밀도</span>
+                <select id="calcGrade">
+                  <option value="4.51" data-i18n="s514">상업용 순티타늄 (Gr.1 / Gr.2) — 4.51 g/cm³</option>
+                  <option value="4.43" data-i18n="s515">Ti-6Al-4V (Gr.5) — 4.43 g/cm³</option>
+                </select>
+              </label>
+              <label><span data-i18n="s516">수량 (개)</span>
+                <input type="number" id="calcQty" min="1" step="1" inputmode="numeric" value="1">
+              </label>
+            </div>
+            <div class="calc-results" aria-live="polite">
+              <div><span data-i18n="s517">개당 중량</span><strong><bdi id="calcPiece">—</bdi> <span dir="ltr">kg</span></strong></div>
+              <div><span data-i18n="s518">총 중량</span><strong><bdi id="calcTotal">—</bdi> <span dir="ltr">kg</span></strong></div>
+            </div>
+            <p class="calc-disclaimer" data-i18n="s519">참고용이며 최종 중량은 실제 공차와 밀도에 따라 달라집니다.</p>
+          </div>
+          <div class="resource-cards">
+            <h3 data-i18n="s485">관련 기술 가이드</h3>
+            <a class="resource-card" href="/ko/titanium-grade-guide">
+              <span class="resource-tag" data-i18n="s465">등급</span>
+              <strong data-i18n="s457">티타늄 등급 해설: ASTM, GB, AMS 대응표</strong>
+              <span class="resource-more" data-i18n="s464">가이드 읽기</span>
+            </a>
+            <a class="resource-card" href="/ko/titanium-corrosion-guide">
+              <span class="resource-tag" data-i18n="s466">내식성</span>
+              <strong data-i18n="s459">매체별 티타늄 내식성</strong>
+              <span class="resource-more" data-i18n="s464">가이드 읽기</span>
+            </a>
+            <a class="resource-card" href="/ko/titanium-specification-guide">
+              <span class="resource-tag" data-i18n="s467">구매</span>
+              <strong data-i18n="s461">티타늄 사양 지정: 성적서, 공차 및 시험</strong>
+              <span class="resource-more" data-i18n="s464">가이드 읽기</span>
+            </a>
+            <a class="resource-all" href="/ko/resources"><span data-i18n="s453">기술 자료</span> →</a>
+          </div>
         </div>
       </div>
     </section>
@@ -543,8 +598,8 @@
     </div>
   </dialog>
 
-    <script src="/hitech.min.js?v=20261119c"></script>
-  <script src="/app.min.js?v=20261119c"></script>
+    <script src="/hitech.min.js?v=20261119f"></script>
+  <script src="/app.min.js?v=20261119f"></script>
 
 
 </body>

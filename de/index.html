@@ -10,8 +10,8 @@
   <link rel="preload" as="image" href="/assets/space-battleship-hero.webp" type="image/webp" fetchpriority="high">
   <title>ALLOYTI｜Titanlieferung und Bearbeitung</title>
   <link rel="icon" type="image/png" href="/assets/favicon-64.png">
-  <link rel="stylesheet" href="/styles.min.css?v=20261119c">
-  <link rel="stylesheet" href="/hitech.min.css?v=20261119c">
+  <link rel="stylesheet" href="/styles.min.css?v=20261119f">
+  <link rel="stylesheet" href="/hitech.min.css?v=20261119f">
   <link rel="canonical" href="https://www.alloyti.com/de/">
   <link rel="alternate" hreflang="en" href="https://www.alloyti.com/">
   <link rel="alternate" hreflang="zh" href="https://www.alloyti.com/zh/">
@@ -205,7 +205,7 @@
         <img class="scene-ghost scene-ghost-2" src="/assets/app-aerospace.webp" alt="" width="512" height="512">
         <img class="scene-ghost scene-ghost-3" src="/assets/app-marine.webp" alt="" width="512" height="512">
         <div class="ship-glow" aria-hidden="true"></div>
-        <canvas class="mesh-canvas" id="meshCanvas" width="749" height="1370" style="width: 749px; height: 1370.05px;"></canvas>
+        <canvas class="mesh-canvas" id="meshCanvas" width="749" height="1042" style="width: 749px; height: 1042.23px;"></canvas>
         <div class="hero-overlay"></div>
       </div>
       <div class="hero-grid container">
@@ -229,7 +229,7 @@
             <div class="holo-ring holo-ring-1"></div>
             <div class="holo-sweep"></div>
             <div class="holo-core">
-              <canvas class="droplet-canvas" id="dropletCanvas" aria-hidden="true" width="360" height="360"></canvas>
+              <canvas class="droplet-canvas" id="dropletCanvas" aria-hidden="true" width="1" height="1"></canvas>
               <div class="holo-label"><small>22 · 47.867</small></div>
             </div>
             <span class="holo-chip holo-chip-a" data-i18n="hero.nodes.0">Güte</span>
@@ -467,16 +467,71 @@
       </form>
     </section>
 
-    <section class="section">
+    <section class="section tools-section" id="tools" aria-labelledby="toolsTitle">
       <div class="container">
-        <div class="prose">
-          <h2 data-i18n="s485">Passende Fachartikel</h2>
-          <ul>
-            <li><a href="/de/titanium-grade-guide" data-i18n="s457">Titan-Güten erklärt: ASTM, GB und AMS im Vergleich</a></li>
-            <li><a href="/de/titanium-corrosion-guide" data-i18n="s459">Korrosionsbeständigkeit von Titan nach Medium</a></li>
-            <li><a href="/de/titanium-specification-guide" data-i18n="s461">Titan richtig bestellen: Zertifikate, Toleranzen, Prüfungen</a></li>
-          </ul>
-          <p><a href="/de/resources" data-i18n="s453">Fachinformationen</a> →</p>
+        <div class="tools-head">
+          <h2 id="toolsTitle" data-i18n="s500">Werkzeuge &amp; technische Ressourcen</h2>
+          <p data-i18n="s501">Schätzen Sie das Materialgewicht vor der Anfrage und lesen Sie dann die Leitfäden zu Sorte, Korrosionsbeständigkeit und Bestelltext.</p>
+        </div>
+        <div class="tools-grid">
+          <div class="tool-card" id="weightCalculator">
+            <h3 data-i18n="s502">Titan-Gewichtsrechner</h3>
+            <p class="tool-note" data-i18n="s503">Produktform wählen, Abmessungen und Menge eingeben. Die Schätzung nutzt Nenndichten; Endgewicht gemäß Werkszeugnis bestätigen.</p>
+            <div class="calc-tabs" role="tablist" aria-label="Product form">
+              <button type="button" class="calc-tab is-active" data-shape="plate" aria-selected="true" data-i18n="s504">Platte / Blech</button>
+              <button type="button" class="calc-tab" data-shape="bar" aria-selected="false" data-i18n="s505">Stange / Rundstab</button>
+              <button type="button" class="calc-tab" data-shape="tube" aria-selected="false" data-i18n="s506">Rohr</button>
+            </div>
+            <div class="calc-fields" data-shape-fields="plate">
+              <label><span data-i18n="s507">Länge (mm)</span><input type="number" data-dim="length" min="0" step="any" inputmode="decimal" placeholder="1000"></label>
+              <label><span data-i18n="s508">Breite (mm)</span><input type="number" data-dim="width" min="0" step="any" inputmode="decimal" placeholder="1000"></label>
+              <label><span data-i18n="s509">Dicke (mm)</span><input type="number" data-dim="thickness" min="0" step="any" inputmode="decimal" placeholder="3"></label>
+            </div>
+            <div class="calc-fields" data-shape-fields="bar" hidden="">
+              <label><span data-i18n="s510">Durchmesser (mm)</span><input type="number" data-dim="diameter" min="0" step="any" inputmode="decimal" placeholder="50"></label>
+              <label><span data-i18n="s507">Länge (mm)</span><input type="number" data-dim="length" min="0" step="any" inputmode="decimal" placeholder="1000"></label>
+            </div>
+            <div class="calc-fields" data-shape-fields="tube" hidden="">
+              <label><span data-i18n="s511">Außendurchmesser (mm)</span><input type="number" data-dim="outer" min="0" step="any" inputmode="decimal" placeholder="50"></label>
+              <label><span data-i18n="s512">Wandstärke (mm)</span><input type="number" data-dim="wall" min="0" step="any" inputmode="decimal" placeholder="3"></label>
+              <label><span data-i18n="s507">Länge (mm)</span><input type="number" data-dim="length" min="0" step="any" inputmode="decimal" placeholder="1000"></label>
+            </div>
+            <div class="calc-meta">
+              <label><span data-i18n="s513">Sorte / Dichte</span>
+                <select id="calcGrade">
+                  <option value="4.51" data-i18n="s514">Reintitan (Gr.1 / Gr.2) — 4,51 g/cm³</option>
+                  <option value="4.43" data-i18n="s515">Ti-6Al-4V (Gr.5) — 4,43 g/cm³</option>
+                </select>
+              </label>
+              <label><span data-i18n="s516">Menge (Stk.)</span>
+                <input type="number" id="calcQty" min="1" step="1" inputmode="numeric" value="1">
+              </label>
+            </div>
+            <div class="calc-results" aria-live="polite">
+              <div><span data-i18n="s517">Gewicht pro Stück</span><strong><bdi id="calcPiece">—</bdi> <span dir="ltr">kg</span></strong></div>
+              <div><span data-i18n="s518">Gesamtgewicht</span><strong><bdi id="calcTotal">—</bdi> <span dir="ltr">kg</span></strong></div>
+            </div>
+            <p class="calc-disclaimer" data-i18n="s519">Nur Richtwert; Endgewicht hängt von tatsächlichen Toleranzen und Dichte ab.</p>
+          </div>
+          <div class="resource-cards">
+            <h3 data-i18n="s485">Passende Fachartikel</h3>
+            <a class="resource-card" href="/de/titanium-grade-guide">
+              <span class="resource-tag" data-i18n="s465">Güten</span>
+              <strong data-i18n="s457">Titan-Güten erklärt: ASTM, GB und AMS im Vergleich</strong>
+              <span class="resource-more" data-i18n="s464">Leitfaden lesen</span>
+            </a>
+            <a class="resource-card" href="/de/titanium-corrosion-guide">
+              <span class="resource-tag" data-i18n="s466">Korrosion</span>
+              <strong data-i18n="s459">Korrosionsbeständigkeit von Titan nach Medium</strong>
+              <span class="resource-more" data-i18n="s464">Leitfaden lesen</span>
+            </a>
+            <a class="resource-card" href="/de/titanium-specification-guide">
+              <span class="resource-tag" data-i18n="s467">Beschaffung</span>
+              <strong data-i18n="s461">Titan richtig bestellen: Zertifikate, Toleranzen, Prüfungen</strong>
+              <span class="resource-more" data-i18n="s464">Leitfaden lesen</span>
+            </a>
+            <a class="resource-all" href="/de/resources"><span data-i18n="s453">Fachinformationen</span> →</a>
+          </div>
         </div>
       </div>
     </section>
@@ -543,8 +598,8 @@
     </div>
   </dialog>
 
-    <script src="/hitech.min.js?v=20261119c"></script>
-  <script src="/app.min.js?v=20261119c"></script>
+    <script src="/hitech.min.js?v=20261119f"></script>
+  <script src="/app.min.js?v=20261119f"></script>
 
 
 </body>

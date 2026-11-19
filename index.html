@@ -30,8 +30,8 @@
   <link rel="preload" as="image" href="assets/space-battleship-hero.webp" type="image/webp" fetchpriority="high">
   <title>Titanium Supply Partner &amp; Supplier — Plate, Bar, Tube | ALLOYTI</title>
   <link rel="icon" type="image/png" href="assets/favicon-64.png">
-  <link rel="stylesheet" href="styles.min.css?v=20261119c">
-  <link rel="stylesheet" href="hitech.min.css?v=20261119c">
+  <link rel="stylesheet" href="styles.min.css?v=20261119f">
+  <link rel="stylesheet" href="hitech.min.css?v=20261119f">
   <link rel="canonical" href="https://www.alloyti.com/">
   <link rel="alternate" hreflang="en" href="https://www.alloyti.com/">
   <link rel="alternate" hreflang="zh" href="https://www.alloyti.com/zh/">
@@ -487,16 +487,71 @@
       </form>
     </section>
 
-    <section class="section">
+    <section class="section tools-section" id="tools" aria-labelledby="toolsTitle">
       <div class="container">
-        <div class="prose">
-          <h2 data-i18n="s485"><span data-i18n="s485">Related technical guides</span></h2>
-          <ul>
-            <li><a href="/titanium-grade-guide" data-i18n="s457"><span data-i18n="s457">Titanium grades explained: ASTM, GB and AMS equivalents</span></a></li>
-            <li><a href="/titanium-corrosion-guide" data-i18n="s459"><span data-i18n="s459">Titanium corrosion resistance by medium</span></a></li>
-            <li><a href="/titanium-specification-guide" data-i18n="s461"><span data-i18n="s461">Specifying titanium: certificates, tolerances and testing</span></a></li>
-          </ul>
-          <p><a href="/resources" data-i18n="s453"><span data-i18n="s453">Resources</span></a> &rarr;</p>
+        <div class="tools-head">
+          <h2 id="toolsTitle" data-i18n="s500"><span data-i18n="s500">Tools &amp; technical resources</span></h2>
+          <p data-i18n="s501">Estimate material weight before you raise an enquiry, then read the guides that decide grade, corrosion life and PO wording.</p>
+        </div>
+        <div class="tools-grid">
+          <div class="tool-card" id="weightCalculator">
+            <h3 data-i18n="s502"><span data-i18n="s502">Titanium weight calculator</span></h3>
+            <p class="tool-note" data-i18n="s503">Select a product form, enter dimensions and quantity. Estimates use nominal densities; confirm final weight against the mill certificate.</p>
+            <div class="calc-tabs" role="tablist" aria-label="Product form">
+              <button type="button" class="calc-tab is-active" data-shape="plate" aria-selected="true" data-i18n="s504"><span data-i18n="s504">Plate / sheet</span></button>
+              <button type="button" class="calc-tab" data-shape="bar" aria-selected="false" data-i18n="s505"><span data-i18n="s505">Bar / rod</span></button>
+              <button type="button" class="calc-tab" data-shape="tube" aria-selected="false" data-i18n="s506"><span data-i18n="s506">Tube / pipe</span></button>
+            </div>
+            <div class="calc-fields" data-shape-fields="plate">
+              <label><span data-i18n="s507">Length (mm)</span><input type="number" data-dim="length" min="0" step="any" inputmode="decimal" placeholder="1000"></label>
+              <label><span data-i18n="s508">Width (mm)</span><input type="number" data-dim="width" min="0" step="any" inputmode="decimal" placeholder="1000"></label>
+              <label><span data-i18n="s509">Thickness (mm)</span><input type="number" data-dim="thickness" min="0" step="any" inputmode="decimal" placeholder="3"></label>
+            </div>
+            <div class="calc-fields" data-shape-fields="bar" hidden>
+              <label><span data-i18n="s510">Diameter (mm)</span><input type="number" data-dim="diameter" min="0" step="any" inputmode="decimal" placeholder="50"></label>
+              <label><span data-i18n="s507">Length (mm)</span><input type="number" data-dim="length" min="0" step="any" inputmode="decimal" placeholder="1000"></label>
+            </div>
+            <div class="calc-fields" data-shape-fields="tube" hidden>
+              <label><span data-i18n="s511">Outer diameter (mm)</span><input type="number" data-dim="outer" min="0" step="any" inputmode="decimal" placeholder="50"></label>
+              <label><span data-i18n="s512">Wall thickness (mm)</span><input type="number" data-dim="wall" min="0" step="any" inputmode="decimal" placeholder="3"></label>
+              <label><span data-i18n="s507">Length (mm)</span><input type="number" data-dim="length" min="0" step="any" inputmode="decimal" placeholder="1000"></label>
+            </div>
+            <div class="calc-meta">
+              <label><span data-i18n="s513">Grade / density</span>
+                <select id="calcGrade">
+                  <option value="4.51" data-i18n="s514">Commercially pure Ti (Gr.1 / Gr.2) — 4.51 g/cm³</option>
+                  <option value="4.43" data-i18n="s515">Ti-6Al-4V (Gr.5) — 4.43 g/cm³</option>
+                </select>
+              </label>
+              <label><span data-i18n="s516">Quantity (pcs)</span>
+                <input type="number" id="calcQty" min="1" step="1" inputmode="numeric" value="1">
+              </label>
+            </div>
+            <div class="calc-results" aria-live="polite">
+              <div><span data-i18n="s517">Weight per piece</span><strong><bdi id="calcPiece">—</bdi> <span dir="ltr">kg</span></strong></div>
+              <div><span data-i18n="s518">Total weight</span><strong><bdi id="calcTotal">—</bdi> <span dir="ltr">kg</span></strong></div>
+            </div>
+            <p class="calc-disclaimer" data-i18n="s519">Indicative only; final weight depends on actual tolerances and density.</p>
+          </div>
+          <div class="resource-cards">
+            <h3 data-i18n="s485"><span data-i18n="s485">Related technical guides</span></h3>
+            <a class="resource-card" href="/titanium-grade-guide">
+              <span class="resource-tag" data-i18n="s465">Grades</span>
+              <strong data-i18n="s457"><span data-i18n="s457">Titanium grades explained: ASTM, GB and AMS equivalents</span></strong>
+              <span class="resource-more" data-i18n="s464">Read the guide</span>
+            </a>
+            <a class="resource-card" href="/titanium-corrosion-guide">
+              <span class="resource-tag" data-i18n="s466">Corrosion</span>
+              <strong data-i18n="s459"><span data-i18n="s459">Titanium corrosion resistance by medium</span></strong>
+              <span class="resource-more" data-i18n="s464">Read the guide</span>
+            </a>
+            <a class="resource-card" href="/titanium-specification-guide">
+              <span class="resource-tag" data-i18n="s467">Purchasing</span>
+              <strong data-i18n="s461"><span data-i18n="s461">Specifying titanium: certificates, tolerances and testing</span></strong>
+              <span class="resource-more" data-i18n="s464">Read the guide</span>
+            </a>
+            <a class="resource-all" href="/resources"><span data-i18n="s453">Resources</span> &rarr;</a>
+          </div>
         </div>
       </div>
     </section>
@@ -563,7 +618,7 @@
     </div>
   </dialog>
 
-    <script src="hitech.min.js?v=20261119c"></script>
-  <script src="app.min.js?v=20261119c"></script>
+    <script src="hitech.min.js?v=20261119f"></script>
+  <script src="app.min.js?v=20261119f"></script>
 </body>
 </html>

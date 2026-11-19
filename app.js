@@ -872,6 +872,70 @@ form: { title: "Anfrage senden", note: "Bitte zuerst die mit * markierten Felder
     });
   }
 
+
+  /* ================= 钛材重量计算器 ================= */
+  (function () {
+    const root = document.getElementById("weightCalculator");
+    if (!root) return;
+    const tabs = Array.prototype.slice.call(root.querySelectorAll(".calc-tab"));
+    const fieldSets = Array.prototype.slice.call(root.querySelectorAll("[data-shape-fields]"));
+    const grade = root.querySelector("#calcGrade");
+    const qtyEl = root.querySelector("#calcQty");
+    const outPiece = root.querySelector("#calcPiece");
+    const outTotal = root.querySelector("#calcTotal");
+    if (!grade || !qtyEl || !outPiece || !outTotal) return;
+
+    function val(dim) {
+      const fs = fieldSets.filter(function (f) { return !f.hidden; })[0] || fieldSets[0];
+      const el = fs ? fs.querySelector('[data-dim="' + dim + '"]') : null;
+      const n = el ? parseFloat(el.value) : 0;
+      return isFinite(n) && n > 0 ? n : 0;
+    }
+    function fmt(v) {
+      if (!isFinite(v)) return "—";
+      return v < 1 ? v.toFixed(3) : v < 100 ? v.toFixed(2) : v.toFixed(1);
+    }
+    function calc() {
+      const active = root.querySelector(".calc-tab.is-active");
+      const shape = active ? active.dataset.shape : "plate";
+      const density = parseFloat(grade.value) || 4.51;
+      const qty = Math.max(1, Math.floor(parseInt(qtyEl.value, 10) || 1));
+      let vol = 0; // mm3
+      if (shape === "plate") {
+        vol = val("length") * val("width") * val("thickness");
+      } else if (shape === "bar") {
+        const d = val("diameter");
+        vol = Math.PI * (d / 2) * (d / 2) * val("length");
+      } else if (shape === "tube") {
+        const od = val("outer");
+        const id = od - 2 * val("wall");
+        if (od > 0 && id > 0) vol = Math.PI / 4 * (od * od - id * id) * val("length");
+      }
+      const kg = vol / 1000 * density / 1000; // mm3 -> cm3 -> g -> kg
+      outPiece.textContent = fmt(kg);
+      outTotal.textContent = fmt(kg * qty);
+    }
+    tabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        tabs.forEach(function (t) {
+          t.classList.remove("is-active");
+          t.setAttribute("aria-selected", "false");
+        });
+        tab.classList.add("is-active");
+        tab.setAttribute("aria-selected", "true");
+        fieldSets.forEach(function (fs) {
+          fs.hidden = fs.getAttribute("data-shape-fields") !== tab.dataset.shape;
+        });
+        calc();
+      });
+    });
+    Array.prototype.slice.call(root.querySelectorAll("input, select")).forEach(function (el) {
+      el.addEventListener("input", calc);
+      el.addEventListener("change", calc);
+    });
+    calc();
+  })();
+
   /* ================= 页脚年份 ================= */
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
