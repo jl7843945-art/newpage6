@@ -7,7 +7,6 @@
   <meta name="theme-color" content="#0A1A3A">
   <meta name="google-site-verification" content="FFXqK-egAdiNEb2clBwxHOXNlUtPSYj9Rt7lxtwyHtg">
   <meta name="robots" content="index,follow">
-  <link rel="preload" as="image" href="/assets/space-battleship-hero.webp" type="image/webp" fetchpriority="high">
   <title>ALLOYTI｜钛及钛合金采购、供应与技术支持</title>
   <link rel="icon" type="image/png" href="/assets/favicon-64.png">
   <link rel="stylesheet" href="/styles.min.css?v=20261119j">
@@ -202,7 +201,6 @@
     <!-- HERO -->
     <section class="hero" id="home" aria-label="Hero">
       <div class="hero-bg" aria-hidden="true">
-        <img src="/assets/space-battleship-hero.webp" alt="" width="1536" height="962" fetchpriority="high">
         <img class="scene-ghost scene-ghost-1" src="/assets/app-chemical.webp" alt="" width="512" height="512">
         <img class="scene-ghost scene-ghost-2" src="/assets/app-aerospace.webp" alt="" width="512" height="512">
         <img class="scene-ghost scene-ghost-3" src="/assets/app-marine.webp" alt="" width="512" height="512">
@@ -210,14 +208,27 @@
         <canvas class="mesh-canvas" id="meshCanvas" width="749" height="1042" style="width: 749px; height: 1042.23px;"></canvas>
         <div class="hero-overlay"></div>
       </div>
-          <div class="hero-media" aria-hidden="true">
-      <video class="hero-slide hero-slide-video" autoplay muted loop playsinline preload="metadata" poster="/assets/hero-factory-poster.jpg">
-        <source src="/assets/hero-factory.mp4" type="video/mp4">
+    <div class="hero-media" aria-hidden="true">
+      <video id="heroFactoryVideo" class="hero-slide hero-slide-video" muted loop playsinline preload="none" poster="/assets/hero-factory-poster.webp">
+        <source data-src="/assets/hero-factory-lite.mp4" type="video/mp4">
       </video>
-      <img class="hero-slide" src="/assets/hero-factory-tubes.jpg" alt="" width="1706" height="1279" fetchpriority="high">
-      <img class="hero-slide" src="/assets/hero-factory-machines.jpg" alt="" width="1279" height="1706">
-      <img class="hero-slide" src="/assets/hero-factory-crates.jpg" alt="" width="1706" height="1279">
+      <img class="hero-slide" src="/assets/hero-factory-tubes.webp" alt="" width="1280" height="960">
+      <img class="hero-slide" src="/assets/hero-factory-machines.webp" alt="" width="960" height="1280">
+      <img class="hero-slide" src="/assets/hero-factory-crates.webp" alt="" width="1280" height="960">
     </div>
+    <script>
+    (function(){
+      if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var v = document.getElementById('heroFactoryVideo'); if (!v) return;
+      function start(){
+        var s = v.querySelector('source[data-src]');
+        if (s && !s.getAttribute('src')) { s.setAttribute('src', s.getAttribute('data-src')); v.load(); }
+        var p = v.play(); if (p && p.catch) p.catch(function(){});
+      }
+      if ('requestIdleCallback' in window) requestIdleCallback(start, {timeout: 1200});
+      else window.addEventListener('load', function(){ setTimeout(start, 300); });
+    })();
+    </script>
       <div class="hero-grid container">
         <div class="hero-copy">
           <p class="kicker" data-i18n="s100">钛材 · 板材 · 棒材 · 管材 · 锻件</p>
