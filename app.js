@@ -326,7 +326,7 @@ form: { title: "Anfrage senden", note: "Bitte zuerst die mit * markierten Felder
     { key: "heat", code: "P·05", img: "assets/factory-heat-treatment.webp" }
   ];
 
-  const METRIC_NUMS = [5, 7, 3, 24];
+  const METRIC_NUMS = [6, 7, 3, 24];
 
   /* ================= 渲染函数 ================= */
   function renderProducts() {
