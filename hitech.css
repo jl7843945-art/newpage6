@@ -678,3 +678,23 @@ h1,h2,h3{color:var(--ink)!important}
 [dir="rtl"] .hero-media::after{background:linear-gradient(270deg,rgba(6,20,42,.95) 0%,rgba(6,20,42,.88) 28%,rgba(6,20,42,.55) 56%,rgba(6,20,42,.22) 100%)}
 .hero-scenes,.hero-band{position:relative;z-index:1}
 @media(prefers-reduced-motion:reduce){.hero-media .hero-slide{animation:none!important;opacity:0!important}.hero-media .hero-slide:nth-child(2){opacity:1!important}.hero-media .hero-slide-video{display:none!important}}
+
+
+/* IN STOCK SECTION v1 — 首页现货/快发板块 */
+.stock-section{padding:72px 0;background:#f8fafc;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0}
+.stock-section .section-heading{margin-bottom:28px}
+.stock-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.stock-card{background:#fff;border:1px solid #dfe7ec;border-radius:12px;padding:22px;box-shadow:0 4px 16px -10px rgba(10,31,60,.16)}
+.stock-badge{display:inline-flex;align-items:center;gap:7px;padding:4px 10px;border-radius:999px;background:#eaf4fb;color:#0a6c7d;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.stock-badge::before{content:"";width:6px;height:6px;border-radius:50%;background:#1d9d74;flex:0 0 auto}
+.stock-card h3{font-size:1.05rem;line-height:1.35;margin:14px 0 8px;color:#0a1f3c}
+.stock-card p{margin:0;color:#5b7386;font-size:14px;line-height:1.6}
+.stock-meta{margin-top:16px;padding-top:12px;border-top:1px solid #e8eef3;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.stock-meta span{font-size:12px;color:#5b6b7f}
+.stock-meta b{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;color:#0a6c7d}
+.stock-foot{margin-top:20px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;padding:18px 20px;background:#fff;border:1px solid #dfe7ec;border-radius:10px}
+.stock-foot p{margin:0;color:#5b6b7f;font-size:13px;line-height:1.65;max-width:780px}
+.stock-foot .button-link{white-space:nowrap}
+.stock-arrow{display:inline-block}
+[dir="rtl"] .stock-arrow{transform:scaleX(-1)}
+@media(max-width:640px){.stock-section{padding:56px 0}.stock-foot{align-items:flex-start;flex-direction:column}}
