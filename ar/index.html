@@ -9,7 +9,8 @@
   <meta name="robots" content="index,follow">
   <title>ALLOYTI｜توريد التيتانيوم وسبائكه</title>
   <link rel="icon" type="image/png" href="/assets/favicon-64.png">
-  <link rel="stylesheet" href="/styles.min.css?v=20261121a">
+  <link rel="preload" as="image" href="/assets/hero-factory-poster.webp" fetchpriority="high">
+    <link rel="stylesheet" href="/styles.min.css?v=20261121a">
   <link rel="stylesheet" href="/hitech.min.css?v=20261121a">
   <link rel="stylesheet" href="/assets/cert-icons.css?v=20261119h">
   <link rel="canonical" href="https://www.alloyti.com/ar/">
@@ -158,7 +159,7 @@
       <span data-i18n="s486">تحتاج عرض سعر سريع؟</span>
       <div class="quickbar-contact">
         <span data-i18n="s487">اتصل / واتساب</span>
-        <a href="https://wa.me/8618523283306" target="_blank" rel="noopener noreferrer">+86 185 2328 3306</a>
+        <a href="tel:+8618523283306">+86 185 2328 3306</a>
         <span data-i18n="s529">البريد الإلكتروني</span>
         <a class="quickbar-email" href="mailto:sales@alloyti.com">sales@alloyti.com</a>
         <a class="quickbar-cta" href="/ar/contact" data-i18n="s488">اطلب عرض سعر</a>
@@ -209,28 +210,39 @@
         <canvas class="mesh-canvas" id="meshCanvas" width="749" height="1042" style="width: 749px; height: 1042.23px;"></canvas>
         <div class="hero-overlay"></div>
       </div>
+
     <div class="hero-media" aria-hidden="true">
-      <video id="heroFactoryVideo" class="hero-slide hero-slide-video" muted="" loop="" playsinline="" preload="none" poster="/assets/hero-factory-poster.webp">
-        <source data-src="/assets/hero-factory-lite.mp4" type="video/mp4" src="/assets/hero-factory-lite.mp4">
+      <video id="heroFactoryVideo" class="hero-slide hero-slide-video" muted loop playsinline preload="none" poster="/assets/hero-factory-poster.webp">
+        <source data-src="/assets/hero-factory-lite.mp4" type="video/mp4">
       </video>
-      <img class="hero-slide" src="/assets/hero-factory-tubes.webp" alt="" width="1280" height="960">
-      <img class="hero-slide" src="/assets/hero-factory-machines.webp" alt="" width="960" height="1280">
-      <img class="hero-slide" src="/assets/hero-factory-crates.webp" alt="" width="1280" height="960">
+      <img class="hero-slide hero-lazy" data-src="/assets/hero-factory-tubes.webp" alt="" width="1280" height="960">
+      <img class="hero-slide hero-lazy" data-src="/assets/hero-factory-machines.webp" alt="" width="960" height="1280">
+      <img class="hero-slide hero-lazy" data-src="/assets/hero-factory-crates.webp" alt="" width="1280" height="960">
     </div>
     <script>
     (function(){
-      if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      var v = document.getElementById('heroFactoryVideo'); if (!v) return;
-      function start(){
+      var media = document.querySelector('.hero-media'); if (!media) return;
+      var v = document.getElementById('heroFactoryVideo');
+      var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var isMobile = window.matchMedia && matchMedia('(max-width: 767px)').matches;
+      function loadSlides(){
+        var imgs = media.querySelectorAll('img.hero-lazy[data-src]');
+        for (var i=0;i<imgs.length;i++){ var im=imgs[i]; im.src = im.getAttribute('data-src'); }
+      }
+      function loadVideo(){
+        if (!v || reduce || isMobile) return;
         var s = v.querySelector('source[data-src]');
         if (s && !s.getAttribute('src')) { s.setAttribute('src', s.getAttribute('data-src')); v.load(); }
         var p = v.play(); if (p && p.catch) p.catch(function(){});
       }
-      if ('requestIdleCallback' in window) requestIdleCallback(start, {timeout: 1200});
+      function start(){ loadSlides(); loadVideo(); }
+      if (reduce) loadSlides();
+      if ('requestIdleCallback' in window) requestIdleCallback(start, {timeout: 1500});
       else window.addEventListener('load', function(){ setTimeout(start, 300); });
     })();
     </script>
-      <div class="hero-grid container">
+
+    <div class="hero-grid container">
         <div class="hero-copy">
           <p class="kicker" data-i18n="s100">تيتانيوم · ألواح · قضبان · أنابيب · مطروقات</p>
           <p class="hero-region" data-i18n="s101">★ نصدّر إلى أمريكا الشمالية وأوروبا والشرق الأوسط وجنوب شرق آسيا</p>
