@@ -50,6 +50,42 @@ const MAX_MSGS = 8;
 const MAX_CHARS = 500;
 const MAX_TOTAL = 2400;
 
+// 轻量按 IP 限流（best-effort：Worker isolate 内内存，跨 isolate 不共享，仅挡随手刷）
+const RATE_WINDOW_MS = 60 * 1000;
+const RATE_MAX = 20;
+const rateBucket = new Map();
+
+function rateLimited(ip) {
+  const now = Date.now();
+  const rec = rateBucket.get(ip);
+  if (!rec || now - rec.start > RATE_WINDOW_MS) {
+    rateBucket.set(ip, { start: now, count: 1 });
+    if (rateBucket.size > 500) rateBucket.clear(); // 防止内存无限增长
+    return false;
+  }
+  rec.count += 1;
+  return rec.count > RATE_MAX;
+}
+
+function aiReady(env) {
+  return !!(env && env.AI && typeof env.AI.run === "function");
+}
+
+/* 模型输出合规自检：只拦明确的「自称制造商/自有工厂/自有证书」肯定句，
+   否定句（如 "we are NOT a manufacturer"）放行，避免误伤正确答案。 */
+const NONCOMPLIANT = [
+  /\bwe\s+are\s+(?:a|the)\s+(?:manufacturer|factory|producer)\b/i,
+  /\bour\s+(?:own\s+)?(?:factory|mill|production\s+line)\b/i,
+  /\bwe\s+(?:are|have\s+been)\s+(?:iso|as9100|ped)[\s-]?(?:9001|certified)?\b/i,
+  /\bwe\s+(?:own|hold|possess)\s+(?:an?\s+)?(?:certificate|certification|iso|as9100|ped)\b/i,
+  /\bwe\s+are\s+(?:an?\s+)?(?:iso\s?9001|as9100|ped)[\s-]?certified\b/i,
+  /\bwe\s+are\s+certified\s+to\s+(?:iso|as9100|ped)\b/i,
+];
+
+function isNoncompliant(text) {
+  return NONCOMPLIANT.some((re) => re.test(text));
+}
+
 export async function onRequestPost(context) {
   const { request, env } = context;
 
@@ -62,6 +98,10 @@ export async function onRequestPost(context) {
 
   // 蜜罐：机器人填了就当作成功，静默丢弃
   if (body && body.website) return json({ ok: true });
+
+  // 轻量限流（best-effort）
+  const ip = (request.headers.get("CF-Connecting-IP") || request.headers.get("x-forwarded-for") || "unknown").slice(0, 80);
+  if (rateLimited(ip)) return json({ ok: false, error: "rate_limited" }, 429);
 
   const raw = Array.isArray(body && body.messages) ? body.messages : [];
   if (!raw.length) return json({ ok: false, error: "empty" }, 400);
@@ -78,7 +118,7 @@ export async function onRequestPost(context) {
   }
 
   // AI binding 未配置 -> 明确的降级信号，前端引导人工渠道
-  if (!env || !env.AI || typeof env.AI.run !== "function") {
+  if (!aiReady(env)) {
     return json({ ok: false, error: "not_configured", build: BUILD }, 503);
   }
 
@@ -92,9 +132,18 @@ export async function onRequestPost(context) {
         max_tokens: 420,
         temperature: 0.5,
       });
-      const text = extractText(result);
-      if (text && text.trim()) {
-        return json({ ok: true, reply: text.trim().slice(0, 1600), model, build: BUILD });
+      const text = extractText(result).trim();
+      if (text) {
+        // 合规自检：命中「自称制造商/自有工厂/自有证书」则用受控答复替换
+        if (isNoncompliant(text)) {
+          return json({
+            ok: false,
+            error: "noncompliant",
+            safe: "ALLOYTI is an independent sourcing and export partner working with partner mills — we are not the factory and do not hold certificates ourselves. Availability is confirmed per order.",
+            model, build: BUILD,
+          });
+        }
+        return json({ ok: true, reply: text.slice(0, 1600), model, build: BUILD });
       }
       lastErr = "empty_result";
     } catch (e) {
@@ -107,12 +156,12 @@ export async function onRequestPost(context) {
   return json({ ok: false, error: "model_unavailable", detail: lastErr.slice(0, 120), build: BUILD }, 502);
 }
 
-export async function onRequestGet() {
+export async function onRequestGet(context) {
   return json({
     ok: false,
     error: "method_not_allowed",
     build: BUILD,
-    ai_ready: false, // 不泄露绑定细节；仅作存活探测
+    ai_ready: aiReady(context && context.env), // 真实反映 AI binding 是否已绑定，便于诊断
   }, 405);
 }
 
