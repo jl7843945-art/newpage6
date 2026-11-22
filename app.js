@@ -48,7 +48,8 @@
         discs: { title: "饼环件库房", desc: "钛饼、钛环批量仓储，规格齐全、库存可查。" },
         inspect: { title: "尺寸检测", desc: "管棒逐支测量直径与公差，出货前逐项核对。" },
         lathe: { title: "车削加工", desc: "按图纸车加工棒材与锻件，表面光洁度与公差可控。" },
-        heat: { title: "热处理设备", desc: "加热与处理产线，保障材料组织与性能状态。" }
+        heat: { title: "热处理设备", desc: "加热与处理产线，保障材料组织与性能状态。" },
+        packing: { title: "出口包装", desc: "按订单完成木箱包装与标识，货件分区待发运。" }
       } },
       about: { title: "专注钛及钛合金的<br>采购、供应与技术支持。", p: "在航空航天、海洋工程、医疗与新能源领域，钛合金集强度、耐蚀、轻量化与生物相容性于一身。ALLOYTI 专注钛及钛合金的采购、供应与技术支持，覆盖 TA1、TC4、TA15 等主流牌号，提供板材、棒材、管材及精密锻件一站式解决方案，符合 ASTM、GB、AMS 等国内外标准。产品远销北美、欧洲、中东及东南亚。我们不只供材料，更提供选型建议、工艺支持与快速响应。", link: "启动一次项目沟通", points: [
         { t: "按订单确认规格", d: "牌号、标准、尺寸与文件要求在订单前逐项确认。" },
@@ -88,7 +89,8 @@ form: { title: "发送询价需求", note: "先填写带 * 的必填项即可，
         discs: { title: "디스크·링 재고", desc: "티타늄 디스크와 링을 규격별로 보관하며 재고 확인이 가능합니다." },
         inspect: { title: "치수 검사", desc: "봉재와 관재를 개별 측정하여 출하 전 항목별로 확인합니다." },
         lathe: { title: "선삭 가공", desc: "도면에 따라 봉재와 단조품을 선삭하며 표면 조도와 공차를 관리합니다." },
-        heat: { title: "열처리 설비", desc: "가열 및 열처리 라인으로 소재 조직과 성능 상태를 확보합니다." }
+        heat: { title: "열처리 설비", desc: "가열 및 열처리 라인으로 소재 조직과 성능 상태를 확보합니다." },
+        packing: { title: "수출 포장", desc: "주문에 따라 목재 상자를 포장하고 표시한 뒤 출하를 준비합니다." }
       } },
       about: { title: "티타늄 및 티타늄 합금:<br>소싱, 공급 및 기술 지원.", p: "항공우주, 해양 엔지니어링, 의료, 신에너지 분야에서 티타늄 합금은 강도, 내식성, 경량성, 생체 적합성을 결합합니다. ALLOYTI는 티타늄 및 티타늄 합금의 소싱, 공급, 기술 지원에 집중하며 TA1, TC4(Gr.5), TA15 등 주요 등급을 ASTM, GB, AMS 규격의 판재, 봉재, 관재, 정밀 단조품 원스톱 솔루션으로 공급합니다. 제품은 북미, 유럽, 중동, 동남아시아로 수출됩니다. 소재만 공급하는 것이 아니라 등급 선정 자문, 공정 지원, 신속한 대응을 제공합니다.", link: "프로젝트 상담 시작", points: [
         { t: "주문별 사양 확정", d: "등급, 규격, 치수, 서류 요구사항을 주문 전에 항목별로 확인합니다." },
@@ -128,7 +130,8 @@ form: { title: "문의 보내기", note: "필수 항목(*)만 작성해 주세�
         discs: { title: "Disc & Ring Inventory", desc: "Bulk storage of titanium discs and rings — wide size range, stock available." },
         inspect: { title: "Dimensional Inspection", desc: "Each bar and tube measured for diameter and tolerance before shipment." },
         lathe: { title: "Turning & Machining", desc: "Lathe machining of bars and forgings to drawing, with controlled finish and tolerance." },
-        heat: { title: "Heat Treatment", desc: "Heating and treatment lines ensure the required microstructure and delivery condition." }
+        heat: { title: "Heat Treatment", desc: "Heating and treatment lines ensure the required microstructure and delivery condition." },
+        packing: { title: "Export Packing", desc: "Wooden crates are packed and marked to order, then staged for shipment." }
       } },
       about: { title: "Titanium &amp; titanium alloys:<br>sourcing, supply and technical support.", p: "Across aerospace, marine engineering, medical and new-energy applications, titanium alloys combine strength, corrosion resistance, light weight and biocompatibility. ALLOYTI focuses on the sourcing, supply and technical support of titanium and titanium alloys, covering mainstream grades such as TA1, TC4 and TA15, and delivers one-stop solutions in plate, bar, tube and precision forgings to ASTM, GB and AMS standards. Our products are exported to North America, Europe, the Middle East and Southeast Asia. We supply more than material — we provide grade selection advice, process support and fast response.", link: "Start a project conversation", points: [
         { t: "Specs confirmed per order", d: "Grades, standards, dimensions and document needs are confirmed item by item before ordering." },
@@ -168,7 +171,8 @@ form: { title: "Send an enquiry", note: "Fill in the essentials marked with * �
         discs: { title: "مخزون الأقراص والحلقات", desc: "تخزين بالجملة لأقراص وحلقات التيتانيوم — مقاسات واسعة ومخزون جاهز." },
         inspect: { title: "فحص الأبعاد", desc: "قياس كل قضيب وأنبوب للقطر والتفاوت قبل الشحن." },
         lathe: { title: "الخراطة والتشغيل", desc: "تشغيل القضبان والمطروقات وفق الرسومات بسطح وتفاوت مضبوطين." },
-        heat: { title: "المعالجة الحرارية", desc: "خطوط التسخين والمعالجة تضمن البنية والأداء المطلوبين للمادة." }
+        heat: { title: "المعالجة الحرارية", desc: "خطوط التسخين والمعالجة تضمن البنية والأداء المطلوبين للمادة." },
+        packing: { title: "تعبئة التصدير", desc: "تُجهَّز الصناديق الخشبية وتُوسَم حسب الطلب، ثم تُعدّ للشحن." }
       } },
       about: { title: "التيتانيوم وسبائكه:<br>التوريد والإمداد والدعم الفني.", p: "في قطاعات الطيران والفضاء والهندسة البحرية والطب والطاقة الجديدة، تجمع سبائك التيتانيوم بين القوة ومقاومة التآكل وخفة الوزن والتوافق الحيوي. تركّز ALLOYTI على توريد ودعم التيتانيوم وسبائكه، وتغطي الدرجات الرئيسية مثل TA1 وTC4 وTA15، وتقدّم حلولاً متكاملة من الألواح والقضبان والأنابيب والمطروقات الدقيقة وفق معايير ASTM وGB وAMS. تُصدَّر منتجاتنا إلى أمريكا الشمالية وأوروبا والشرق الأوسط وجنوب شرق آسيا. نحن لا نورّد المادة فحسب، بل نقدّم مشورة اختيار الدرجة ودعمًا فنيًا واستجابة سريعة.", link: "ابدأ محادثة مشروع", points: [
         { t: "مواصفات مؤكدة لكل طلب", d: "تُؤكد الدرجات والمعايير والأبعاد ومتطلبات المستندات بندًا بندًا قبل الطلب." },
@@ -208,7 +212,8 @@ form: { title: "إرسال طلب عرض سعر", note: "املأ الحقول �
         discs: { title: "Склад дисков и колец", desc: "Массовое хранение титановых дисков и колец — широкий размерный ряд, товарные запасы." },
         inspect: { title: "Контроль размеров", desc: "Каждый пруток и труба измеряются по диаметру и допускам перед отгрузкой." },
         lathe: { title: "Токарная обработка", desc: "Обработка прутков и поковок по чертежам с контролем чистоты и допусков." },
-        heat: { title: "Термообработка", desc: "Линии нагрева и обработки обеспечивают требуемую структуру и свойства материала." }
+        heat: { title: "Термообработка", desc: "Линии нагрева и обработки обеспечивают требуемую структуру и свойства материала." },
+        packing: { title: "Экспортная упаковка", desc: "Деревянные ящики упаковываются и маркируются по заказу, затем подготавливаются к отгрузке." }
       } },
       about: { title: "Титан и титановые сплавы:<br>закупка, поставка и техническая поддержка.", p: "В авиации и космосе, морской технике, медицине и новой энергетике титановые сплавы сочетают прочность, коррозионную стойкость, малый вес и биосовместимость. ALLOYTI специализируется на закупке, поставке и технической поддержке титана и его сплавов, охватывая основные марки TA1, TC4 и TA15, и поставляет комплексные решения — листы, прутки, трубы и точные поковки — по стандартам ASTM, GB и AMS. Продукция экспортируется в Северную Америку, Европу, на Ближний Восток и в Юго-Восточную Азию. Мы поставляем не только материал, но и рекомендации по выбору марок, технологическую поддержку и быстрый отклик.", link: "Обсудить проект", points: [
         { t: "Спецификации по заказу", d: "Марки, стандарты, размеры и документы согласуются по пунктам до заказа." },
@@ -248,7 +253,8 @@ form: { title: "Отправить запрос", note: "Заполните по
         discs: { title: "Scheiben- & Ringlager", desc: "Massenlagerung von Titanscheiben und -ringen — viele Maße, Lagerbestand verfügbar." },
         inspect: { title: "Maßprüfung", desc: "Jede Stange und jedes Rohr wird vor dem Versand auf Durchmesser und Toleranz geprüft." },
         lathe: { title: "Drehbearbeitung", desc: "Drehen von Stangen und Schmiedeteilen nach Zeichnung mit kontrollierter Oberfläche und Toleranz." },
-        heat: { title: "Wärmebehandlung", desc: "Heiz- und Behandlungslinien sichern das erforderliche Gefüge und den Lieferzustand." }
+        heat: { title: "Wärmebehandlung", desc: "Heiz- und Behandlungslinien sichern das erforderliche Gefüge und den Lieferzustand." },
+        packing: { title: "Exportverpackung", desc: "Holzkisten werden auftragsgerecht gepackt und gekennzeichnet und für den Versand vorbereitet." }
       } },
       about: { title: "Titan und Titanlegierungen:<br>Beschaffung, Lieferung und technische Unterstützung.", p: "In Luft- und Raumfahrt, Meerestechnik, Medizintechnik und neuer Energietechnik vereinen Titanlegierungen Festigkeit, Korrosionsbeständigkeit, geringes Gewicht und Biokompatibilität. ALLOYTI konzentriert sich auf Beschaffung, Lieferung und technische Unterstützung von Titan und Titanlegierungen, deckt die gängigen Güten TA1, TC4 und TA15 ab und liefert Komplettlösungen aus Blech, Stangen, Rohren und Präzisionsschmiedestücken nach ASTM, GB und AMS. Unsere Produkte werden nach Nordamerika, Europa, in den Nahen Osten und nach Südostasien exportiert. Wir liefern nicht nur Material, sondern auch Auslegungsberatung, verfahrenstechnische Unterstützung und schnelle Reaktion.", link: "Projektgespräch starten", points: [
         { t: "Spezifikationen je Auftrag", d: "Güten, Normen, Maße und Dokumente werden vor Bestellung einzeln bestätigt." },
@@ -323,7 +329,8 @@ form: { title: "Anfrage senden", note: "Bitte zuerst die mit * markierten Felder
     { key: "discs", code: "P·02", img: "assets/factory-disc-warehouse.webp" },
     { key: "inspect", code: "P·03", img: "assets/factory-inspection.webp" },
     { key: "lathe", code: "P·04", img: "assets/factory-lathe.webp" },
-    { key: "heat", code: "P·05", img: "assets/factory-heat-treatment.webp" }
+    { key: "heat", code: "P·05", img: "assets/factory-heat-treatment.webp" },
+    { key: "packing", code: "P·06", img: "assets/factory-packing.webp" }
   ];
 
   const METRIC_NUMS = [6, 7, 3, 24];
