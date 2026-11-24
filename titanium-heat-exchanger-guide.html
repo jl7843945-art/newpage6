@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- 语言由 URL 决定：英文在根路径，其余语言是 /zh/ /ar/ /ru/ /de 独立静态页。
+       旧链接 /path?lang=zh 在这里直接跳转到对应语言页，避免 ?lang= 变体被重复收录。 -->
+  <script>
+  (function () {
+    var h = document.documentElement;
+    if (h.getAttribute("data-static-lang")) return;
+    if (/[?&]gen=1/.test(location.search)) {
+      // 构建期渲染译文：临时加载对应语言包，供生成静态语言页使用
+      var g = new URLSearchParams(location.search).get("lang");
+      if (g && /^(zh|ko|ar|ru|de)$/.test(g)) document.write('<script src="/i18n/' + g + '.js?v=20261124a"><\/script>');
+      return;
+    }
+    try {
+      var q = new URLSearchParams(location.search).get("lang");
+      if (q && /^(zh|ko|ar|ru|de)$/.test(q)) {
+        location.replace("/" + q + (location.pathname === "/" ? "/" : location.pathname));
+      }
+    } catch (e) {}
+  })();
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Titanium Heat Exchanger Tubes: Grade, Wall and Ends | ALLOYTI</title>
+  <meta name="description" content="A practical guide to specifying titanium condenser and heat exchanger tubes: ASTM B338/B338M, seamless or welded, wall thickness, tube-sheet joints, inspection and documents confirmed per order.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0A1A3A">
+  <link rel="canonical" href="https://www.alloyti.com/titanium-heat-exchanger-guide">
+  <link rel="alternate" hreflang="en" href="https://www.alloyti.com/titanium-heat-exchanger-guide">
+  <link rel="alternate" hreflang="zh" href="https://www.alloyti.com/zh/titanium-heat-exchanger-guide">
+  <link rel="alternate" hreflang="ar" href="https://www.alloyti.com/ar/titanium-heat-exchanger-guide">
+  <link rel="alternate" hreflang="ru" href="https://www.alloyti.com/ru/titanium-heat-exchanger-guide">
+  <link rel="alternate" hreflang="de" href="https://www.alloyti.com/de/titanium-heat-exchanger-guide">
+  <link rel="alternate" hreflang="ko" href="https://www.alloyti.com/ko/titanium-heat-exchanger-guide">
+  <link rel="alternate" hreflang="x-default" href="https://www.alloyti.com/titanium-heat-exchanger-guide">
+  <link rel="icon" type="image/png" href="assets/favicon-64.png">
+  <link rel="stylesheet" href="styles.min.css?v=20261124a">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="ALLOYTI">
+  <meta property="og:title" content="Titanium Heat Exchanger Tubes: Grade, Wall and Ends | ALLOYTI">
+  <meta property="og:description" content="A practical guide to specifying titanium condenser and heat exchanger tubes: ASTM B338/B338M, seamless or welded, wall thickness, tube-sheet joints, inspection and documents confirmed per order.">
+  <meta property="og:url" content="https://www.alloyti.com/titanium-heat-exchanger-guide">
+  <meta property="og:image" content="https://www.alloyti.com/assets/article-tube-hero.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Titanium mill products for industrial supply">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Titanium Heat Exchanger Tubes: Grade, Wall and Ends | ALLOYTI">
+  <meta name="twitter:description" content="A practical guide to specifying titanium condenser and heat exchanger tubes: ASTM B338/B338M, seamless or welded, wall thickness, tube-sheet joints, inspection and documents confirmed per order.">
+  <meta name="twitter:image" content="https://www.alloyti.com/assets/article-tube-hero.webp">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.alloyti.com/#organization",
+      "name": "ALLOYTI",
+      "url": "https://www.alloyti.com/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.alloyti.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Technical library",
+          "item": "https://www.alloyti.com/resources"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Heat exchanger tubes",
+          "item": "https://www.alloyti.com/titanium-heat-exchanger-guide"
+        }
+      ]
+    },
+    {
+      "@type": "TechArticle",
+      "headline": "Titanium Heat Exchanger Tubes: A Practical Specification Guide",
+      "description": "A practical guide to specifying titanium condenser and heat exchanger tubes: ASTM B338/B338M, seamless or welded, wall thickness, tube-sheet joints, inspection and documents confirmed per order.",
+      "inLanguage": "en",
+      "datePublished": "2026-11-24",
+      "dateModified": "2026-11-24",
+      "image": "https://www.alloyti.com/assets/article-tube-hero.webp",
+      "author": {
+        "@type": "Organization",
+        "name": "ALLOYTI"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ALLOYTI",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.alloyti.com/assets/logo-emblem.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.alloyti.com/titanium-heat-exchanger-guide"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body data-light-header="1">
+  <div class="quickbar" id="quickbar">
+    <div class="container">
+      <span data-i18n="s486">Need a fast quote?</span>
+      <div class="quickbar-contact">
+        <span data-i18n="s487">Call / WhatsApp</span>
+        <a href="tel:+8618523283306">+86 185 2328 3306</a>
+        <span data-i18n="s529">Email</span>
+        <a class="quickbar-email" href="mailto:sales@alloyti.com">sales@alloyti.com</a>
+        <a class="quickbar-cta" href="/contact" data-i18n="s488">Get a quote</a>
+      </div>
+    </div>
+  </div>
+  <header class="site-header scrolled" id="siteHeader">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="/" aria-label="ALLOYTI home">
+        <img class="brand-mark" src="assets/logo-emblem.webp" alt="ALLOYTI logo" width="36" height="36"> <span class="brand-word" data-i18n="s001">ALLOYTI</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="primaryNav" aria-label="Open navigation"><span></span><span></span><span></span></button>
+      <div class="nav-links" id="primaryNav">
+        <a href="/" data-i18n="nav.home"><span data-i18n="s004">Home</span></a>
+        <a href="/products" data-i18n="nav.products"><span data-i18n="s008">Products</span></a>
+        <a href="/about" data-i18n="nav.about"><span data-i18n="s023">About</span></a>
+        <a href="/quality" data-i18n="nav.quality"><span data-i18n="s043">Quality &amp; Service</span></a>
+        <a href="/faq" data-i18n="nav.faq"><span data-i18n="s010">FAQ</span></a>
+        <a href="/resources" class="is-active" data-i18n="s453"><span data-i18n="s453">Resources</span></a>
+        <a href="/contact" class="nav-contact" data-i18n="nav.contact"><span data-i18n="s012">Contact</span></a>        <div class="lang-switch" id="langSwitch">
+          <button class="lang-toggle" id="langToggle" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Switch language">
+            <svg class="lang-globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            <span class="lang-code" id="langCode">EN</span>
+            <svg class="lang-caret" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </button>
+          <ul class="lang-menu" id="langMenu" role="listbox" aria-label="Language">
+            <li role="option" data-lang="en" class="is-active" aria-selected="true"><span class="lc">EN</span><span class="ln">English</span></li>
+            <li role="option" data-lang="zh"><span class="lc">中文</span><span class="ln">简体中文</span></li>
+            <li role="option" data-lang="ar" dir="rtl"><span class="lc">AR</span><span class="ln">العربية</span></li>
+            <li role="option" data-lang="ru"><span class="lc">RU</span><span class="ln">Русский</span></li>
+            <li role="option" data-lang="de"><span class="lc">DE</span><span class="ln">Deutsch</span></li>
+            <li role="option" data-lang="ko"><span class="lc">한국</span><span class="ln">한국어</span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+    <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/resources">Technical library</a> › <span aria-current="page">Heat exchanger tubes</span></nav>
+        <h1>Titanium Heat Exchanger Tubes: A Practical Specification Guide</h1>
+        <p class="page-lead">A heat exchanger tube is a small part with a long list of decisions behind it. This guide walks through the choices that decide whether a titanium tube performs in service — the medium, the standard, the manufacturing route, the wall, the ends and the documents.</p>
+        <div class="article-meta">
+          <span>Tubes</span>
+          <span>11 min read</span>
+          <span>Updated November 2026</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="prose">
+          <figure class="article-figure">
+            <img src="/assets/article-tube-hero.webp" alt="Titanium tubes at a partner mill before cutting and shipment" width="1200" height="675" fetchpriority="high" decoding="async">
+            <figcaption>Titanium tube at a partner mill. Dimensions, condition and documents are confirmed per order.</figcaption>
+          </figure>
+          <p>Titanium tube is specified when chloride, seawater, process condensate or a oxidising acid environment makes copper alloy or stainless steel tube unreliable. The decision is rarely about the material alone: the grade, manufacturing route, wall thickness, end preparation and inspection scope all have to be written into the same order.</p>
+          <p>This guide is written for engineers and buyers who need to describe a tube clearly enough for a supplier to quote it — and clear enough that the delivered material can be checked against what was agreed.</p>
+
+          <div class="article-toc">
+            <p>In this guide</p>
+            <ol>
+              <li><a href="#service">Start with the service, not with the grade</a></li>
+              <li><a href="#standards">Standards and grades to name on the order</a></li>
+              <li><a href="#route">Seamless or welded tube</a></li>
+              <li><a href="#dimensions">Diameter, wall thickness and tolerance</a></li>
+              <li><a href="#ends">End preparation and the tube-to-tubesheet joint</a></li>
+              <li><a href="#inspection">Inspection, testing and documents</a></li>
+              <li><a href="#failure">Failure modes worth designing out</a></li>
+              <li><a href="#rfq">A shorter path from enquiry to quotation</a></li>
+            </ol>
+          </div>
+
+          <h2 id="service">Start with the service, not with the grade</h2>
+          <p>Titanium resists many chloride-bearing waters, seawater, wet chlorine and oxidising acids because of a thin, stable oxide film. That film is useful only when the chemistry supports it. Reducing acids, dry chlorine, high-temperature crevices and heavily fouled deposits need a separate corrosion review before the grade is fixed.</p>
+          <p>Write down the medium and concentration, continuous and peak temperature, pressure, flow velocity, cleaning method and whether the tube will be in a crevice or under deposit. A grade chosen without those values is a name, not a specification.</p>
+          <div class="callout">
+            <p><strong>Rule of thumb:</strong> if the medium is not fully understood, do not buy titanium tube on a grade name alone. Share the service conditions with your corrosion engineer and the supplier before committing to material.</p>
+          </div>
+          <figure class="article-figure">
+            <img src="/assets/factory-straightening.webp" alt="Straightening equipment for titanium bar and tube at a partner mill" width="1200" height="675" loading="lazy" decoding="async">
+            <figcaption>Straightening at a partner mill. Straightness and surface condition are confirmed against the order.</figcaption>
+          </figure>
+
+          <h2 id="standards">Standards and grades to name on the order</h2>
+          <p>ASTM B338/B338M is the common specification for seamless and welded titanium and titanium-alloy condenser and heat exchanger tubes. ASME SB338 is the code adoption used in many pressure-equipment projects. Enhanced-surface tubes, where the surface is cold-formed to improve heat transfer, are covered by ASTM B891/B891M; the two standards should not be mixed on one order without agreement.</p>
+          <table class="spec-table">
+            <caption>Name one base standard, and name any enhanced-surface requirement separately.</caption>
+            <thead><tr><th>Document</th><th>What it covers</th><th>When to name it</th></tr></thead>
+            <tbody>
+              <tr><td>ASTM B338/B338M</td><td>Seamless and welded titanium condenser and heat exchanger tube</td><td>Default specification for plain tube</td></tr>
+              <tr><td>ASME SB338</td><td>Code version used in ASME-governed work</td><td>When the project design code requires it</td></tr>
+              <tr><td>ASTM B891/B891M</td><td>Enhanced-surface tube with integral cold-formed surface</td><td>Only when enhanced surface is specified</td></tr>
+            </tbody>
+          </table>
+          <p>Grade 2 unalloyed titanium is the usual starting point for seawater and chloride service. Grade 1 offers lower strength but more formability; Grade 7 and Grade 12 are considered where crevice corrosion or specific reducing conditions are a concern; Grade 9 is an alloy option when higher strength is needed. Grade availability and exact chemistry follow the standard edition named on the order.</p>
+          <div class="callout">
+            <p><strong>Availability is confirmed per order.</strong> A grade being listed in a standard does not mean every diameter, wall and condition is available from every mill. Ask for the supply route before you promise a delivery date.</p>
+          </div>
+
+          <h2 id="route">Seamless or welded tube</h2>
+          <p>Both seamless and welded tube are covered by B338/B338M. The choice is driven by diameter, wall, length, quantity and inspection expectation — not by the assumption that one route is always better.</p>
+          <figure class="article-figure">
+            <img src="/assets/article-tube-forms.svg" alt="End-view comparison of seamless and welded titanium tube" width="1200" height="675" loading="lazy" decoding="async">
+            <figcaption>End-view schematic: 1 longitudinal weld seam on welded tube; 2 seamless tube has no weld line.</figcaption>
+          </figure>
+          <table class="spec-table">
+            <caption>Typical selection considerations; final route is confirmed with the supplier per order.</caption>
+            <thead><tr><th>Aspect</th><th>Seamless</th><th>Welded</th></tr></thead>
+            <tbody>
+              <tr><td>Forming route</td><td>Pierced and drawn without a longitudinal seam</td><td>Formed from strip and longitudinally welded</td></tr>
+              <tr><td>Diameter and wall</td><td>Common for smaller diameters and certain wall ranges</td><td>Common for larger diameters and thin-wall product</td></tr>
+              <tr><td>Inspection focus</td><td>General dimensional and surface checks</td><td>Weld seam integrity plus agreed nondestructive testing</td></tr>
+              <tr><td>Selection basis</td><td>Availability in the required size and condition</td><td>Weld quality, inspection scope and supply route</td></tr>
+            </tbody>
+          </table>
+          <p>For a welded tube, ask how the seam is inspected and what acceptance standard is used. For a seamless tube, ask about the piercing and drawing route and the delivery condition. In both cases, define what will be measured and documented instead of relying on the word 'seamless' or 'welded' alone.</p>
+
+          <h2 id="dimensions">Diameter, wall thickness and tolerance</h2>
+          <p>Tube orders fail on dimensions more often than on chemistry. Outside diameter and wall thickness control fit in the tube sheet, pressure capability and resistance to collapse during expansion. Length, straightness, ovality and end condition must be stated together.</p>
+          <table class="spec-table">
+            <caption>A dimensional line is complete only when the tolerance and measuring basis are also agreed.</caption>
+            <thead><tr><th>Item</th><th>What to specify</th><th>Why it matters</th></tr></thead>
+            <tbody>
+              <tr><td>Outside diameter</td><td>Nominal OD plus tolerance and measuring basis</td><td>Controls tube sheet hole and rolling fit</td></tr>
+              <tr><td>Wall thickness</td><td>Nominal or minimum wall plus tolerance</td><td>Affects pressure rating, expansion and service life</td></tr>
+              <tr><td>Length</td><td>Cut length, U-tube leg lengths or coil form</td><td>Drives nesting, transport and bending allowance</td></tr>
+              <tr><td>Straightness and ovality</td><td>Agreed limits over the full length</td><td>Affects insertion and support plate alignment</td></tr>
+              <tr><td>Surface</td><td>Pickled, annealed or other agreed finish</td><td>Affects inspection and handling before installation</td></tr>
+            </tbody>
+          </table>
+          <ul class="article-list">
+            <li>State whether wall thickness is nominal or minimum.</li>
+            <li>Confirm whether OD or ID governs the fit at the tube sheet.</li>
+            <li>For U-tubes, give bend radius and straight leg allowance.</li>
+            <li>Ask for the delivery condition: annealed, cold-worked or as agreed.</li>
+          </ul>
+          <div class="callout">
+            <p><strong>Do not treat wall thickness as a free parameter.</strong> A lighter wall may pass a chemical certificate and still be wrong for the expansion joint or the design pressure. Wall tolerance and inspection scope belong on the same purchase order.</p>
+          </div>
+
+          <h2 id="ends">End preparation and the tube-to-tubesheet joint</h2>
+          <p>Most tube-side leakage starts at the joint, not in the middle of the tube. The end may be expanded, welded, or both. The joint design belongs to the exchanger fabricator, but the tube supplier must deliver ends that can be prepared and joined as specified.</p>
+          <figure class="article-figure">
+            <img src="/assets/article-tube-joint.svg" alt="Section through a titanium tube expanded and welded in a tubesheet" width="1200" height="675" loading="lazy" decoding="async">
+            <figcaption>Schematic joint: 1 tube wall; 2 tubesheet plate; 3 expanded zone; 4 projecting tube end. The joint procedure is confirmed by the fabricator.</figcaption>
+          </figure>
+          <ul class="article-list">
+            <li>Expanded joint: confirm expansion range, surface finish and whether a test expansion is required.</li>
+            <li>Welded joint: confirm bevel, projection length, cleaning and welding procedure.</li>
+            <li>Combined joint: state the sequence — weld then expand, or expand then weld — agreed with the fabricator.</li>
+            <li>Enhanced-surface tube: the ends are normally left unenhanced for rolling-in, as described in ASTM B891/B891M.</li>
+          </ul>
+          <div class="callout">
+            <p><strong>Keep the end specification with the tube order.</strong> If the exchanger will be expanded into the tube sheet, a bright, clean, correctly sized end is part of the material requirement — not a site detail to discover after delivery.</p>
+          </div>
+
+          <h2 id="inspection">Inspection, testing and documents</h2>
+          <p>A certificate is a record, not a performance guarantee. Define what will be inspected, which test method is used, and which document will be issued. For enhanced-surface tube, ASTM B891/B891M states that each tube is subject to a nondestructive eddy current test and either a pneumatic or hydrostatic test. For plain tube to B338/B338M, the test scope follows the standard and the order.</p>
+          <table class="spec-table">
+            <caption>Documents are agreed per order; ALLOYTI coordinates supplier records and any agreed third-party inspection.</caption>
+            <thead><tr><th>Document or test</th><th>Question to settle before ordering</th><th>Typical output</th></tr></thead>
+            <tbody>
+              <tr><td>Mill test certificate</td><td>Standard edition, grade, heat number and mechanical results</td><td>EN 10204 3.1 or 3.2 as agreed</td></tr>
+              <tr><td>Dimensional report</td><td>Which dimensions are measured and how they are reported</td><td>Report or certificate of dimensions</td></tr>
+              <tr><td>Nondestructive test</td><td>Method, acceptance level and whether welded seam is included</td><td>Eddy current or agreed NDT record</td></tr>
+              <tr><td>Pressure test</td><td>Pneumatic or hydrostatic, pressure and hold time</td><td>Test record</td></tr>
+              <tr><td>Packing and marking</td><td>Tube identity, bundle marking and protection</td><td>Packing list and marking photos</td></tr>
+            </tbody>
+          </table>
+          <figure class="article-figure">
+            <div dir="ltr"><svg viewBox="0 0 700 320" role="img" aria-label="From confirmed requirement to delivered documents" style="width:100%;height:auto;display:block;overflow:visible;direction:ltr"><text x="0" y="22" fill="#5d7387" font-size="13" font-family="inherit">From confirmed requirement to delivered documents</text><rect x="0" y="56" width="700" height="36" rx="9" fill="#0b6fb5" opacity="0.08"/><rect x="0" y="56" width="4" height="36" rx="2" fill="#0b6fb5" opacity="0.75"/><text x="16" y="79" fill="#0b6fb5" font-size="12" font-family="inherit" opacity="0.85">01</text><text x="46" y="79" fill="#12293f" font-size="13" font-family="inherit">Confirm service and drawing</text><text x="230" y="79" fill="#5d7387" font-size="12" font-family="inherit">Medium, temperature, pressure, standard</text><rect x="0" y="102" width="700" height="36" rx="9" fill="#0b6fb5" opacity="0.08"/><rect x="0" y="102" width="4" height="36" rx="2" fill="#0b6fb5" opacity="0.75"/><text x="16" y="125" fill="#0b6fb5" font-size="12" font-family="inherit" opacity="0.85">02</text><text x="46" y="125" fill="#12293f" font-size="13" font-family="inherit">Agree grade and route</text><text x="230" y="125" fill="#5d7387" font-size="12" font-family="inherit">Grade, seamless or welded, condition</text><rect x="0" y="148" width="700" height="36" rx="9" fill="#0b6fb5" opacity="0.08"/><rect x="0" y="148" width="4" height="36" rx="2" fill="#0b6fb5" opacity="0.75"/><text x="16" y="171" fill="#0b6fb5" font-size="12" font-family="inherit" opacity="0.85">03</text><text x="46" y="171" fill="#12293f" font-size="13" font-family="inherit">Fix dimensions and ends</text><text x="230" y="171" fill="#5d7387" font-size="12" font-family="inherit">OD, wall, length, end preparation</text><rect x="0" y="194" width="700" height="36" rx="9" fill="#0b6fb5" opacity="0.08"/><rect x="0" y="194" width="4" height="36" rx="2" fill="#0b6fb5" opacity="0.75"/><text x="16" y="217" fill="#0b6fb5" font-size="12" font-family="inherit" opacity="0.85">04</text><text x="46" y="217" fill="#12293f" font-size="13" font-family="inherit">Define inspection</text><text x="230" y="217" fill="#5d7387" font-size="12" font-family="inherit">NDT, pressure test, document type</text><rect x="0" y="240" width="700" height="36" rx="9" fill="#0b6fb5" opacity="0.08"/><rect x="0" y="240" width="4" height="36" rx="2" fill="#0b6fb5" opacity="0.75"/><text x="16" y="263" fill="#0b6fb5" font-size="12" font-family="inherit" opacity="0.85">05</text><text x="46" y="263" fill="#12293f" font-size="13" font-family="inherit">Check before shipment</text><text x="230" y="263" fill="#5d7387" font-size="12" font-family="inherit">Packing, marking, records</text></svg></div>
+            <figcaption>A short checklist for turning a tube enquiry into a verifiable order.</figcaption>
+          </figure>
+          <div class="callout">
+            <p><strong>Certification belongs to the mill, not to ALLOYTI.</strong> We supply as a sourcing partner. Certificates and inspection reports are requested from the producing mill or agreed inspection body and issued against the confirmed order.</p>
+          </div>
+
+          <h2 id="failure">Failure modes worth designing out</h2>
+          <p>When a titanium tube leaks, the cause is usually local rather than a general shortage of corrosion resistance. Understanding the pattern helps the next specification avoid the same problem.</p>
+          <ul class="article-list">
+            <li>Crevice corrosion under gaskets, deposits or poor support — controlled by detail design and cleanliness, not by guessing a higher grade.</li>
+            <li>Pitting in hot chloride service — review temperature and deposit conditions before switching grade.</li>
+            <li>Erosion or thinning at the inlet end — review velocity, impingement and tube inlet protection.</li>
+            <li>Vibration at support plates — review spacing and straightness, not only material.</li>
+            <li>Galvanic pairing with less noble metals — insulate or isolate where required.</li>
+          </ul>
+          <p>None of these failure modes is solved by a certificate alone. The material specification, exchanger design and operating practice have to agree. If you are replacing failed tubes, send the failed sample history together with the original tube order — it usually shortens the next specification conversation.</p>
+
+          <h2 id="rfq">A shorter path from enquiry to quotation</h2>
+          <p>A usable tube enquiry does not need every answer on the first day, but it should separate what is fixed from what is still being confirmed. The list below is enough to start a technical response.</p>
+          <ul class="article-list">
+            <li>Product and standard: condenser or heat exchanger tube; ASTM B338/B338M, ASME SB338 or enhanced surface.</li>
+            <li>Grade and condition: for example Gr.2, annealed; state any alternative being considered.</li>
+            <li>Dimensions: OD, wall (nominal or minimum), cut length or U-tube geometry.</li>
+            <li>Quantity and destination: total length or piece count, port and target delivery.</li>
+            <li>Joint and ends: expanded, welded or combined; end finish and projection.</li>
+            <li>Service conditions: medium, concentration, temperature, pressure and cleaning method.</li>
+            <li>Documents: certificate type, NDT, pressure test, marking and any third-party inspection.</li>
+          </ul>
+          <div class="callout">
+            <p><strong>Send what is known.</strong> We will confirm grade, size, supply route, documents and availability per order — and say clearly where a value must come from your exchanger designer instead of being assumed.</p>
+          </div>
+        </div>
+
+        <div class="cta-band">
+          <div>
+            <h2>Ready to specify your heat exchanger tubes?</h2>
+            <p>Send the medium, grade, OD, wall, length and document requirements. We will confirm what can be supplied and what still needs to be agreed.</p>
+          </div>
+          <a class="button button-primary" href="/contact">Request a quotation <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="/" aria-label="ALLOYTI home">
+          <img class="brand-mark" src="assets/logo-emblem.webp" alt="ALLOYTI logo" width="36" height="36"> <span class="brand-word" data-i18n="s001">ALLOYTI</span>
+        </a>
+        <p class="footer-slogan" data-i18n="ui.slogan"><span data-i18n="s326">Built on Titanium. Driven by Technology.</span></p>
+        <p data-i18n="footer.brandDesc"><span data-i18n="s327">Titanium and titanium alloy sourcing, supply and technical support — plate, bar, tube, fasteners and precision forgings to ASTM, GB and AMS standards, exported to North America, Europe, the Middle East and Southeast Asia.</span></p>
+      </div>
+      <nav class="footer-col" aria-label="Product links">
+        <p class="footer-col-title" data-i18n="s008"><span data-i18n="s008">Products</span></p>
+        <a href="/titanium-plate" data-i18n="s014"><span data-i18n="s014">Titanium Plate &amp; Sheet</span></a>
+        <a href="/titanium-bar" data-i18n="s015"><span data-i18n="s015">Titanium Bar &amp; Rod</span></a>
+        <a href="/titanium-tube" data-i18n="s016"><span data-i18n="s016">Titanium Tube & Pipe</span></a>
+        <a href="/titanium-fasteners" data-i18n="s017"><span data-i18n="s017">Titanium Fasteners</span></a>
+        <a href="/titanium-daily-goods" data-i18n="s530"><span data-i18n="s530">Titanium Daily Goods</span></a>
+        <a href="/titanium-forgings" data-i18n="s018"><span data-i18n="s018">Forgings &amp; Machined Parts</span></a>
+      </nav>
+      <nav class="footer-col" aria-label="Company links">
+        <p class="footer-col-title" data-i18n="footer.colAbout"><span data-i18n="s057">Company</span></p>
+        <a href="/about" data-i18n="nav.about"><span data-i18n="s023">About</span></a>
+        <a href="/quality" data-i18n="nav.quality"><span data-i18n="s043">Quality &amp; Service</span></a>
+        <a href="/faq" data-i18n="nav.faq"><span data-i18n="s010">FAQ</span></a>
+        <a href="/resources" data-i18n="s453"><span data-i18n="s453">Resources</span></a>
+        <a href="/applications" data-i18n="s584"><span data-i18n="s584">Applications</span></a>
+        <a href="/#showcase" data-i18n="nav.showcase"><span data-i18n="s328">Sourcing</span></a>
+      </nav>
+      <div class="footer-col">
+        <p class="footer-col-title" data-i18n="footer.colContact"><span data-i18n="s012">Contact</span></p>
+        <a href="mailto:sales@alloyti.com" data-i18n="s019"><span data-i18n="s019">sales@alloyti.com</span></a>
+        <a href="https://wa.me/8618523283306" target="_blank" rel="noopener noreferrer" data-i18n="s020"><span data-i18n="s020">WhatsApp +86 185 2328 3306</span></a>
+        <a href="/contact" data-i18n="s021"><span data-i18n="s021">Send an enquiry ↗</span></a>
+        <span class="footer-addr" data-i18n="s445">High-Tech Avenue, Baoji, Shaanxi, China</span>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year">2026</span> <span data-i18n="s001">ALLOYTI</span></p>
+      <p data-i18n="ui.bottomTag"><span data-i18n="s329">TITANIUM · ASTM / DIN / ISO · Confirmed per order</span></p>
+      <a href="/privacy" data-i18n="s022"><span data-i18n="s022">Privacy Policy</span></a>
+      <a href="/terms" data-i18n="s557"><span data-i18n="s557">Terms of Sale</span></a>
+      <a href="/" data-i18n="ui.backTop"><span data-i18n="s330">Back to top ↑</span></a>
+    </div>
+  </footer>
+  <script src="app.min.js?v=20261124a"></script>
+  <script src="chat.min.js?v=20261124a"></script>
+  <!-- WA FLOAT v1 -->
+  <a class="wa-float" href="https://wa.me/8618523283306" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15h-.01c-1.52 0-3.01-.41-4.31-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.83 2.41a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23z"/><path d="M16.53 14.09c-.25-.12-1.47-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.79.97-.15.16-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05s.88 2.38 1 2.54c.12.16 1.73 2.64 4.19 3.7.59.25 1.04.4 1.4.51.59.19 1.12.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.11-.23-.17-.48-.29z"/></svg>
+  </a>
+</body>
+</html>

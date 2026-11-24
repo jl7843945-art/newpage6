@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-label="Seamless and welded titanium tube end view">
+<rect width="1200" height="675" fill="#ffffff"/>
+<rect x="1" y="1" width="1198" height="673" rx="18" fill="#f5f9fc" stroke="#d6e3ed"/>
+<text x="56" y="66" fill="#12293f" font-size="27" font-family="Arial,Helvetica,sans-serif" font-weight="700" text-anchor="start">SEAMLESS VS WELDED TUBE</text>
+<text x="56" y="98" fill="#5d7387" font-size="16" font-family="Arial,Helvetica,sans-serif" font-weight="400" text-anchor="start">End view schematic - seam position shown only on welded tube</text>
+<circle cx="220" cy="330" r="130" fill="#ffffff" stroke="#0b6fb5" stroke-width="22"/>
+<circle cx="220" cy="330" r="108" fill="#eaf4fb" opacity=".55"/>
+<text x="220" y="520" fill="#12293f" font-size="22" font-family="Arial,Helvetica,sans-serif" font-weight="700" text-anchor="middle">SEAMLESS</text>
+<circle cx="220" cy="174" r="20" fill="#0b6fb5"/>
+<text x="220" y="180" fill="#ffffff" font-size="18" font-family="Arial,Helvetica,sans-serif" font-weight="700" text-anchor="middle">2</text>
+<circle cx="760" cy="330" r="130" fill="#ffffff" stroke="#0b6fb5" stroke-width="22"/>
+<circle cx="760" cy="330" r="108" fill="#eaf4fb" opacity=".55"/>
+<text x="760" y="520" fill="#12293f" font-size="22" font-family="Arial,Helvetica,sans-serif" font-weight="700" text-anchor="middle">WELDED</text>
+<path d="M 760 200 L 760 460" stroke="#c68a2e" stroke-width="10" stroke-linecap="round" stroke-dasharray="18 10"/>
+<circle cx="760" cy="174" r="20" fill="#c68a2e"/>
+<text x="760" y="180" fill="#ffffff" font-size="18" font-family="Arial,Helvetica,sans-serif" font-weight="700" text-anchor="middle">1</text>
+<text x="56" y="600" fill="#5d7387" font-size="18" font-family="Arial,Helvetica,sans-serif" font-weight="400" text-anchor="start">1  Longitudinal weld seam (welded tube)</text>
+<text x="56" y="632" fill="#5d7387" font-size="18" font-family="Arial,Helvetica,sans-serif" font-weight="400" text-anchor="start">2  Seamless tube - no weld line</text>
+</svg>

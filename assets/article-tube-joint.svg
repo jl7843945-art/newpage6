@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-label="Tube to tubesheet joint schematic">
+<rect width="1200" height="675" fill="#ffffff"/>
+<rect x="1" y="1" width="1198" height="673" rx="18" fill="#f5f9fc" stroke="#d6e3ed"/>
+<text x="56" y="66" fill="#12293f" font-size="27" font-family="Arial,Helvetica,sans-serif" font-weight="700" text-anchor="start">TUBE-TO-TUBESHEET JOINT</text>
+<text x="56" y="98" fill="#5d7387" font-size="16" font-family="Arial,Helvetica,sans-serif" font-weight="400" text-anchor="start">Longitudinal section - not to scale</text>
+<rect x="122" y="238" width="300" height="196" rx="8" fill="#eaf4fb" stroke="#d6e3ed" stroke-width="2"/>
+<rect x="122" y="304" width="300" height="64" fill="#ffffff"/>
+<path d="M 122 304 L 422 304 M 122 368 L 422 368" stroke="#5d7387" stroke-width="2"/>
+<path d="M 60 292 L 600 292 L 600 306 L 330 306 L 330 366 L 600 366 L 600 380 L 60 380 Z" fill="#0b6fb5" opacity=".92"/>
+<path d="M 60 308 L 320 308 L 320 364 L 60 364 Z" fill="#ffffff"/>
+<path d="M 330 308 L 600 308 L 600 320 L 330 320 Z" fill="#ffffff" opacity=".9"/>
+<path d="M 330 352 L 600 352 L 600 364 L 330 364 Z" fill="#ffffff" opacity=".9"/>
+<rect x="160" y="306" width="150" height="60" rx="4" fill="none" stroke="#c68a2e" stroke-width="4" stroke-dasharray="12 8"/>
+<path d="M 420 286 Q 444 336 420 386" fill="none" stroke="#c68a2e" stroke-width="12" stroke-linecap="round"/>
+<path d="M 210 292 L 196 174" stroke="#5d7387" stroke-width="2"/>
+<circle cx="196" cy="150" r="19" fill="#0b6fb5"/>
+<text x="196" y="156" fill="#ffffff" font-size="18" font-family="Arial,Helvetica,sans-serif" font-weight="700" text-anchor="middle">1</text>
+<path d="M 300 368 L 340 174" stroke="#5d7387" stroke-width="2"/>
+<circle cx="340" cy="150" r="19" fill="#0b6fb5"/>
+<text x="340" y="156" fill="#ffffff" font-size="18" font-family="Arial,Helvetica,sans-serif" font-weight="700" text-anchor="middle">2</text>
+<path d="M 230 306 L 490 174" stroke="#5d7387" stroke-width="2"/>
+<circle cx="490" cy="150" r="19" fill="#0b6fb5"/>
+<text x="490" y="156" fill="#ffffff" font-size="18" font-family="Arial,Helvetica,sans-serif" font-weight="700" text-anchor="middle">3</text>
+<path d="M 540 292 L 660 174" stroke="#5d7387" stroke-width="2"/>
+<circle cx="660" cy="150" r="19" fill="#0b6fb5"/>
+<text x="660" y="156" fill="#ffffff" font-size="18" font-family="Arial,Helvetica,sans-serif" font-weight="700" text-anchor="middle">4</text>
+<text x="80" y="512" fill="#12293f" font-size="20" font-family="Arial,Helvetica,sans-serif" font-weight="400" text-anchor="start">1  Tube wall</text>
+<text x="310" y="512" fill="#12293f" font-size="20" font-family="Arial,Helvetica,sans-serif" font-weight="400" text-anchor="start">2  Tubesheet plate</text>
+<text x="560" y="512" fill="#12293f" font-size="20" font-family="Arial,Helvetica,sans-serif" font-weight="400" text-anchor="start">3  Expanded zone</text>
+<text x="820" y="512" fill="#12293f" font-size="20" font-family="Arial,Helvetica,sans-serif" font-weight="400" text-anchor="start">4  Projecting tube end</text>
+<text x="56" y="618" fill="#5d7387" font-size="17" font-family="Arial,Helvetica,sans-serif" font-weight="400" text-anchor="start">Confirm joint design, expansion limits and weld preparation with the fabricator.</text>
+</svg>
