@@ -70,6 +70,18 @@
   var WA = "https://wa.me/8618523283306";
   var MAIL = "mailto:sales@alloyti.com";
 
+  // 小机器人图标：悬浮按钮与聊天窗顶栏共用
+  var ROBOT_ICON = '<svg viewBox="0 0 32 32" aria-hidden="true">' +
+    '<path d="M16 8V4.8"/>' +
+    '<circle class="ac-fill" cx="16" cy="3.3" r="1.7"/>' +
+    '<rect x="6.5" y="8.5" width="19" height="15" rx="5"/>' +
+    '<rect class="ac-ear" x="3.5" y="13" width="3" height="7" rx="1.5"/>' +
+    '<rect class="ac-ear" x="25.5" y="13" width="3" height="7" rx="1.5"/>' +
+    '<circle class="ac-fill" cx="12" cy="14.6" r="1.7"/>' +
+    '<circle class="ac-fill" cx="20" cy="14.6" r="1.7"/>' +
+    '<path d="M12 19.2c1.1 1.3 2.5 1.9 4 1.9s2.9-.6 4-1.9"/>' +
+    '</svg>';
+
   /* FAQ 知识库：本地即时回答，口径与后端 system prompt 一致。
      命中即答（零延迟、不消耗 AI 额度）；未命中才走 AI，再不行降级人工。
      kw = 跨语言关键词（小写子串），a = 六语答案。 */
@@ -224,12 +236,15 @@
       "#acChat.ac-rtl{align-items:flex-start}",
       "#acFab{width:54px;height:54px;border-radius:50%;border:0;cursor:pointer;background:#0a6c7d;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(6,20,42,.28);transition:transform .18s ease,box-shadow .18s ease}",
       "#acFab:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(6,20,42,.34)}",
-      "#acFab svg{width:27px;height:27px;fill:none;stroke:#fff;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}",
+      "#acFab svg{width:30px;height:30px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}",
+      "#acFab .ac-fill,#acHead .ac-ic .ac-fill{fill:#fff;stroke:none}",
+      "#acFab .ac-ear,#acHead .ac-ic .ac-ear{fill:rgba(255,255,255,.2)}",
       "#acFab .ac-badge{position:absolute;top:0;right:0;width:14px;height:14px;background:#25d366;border:2px solid #fff;border-radius:50%}",
       "#acPanel{width:360px;max-width:calc(100vw - 28px);height:470px;max-height:calc(100vh - 120px);background:#fff;border:1px solid #dfe7ec;border-radius:14px;box-shadow:0 18px 50px rgba(6,20,42,.22);display:none;flex-direction:column;overflow:hidden;margin-bottom:14px}",
       "#acPanel.ac-open{display:flex}",
       "#acHead{background:#0a6c7d;color:#fff;padding:14px 16px;display:flex;align-items:center;gap:11px;flex:0 0 auto}",
       "#acHead .ac-ic{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;font-weight:700;letter-spacing:.04em;font-size:12px;flex:0 0 auto}",
+      "#acHead .ac-ic svg{width:23px;height:23px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}",
       "#acHead .ac-tt{flex:1;min-width:0}",
       "#acHead .ac-name{font-weight:700;font-size:15px;line-height:1.2}",
       "#acHead .ac-sub{font-size:11.5px;opacity:.86;margin-top:2px}",
@@ -285,7 +300,8 @@
 
   var head = el("div", "");
   head.id = "acHead";
-  var ico = el("div", "ac-ic", "AT");
+  var ico = el("div", "ac-ic");
+  ico.innerHTML = ROBOT_ICON;
   var tt = el("div", "ac-tt");
   tt.appendChild(el("div", "ac-name", t.title));
   tt.appendChild(el("div", "ac-sub", t.status));
@@ -318,7 +334,7 @@
   var fab = el("button", "");
   fab.id = "acFab";
   fab.setAttribute("aria-label", t.label);
-  fab.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.5 7.5L3 21l1.9-5.2A8.5 8.5 0 1 1 21 11.5z"/><path d="M8.5 10.5h7M8.5 13.5h4.5"/></svg>';
+  fab.innerHTML = ROBOT_ICON;
 
   host.appendChild(panel);
   host.appendChild(fab);
