@@ -16,7 +16,7 @@
   <link rel="alternate" hreflang="ko" href="https://www.alloyti.com/ko/quality">
   <link rel="alternate" hreflang="x-default" href="https://www.alloyti.com/quality">
   <link rel="icon" type="image/png" href="/assets/favicon-64.png">
-  <link rel="stylesheet" href="/styles.min.css?v=20261125a">
+  <link rel="stylesheet" href="/styles.min.css?v=20261126a">
   <link rel="stylesheet" href="/assets/cert-icons.css?v=20261119h">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ko_KR">
@@ -85,7 +85,14 @@
         "ASTM B338",
         "AMS 4911",
         "Titanium forging",
-        "Titanium fasteners"
+        "Titanium fasteners",
+        "EN 10204 3.1",
+        "EN 10204 3.2",
+        "Heat-number traceability",
+        "Third-party inspection",
+        "ISO 9001 (partner mills)",
+        "AS9100 (partner mills)",
+        "PED 2014/68/EU"
       ]
     },
     {
@@ -140,7 +147,49 @@
       "isPartOf": {
         "@id": "https://www.alloyti.com/#website"
       },
-      "inLanguage": "ko"
+      "inLanguage": "ko",
+      "about": {
+        "@type": "ItemList",
+        "name": "검증 및 제3자 증거",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "Thing",
+              "name": "EN 10204 3.1 / 3.2 mill test certificate",
+              "description": "Mill test certificate issued by the producing mill, reporting chemical composition, mechanical properties and heat number; 3.2 countersigned by an independent inspector by agreement."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "Thing",
+              "name": "Heat-number traceability",
+              "description": "Material identified by heat number from mill certificate through inspection record to packing list."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "Thing",
+              "name": "Third-party inspection",
+              "description": "Independent inspection arranged by agreement, with scope defined before production."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "Thing",
+              "name": "Partner-mill quality systems (ISO 9001, AS9100, PED)",
+              "description": "Quality-system documentation held by specific partner mills, not by ALLOYTI; confirmed per order."
+            }
+          }
+        ]
+      }
     }
   ]
 }
@@ -270,7 +319,30 @@
             </div>
           </div>
           <p class="cert-note" data-i18n="s528">현행 공장 인증서 사본과 적용 범위는 요청 시 제공되며, 출하 전 주문과 대조하여 확인합니다.</p>
-
+          <h2 data-i18n="s608">검증 및 제3자 증거</h2>
+          <p data-i18n="s609">아래 문서와 검사는 ALLOYTI가 아닌 생산 공장 또는 독립 검사 기관이 발급합니다. 각 항목은 출하 전 주문 기준으로 확인됩니다.</p>
+          <div class="cert-grid verify-grid">
+            <div class="cert-item">
+              <h3 data-i18n="s610">EN 10204 3.1 / 3.2 밀 인증서</h3>
+              <p data-i18n="s611">밀 테스트 인증서에는 화학 성분, 기계적 성질 및 열번호가 기재됩니다. EN 10204 3.1은 표준으로 발급되며, 독립 검사원이 부서한 3.2는 협의 가능합니다.</p>
+              <p class="cert-note" data-i18n="s612">확인 방법: 인증서를 요청하고 열번호를 확인한 뒤 포장 명세서 및 재질 표시와 대조하십시오.</p>
+            </div>
+            <div class="cert-item">
+              <h3 data-i18n="s613">열번호 추적성</h3>
+              <p data-i18n="s614">재질은 밀 인증서부터 검사 기록, 포장 명세서까지 열번호로 식별되어 납품된 모든 제품을 해당 열 기록까지 추적할 수 있습니다.</p>
+              <p class="cert-note" data-i18n="s615">확인 방법: 재질 표시, 인증서, 포장 명세서의 열번호를 비교하십시오. 주문과 일치해야 합니다.</p>
+            </div>
+            <div class="cert-item">
+              <h3 data-i18n="s616">제3자 검사</h3>
+              <p data-i18n="s617">독립 검사는 협의에 따라 준비할 수 있으며, 검사 범위(치수, 외관, 초음파 UT, 침투 PT 또는 입회 시험)는 생산 전에 정의됩니다.</p>
+              <p class="cert-note" data-i18n="s618">확인 방법: 주문에 검사 범위와 검사 기관을 명시하고, 성적서는 검사 기관이 직접 발급합니다.</p>
+            </div>
+            <div class="cert-item">
+              <h3 data-i18n="s619">협력 공장 품질 시스템</h3>
+              <p data-i18n="s620">ISO 9001, AS9100 및 PED 관련 문서는 특정 협력 공장과 제품 형태에 적용됩니다. 인증은 ALLOYTI가 아닌 생산 공장에 귀속되며, 가용성은 주문별로 확인합니다.</p>
+              <p class="cert-note" data-i18n="s621">확인 방법: 주문에 배정된 공장의 최신 인증서 사본과 범위를 요청하고, 출하 전 유효기간과 제품 적용 범위를 확인하십시오.</p>
+            </div>
+          </div>
 
           <h2 data-i18n="s205">추적성</h2>
           <p data-i18n="s206">소재는 밀 시트부터 포장 명세서까지 히트 번호로 식별되므로, 납품된 모든 제품을 해당 히트와 검사 기록까지 추적할 수 있습니다. 표기 방법과 식별 규칙은 주문 시 합의합니다.</p>
@@ -335,8 +407,8 @@
     </div>
   </footer>
 
-    <script src="/app.min.js?v=20261125a"></script>
-  <script src="/chat.20261125a.min.js?v=20261125a"></script>
+    <script src="/app.min.js?v=20261126a"></script>
+  <script src="/chat.20261126a.min.js?v=20261126a"></script>
   <!-- WA FLOAT v1 -->
   <a class="wa-float" href="https://wa.me/8618523283306" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15h-.01c-1.52 0-3.01-.41-4.31-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.83 2.41a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23z"></path><path d="M16.53 14.09c-.25-.12-1.47-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.79.97-.15.16-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05s.88 2.38 1 2.54c.12.16 1.73 2.64 4.19 3.7.59.25 1.04.4 1.4.51.59.19 1.12.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.11-.23-.17-.48-.29z"></path></svg>

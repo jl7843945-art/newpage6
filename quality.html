@@ -36,7 +36,7 @@
   <link rel="alternate" hreflang="ko" href="https://www.alloyti.com/ko/quality">
   <link rel="alternate" hreflang="x-default" href="https://www.alloyti.com/quality">
   <link rel="icon" type="image/png" href="assets/favicon-64.png">
-  <link rel="stylesheet" href="styles.min.css?v=20261125a">
+  <link rel="stylesheet" href="styles.min.css?v=20261126a">
   <link rel="stylesheet" href="/assets/cert-icons.css?v=20261119h">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
@@ -105,7 +105,14 @@
         "ASTM B338",
         "AMS 4911",
         "Titanium forging",
-        "Titanium fasteners"
+        "Titanium fasteners",
+        "EN 10204 3.1",
+        "EN 10204 3.2",
+        "Heat-number traceability",
+        "Third-party inspection",
+        "ISO 9001 (partner mills)",
+        "AS9100 (partner mills)",
+        "PED 2014/68/EU"
       ]
     },
     {
@@ -160,7 +167,49 @@
       "isPartOf": {
         "@id": "https://www.alloyti.com/#website"
       },
-      "inLanguage": "en"
+      "inLanguage": "en",
+      "about": {
+        "@type": "ItemList",
+        "name": "Verification & third-party evidence",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "Thing",
+              "name": "EN 10204 3.1 / 3.2 mill test certificate",
+              "description": "Mill test certificate issued by the producing mill, reporting chemical composition, mechanical properties and heat number; 3.2 countersigned by an independent inspector by agreement."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "Thing",
+              "name": "Heat-number traceability",
+              "description": "Material identified by heat number from mill certificate through inspection record to packing list."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "Thing",
+              "name": "Third-party inspection",
+              "description": "Independent inspection arranged by agreement, with scope defined before production."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "Thing",
+              "name": "Partner-mill quality systems (ISO 9001, AS9100, PED)",
+              "description": "Quality-system documentation held by specific partner mills, not by ALLOYTI; confirmed per order."
+            }
+          }
+        ]
+      }
     }
   ]
 }
@@ -290,7 +339,30 @@
             </div>
           </div>
           <p class="cert-note" data-i18n="s528">Copies of current mill certificates and their scopes are available on request; we verify them against the order before dispatch.</p>
-
+          <h2 data-i18n="s608">Verification & third-party evidence</h2>
+          <p data-i18n="s609">The documents and checks below are issued by the producing mill or an independent inspector, not by ALLOYTI. Each item is confirmed against your order before dispatch.</p>
+          <div class="cert-grid verify-grid">
+            <div class="cert-item">
+              <h3 data-i18n="s610">EN 10204 3.1 / 3.2 mill certificate</h3>
+              <p data-i18n="s611">Chemical composition, mechanical properties and heat number are reported on the mill test certificate. EN 10204 3.1 is issued as standard; 3.2 countersigned by an independent inspector can be agreed.</p>
+              <p class="cert-note" data-i18n="s612">How to verify: request the certificate, check its heat number, and match it to your packing list and material marking.</p>
+            </div>
+            <div class="cert-item">
+              <h3 data-i18n="s613">Heat-number traceability</h3>
+              <p data-i18n="s614">Material is identified by heat number from mill certificate through inspection record to packing list, so any delivered piece can be traced back to its heat record.</p>
+              <p class="cert-note" data-i18n="s615">How to verify: compare the heat number on the material marking, the certificate and the packing list — they should match your order.</p>
+            </div>
+            <div class="cert-item">
+              <h3 data-i18n="s616">Third-party inspection</h3>
+              <p data-i18n="s617">Independent inspection can be arranged by agreement, with the scope — dimensional, visual, ultrasonic (UT), penetrant (PT) or witness testing — defined before production starts.</p>
+              <p class="cert-note" data-i18n="s618">How to verify: agree the inspection scope and the inspection body in the order; the report is issued directly by the inspection body.</p>
+            </div>
+            <div class="cert-item">
+              <h3 data-i18n="s619">Partner-mill quality systems</h3>
+              <p data-i18n="s620">ISO 9001, AS9100 and PED documentation applies to specific partner mills and product forms. These certificates belong to the producing mills, not to ALLOYTI; availability is confirmed per order.</p>
+              <p class="cert-note" data-i18n="s621">How to verify: request the current certificate copy and its scope for the mill assigned to your order, and check validity and product coverage before dispatch.</p>
+            </div>
+          </div>
 
           <h2 data-i18n="s205"><span data-i18n="s205">Traceability</span></h2>
           <p data-i18n="s206"><span data-i18n="s206">Material is identified by heat number from mill certificate through to packing list, so any delivered piece can be traced back to its heat and inspection record. Marking method and identification rules are agreed with the order.</span></p>
@@ -355,8 +427,8 @@
     </div>
   </footer>
 
-    <script src="app.min.js?v=20261125a"></script>
-  <script src="chat.20261125a.min.js?v=20261125a"></script>
+    <script src="app.min.js?v=20261126a"></script>
+  <script src="chat.20261126a.min.js?v=20261126a"></script>
   <!-- WA FLOAT v1 -->
   <a class="wa-float" href="https://wa.me/8618523283306" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15h-.01c-1.52 0-3.01-.41-4.31-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.83 2.41a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23z"/><path d="M16.53 14.09c-.25-.12-1.47-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.79.97-.15.16-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05s.88 2.38 1 2.54c.12.16 1.73 2.64 4.19 3.7.59.25 1.04.4 1.4.51.59.19 1.12.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.11-.23-.17-.48-.29z"/></svg>

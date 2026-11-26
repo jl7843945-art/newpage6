@@ -698,3 +698,6 @@ h1,h2,h3{color:var(--ink)!important}
 .stock-arrow{display:inline-block}
 [dir="rtl"] .stock-arrow{transform:scaleX(-1)}
 @media(max-width:640px){.stock-section{padding:56px 0}.stock-foot{align-items:flex-start;flex-direction:column}}
+
+/* P2-4 证据链：4 条事实按 2x2 排布，填满网格 */
+.verify-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}

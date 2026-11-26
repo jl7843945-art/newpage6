@@ -1087,3 +1087,6 @@ h1,h2,h3{color:var(--ink)!important}
 .site-header .nav-links a.nav-contact,.site-header .nav-links a.nav-contact:hover{color:#fff!important;flex:0 0 auto;white-space:nowrap;padding:9px 18px}
 .site-footer .brand-word{color:#fff!important;-webkit-text-fill-color:#fff!important}
 .usecase-grid + .terms-note{margin-top:18px}
+
+/* P2-4 证据链：4 条事实按 2x2 排布，填满网格 */
+.verify-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}

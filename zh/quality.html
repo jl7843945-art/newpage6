@@ -16,7 +16,7 @@
   <link rel="alternate" hreflang="ko" href="https://www.alloyti.com/ko/quality">
   <link rel="alternate" hreflang="x-default" href="https://www.alloyti.com/quality">
   <link rel="icon" type="image/png" href="/assets/favicon-64.png">
-  <link rel="stylesheet" href="/styles.min.css?v=20261125a">
+  <link rel="stylesheet" href="/styles.min.css?v=20261126a">
   <link rel="stylesheet" href="/assets/cert-icons.css?v=20261119h">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="zh_CN">
@@ -85,7 +85,14 @@
         "ASTM B338",
         "AMS 4911",
         "Titanium forging",
-        "Titanium fasteners"
+        "Titanium fasteners",
+        "EN 10204 3.1",
+        "EN 10204 3.2",
+        "Heat-number traceability",
+        "Third-party inspection",
+        "ISO 9001 (partner mills)",
+        "AS9100 (partner mills)",
+        "PED 2014/68/EU"
       ]
     },
     {
@@ -140,7 +147,49 @@
       "isPartOf": {
         "@id": "https://www.alloyti.com/#website"
       },
-      "inLanguage": "zh"
+      "inLanguage": "zh",
+      "about": {
+        "@type": "ItemList",
+        "name": "核验与第三方证据",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "Thing",
+              "name": "EN 10204 3.1 / 3.2 mill test certificate",
+              "description": "Mill test certificate issued by the producing mill, reporting chemical composition, mechanical properties and heat number; 3.2 countersigned by an independent inspector by agreement."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "Thing",
+              "name": "Heat-number traceability",
+              "description": "Material identified by heat number from mill certificate through inspection record to packing list."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "Thing",
+              "name": "Third-party inspection",
+              "description": "Independent inspection arranged by agreement, with scope defined before production."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "Thing",
+              "name": "Partner-mill quality systems (ISO 9001, AS9100, PED)",
+              "description": "Quality-system documentation held by specific partner mills, not by ALLOYTI; confirmed per order."
+            }
+          }
+        ]
+      }
     }
   ]
 }
@@ -270,7 +319,30 @@
             </div>
           </div>
           <p class="cert-note" data-i18n="s528">可应要求提供合作工厂现行证书副本及适用范围；发货前我们会按订单逐项核对。</p>
-
+          <h2 data-i18n="s608">核验与第三方证据</h2>
+          <p data-i18n="s609">下列文件与检验由生产钢厂或独立检验机构出具，而非 ALLOYTI 出具。每一项均在发货前按订单核对确认。</p>
+          <div class="cert-grid verify-grid">
+            <div class="cert-item">
+              <h3 data-i18n="s610">EN 10204 3.1 / 3.2 材质证书</h3>
+              <p data-i18n="s611">材质证明书载明化学成分、力学性能与炉号。EN 10204 3.1 为标准随货文件；经独立检验员会签的 3.2 可协商安排。</p>
+              <p class="cert-note" data-i18n="s612">核验方式：索取证书，核对炉号，并与装箱单及材料标识一致。</p>
+            </div>
+            <div class="cert-item">
+              <h3 data-i18n="s613">炉号追溯</h3>
+              <p data-i18n="s614">材料自钢厂证书、检验记录至装箱单均以炉号标识，任一交货件均可追溯至其炉号记录。</p>
+              <p class="cert-note" data-i18n="s615">核验方式：比对材料标识、证书与装箱单上的炉号，三者应与订单一致。</p>
+            </div>
+            <div class="cert-item">
+              <h3 data-i18n="s616">第三方检验</h3>
+              <p data-i18n="s617">可按订单约定安排独立检验，检验范围（尺寸、外观、超声 UT、渗透 PT 或见证试验）在生产前确定。</p>
+              <p class="cert-note" data-i18n="s618">核验方式：在订单中约定检验范围与检验机构，报告由检验机构直接出具。</p>
+            </div>
+            <div class="cert-item">
+              <h3 data-i18n="s619">合作钢厂质量体系</h3>
+              <p data-i18n="s620">ISO 9001、AS9100 与 PED 相关文件适用于特定合作钢厂及产品形态。证书属生产钢厂，不属 ALLOYTI；可用性按订单确认。</p>
+              <p class="cert-note" data-i18n="s621">核验方式：索取你所在订单对应钢厂的有效证书副本及覆盖范围，并在发货前确认有效期与产品覆盖。</p>
+            </div>
+          </div>
 
           <h2 data-i18n="s205">可追溯性</h2>
           <p data-i18n="s206">材料从材质证书到装箱单均以炉号标识，任何交付件均可追溯至其炉号与检验记录。标识方式与识别规则在订单中约定。</p>
@@ -335,8 +407,8 @@
     </div>
   </footer>
 
-    <script src="/app.min.js?v=20261125a"></script>
-  <script src="/chat.20261125a.min.js?v=20261125a"></script>
+    <script src="/app.min.js?v=20261126a"></script>
+  <script src="/chat.20261126a.min.js?v=20261126a"></script>
   <!-- WA FLOAT v1 -->
   <a class="wa-float" href="https://wa.me/8618523283306" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15h-.01c-1.52 0-3.01-.41-4.31-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.83 2.41a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23z"></path><path d="M16.53 14.09c-.25-.12-1.47-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.79.97-.15.16-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05s.88 2.38 1 2.54c.12.16 1.73 2.64 4.19 3.7.59.25 1.04.4 1.4.51.59.19 1.12.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.11-.23-.17-.48-.29z"></path></svg>
