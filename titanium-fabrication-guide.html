@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- 语言由 URL 决定：英文在根路径，其余语言是 /zh/ /ar/ /ru/ /de 独立静态页。
+       旧链接 /path?lang=zh 在这里直接跳转到对应语言页，避免 ?lang= 变体被重复收录。 -->
+  <script>
+  (function () {
+    var h = document.documentElement;
+    if (h.getAttribute("data-static-lang")) return;
+    if (/[?&]gen=1/.test(location.search)) {
+      // 构建期渲染译文：临时加载对应语言包，供生成静态语言页使用
+      var g = new URLSearchParams(location.search).get("lang");
+      if (g && /^(zh|ko|ar|ru|de)$/.test(g)) document.write('<script src="/i18n/' + g + '.js?v=20261126b"><\/script>');
+      return;
+    }
+    try {
+      var q = new URLSearchParams(location.search).get("lang");
+      if (q && /^(zh|ko|ar|ru|de)$/.test(q)) {
+        location.replace("/" + q + (location.pathname === "/" ? "/" : location.pathname));
+      }
+    } catch (e) {}
+  })();
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Titanium Fabrication Essentials: From Cutting to Assembly | ALLOYTI</title>
+  <meta name="description" content="A shop-floor guide to titanium cutting, machining, forming, welding, heat treatment, surface finishing and assembly: iron contamination control, cutting parameters, dual-side argon shielding, weld colour checks, ferroxyl testing and galvanic isolation.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0A1A3A">
+  <link rel="canonical" href="https://www.alloyti.com/titanium-fabrication-guide">
+  <link rel="alternate" hreflang="en" href="https://www.alloyti.com/titanium-fabrication-guide">
+  <link rel="alternate" hreflang="zh" href="https://www.alloyti.com/zh/titanium-fabrication-guide">
+  <link rel="alternate" hreflang="ar" href="https://www.alloyti.com/ar/titanium-fabrication-guide">
+  <link rel="alternate" hreflang="ru" href="https://www.alloyti.com/ru/titanium-fabrication-guide">
+  <link rel="alternate" hreflang="de" href="https://www.alloyti.com/de/titanium-fabrication-guide">
+  <link rel="alternate" hreflang="ko" href="https://www.alloyti.com/ko/titanium-fabrication-guide">
+  <link rel="alternate" hreflang="x-default" href="https://www.alloyti.com/titanium-fabrication-guide">
+  <link rel="icon" type="image/png" href="assets/favicon-64.png">
+  <link rel="stylesheet" href="styles.min.css?v=20261126a">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="ALLOYTI">
+  <meta property="og:title" content="Titanium Fabrication Essentials: From Cutting to Assembly | ALLOYTI">
+  <meta property="og:description" content="A shop-floor guide to titanium cutting, machining, forming, welding, heat treatment, surface finishing and assembly: iron contamination control, cutting parameters, dual-side argon shielding, weld colour checks, ferroxyl testing and galvanic isolation.">
+  <meta property="og:url" content="https://www.alloyti.com/titanium-fabrication-guide">
+  <meta property="og:image" content="https://www.alloyti.com/assets/article-fabrication-hero.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Titanium mill products for industrial supply">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Titanium Fabrication Essentials: From Cutting to Assembly | ALLOYTI">
+  <meta name="twitter:description" content="A shop-floor guide to titanium cutting, machining, forming, welding, heat treatment, surface finishing and assembly: iron contamination control, cutting parameters, dual-side argon shielding, weld colour checks, ferroxyl testing and galvanic isolation.">
+  <meta name="twitter:image" content="https://www.alloyti.com/assets/article-fabrication-hero.webp">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.alloyti.com/#organization",
+      "name": "ALLOYTI",
+      "url": "https://www.alloyti.com/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.alloyti.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Technical library",
+          "item": "https://www.alloyti.com/resources"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Titanium fabrication",
+          "item": "https://www.alloyti.com/titanium-fabrication-guide"
+        }
+      ]
+    },
+    {
+      "@type": "TechArticle",
+      "headline": "Titanium Fabrication Essentials: A Shop-Floor Guide from Cutting to Assembly",
+      "description": "A shop-floor guide to titanium cutting, machining, forming, welding, heat treatment, surface finishing and assembly: iron contamination control, cutting parameters, dual-side argon shielding, weld colour checks, ferroxyl testing and galvanic isolation.",
+      "inLanguage": "en",
+      "datePublished": "2026-11-26",
+      "dateModified": "2026-11-26",
+      "image": "https://www.alloyti.com/assets/article-fabrication-hero.webp",
+      "author": {
+        "@type": "Organization",
+        "name": "ALLOYTI"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ALLOYTI",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.alloyti.com/assets/logo-emblem.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.alloyti.com/titanium-fabrication-guide"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body data-light-header="1">
+  <div class="quickbar" id="quickbar">
+    <div class="container">
+      <span data-i18n="s486">Need a fast quote?</span>
+      <div class="quickbar-contact">
+        <span data-i18n="s487">Call / WhatsApp</span>
+        <a href="tel:+8618523283306">+86 185 2328 3306</a>
+        <span data-i18n="s529">Email</span>
+        <a class="quickbar-email" href="mailto:sales@alloyti.com">sales@alloyti.com</a>
+        <a class="quickbar-cta" href="/contact" data-i18n="s488">Get a quote</a>
+      </div>
+    </div>
+  </div>
+  <header class="site-header scrolled" id="siteHeader">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="/" aria-label="ALLOYTI home">
+        <img class="brand-mark" src="assets/logo-emblem.webp" alt="ALLOYTI logo" width="36" height="36"> <span class="brand-word" data-i18n="s001">ALLOYTI</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="primaryNav" aria-label="Open navigation"><span></span><span></span><span></span></button>
+      <div class="nav-links" id="primaryNav">
+        <a href="/" data-i18n="nav.home"><span data-i18n="s004">Home</span></a>
+        <a href="/products" data-i18n="nav.products"><span data-i18n="s008">Products</span></a>
+        <a href="/about" data-i18n="nav.about"><span data-i18n="s023">About</span></a>
+        <a href="/quality" data-i18n="nav.quality"><span data-i18n="s043">Quality &amp; Service</span></a>
+        <a href="/faq" data-i18n="nav.faq"><span data-i18n="s010">FAQ</span></a>
+        <a href="/resources" class="is-active" data-i18n="s453"><span data-i18n="s453">Resources</span></a>
+        <a href="/contact" class="nav-contact" data-i18n="nav.contact"><span data-i18n="s012">Contact</span></a>        <div class="lang-switch" id="langSwitch">
+          <button class="lang-toggle" id="langToggle" type="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Switch language">
+            <svg class="lang-globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+            <span class="lang-code" id="langCode">EN</span>
+            <svg class="lang-caret" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </button>
+          <ul class="lang-menu" id="langMenu" role="listbox" aria-label="Language">
+            <li role="option" data-lang="en" class="is-active" aria-selected="true"><span class="lc">EN</span><span class="ln">English</span></li>
+            <li role="option" data-lang="zh"><span class="lc">中文</span><span class="ln">简体中文</span></li>
+            <li role="option" data-lang="ar" dir="rtl"><span class="lc">AR</span><span class="ln">العربية</span></li>
+            <li role="option" data-lang="ru"><span class="lc">RU</span><span class="ln">Русский</span></li>
+            <li role="option" data-lang="de"><span class="lc">DE</span><span class="ln">Deutsch</span></li>
+            <li role="option" data-lang="ko"><span class="lc">한국</span><span class="ln">한국어</span></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+    <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/resources">Technical library</a> › <span aria-current="page">Titanium fabrication</span></nav>
+        <h1>Titanium Fabrication Essentials: A Shop-Floor Guide from Cutting to Assembly</h1>
+        <p class="page-lead">Titanium's reputation for corrosion resistance and high strength often creates a false impression that it is easy to fabricate. The opposite is true: poor thermal conductivity, rapid work hardening and high chemical reactivity at temperature make titanium a difficult metal to process. When titanium equipment fails, the cause is usually the fabrication route, not the material.</p>
+        <div class="article-meta">
+          <span>Fabrication</span>
+          <span>12 min read</span>
+          <span>Updated November 2026</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="prose">
+          <figure class="article-figure">
+            <img src="/assets/article-fabrication-hero.webp" alt="Welder performing TIG welding on titanium in a workshop, with a silver-white weld bead" width="1200" height="675" fetchpriority="high" decoding="async">
+            <figcaption>Titanium welding demands strict shielding and cleanliness. Workshop photograph used to illustrate the process points.</figcaption>
+          </figure>
+          <p>This guide follows the real shop-floor sequence — cutting, machining, forming, welding, heat treatment, surface treatment and assembly — and sets out the key controls at each step. It complements our guides on titanium industrial selection and on troubleshooting titanium problems in service.</p>
+          <p>The content is general process knowledge for buyers and engineers discussing requirements with a fabricator. Specific parameters must be set by a qualified fabricator for the grade, product form, drawing and applicable standard.</p>
+          <p>ALLOYTI is a sourcing and supply partner, not a manufacturer and not the holder of shop certifications. Welding procedure qualifications, inspection reports and certificates are confirmed per order and attributed to the partner mill or fabricator.</p>
+
+          <div class="article-toc">
+            <p>In this guide</p>
+            <ol>
+              <li><a href="#cutting">1. Cutting: start clean from the first cut</a></li>
+              <li><a href="#machining">2. Machining: neither too slow nor too fast</a></li>
+              <li><a href="#forming">3. Forming: remember springback, iron and heat</a></li>
+              <li><a href="#welding">4. Welding: the highest-risk step for titanium equipment</a></li>
+              <li><a href="#heattreat">5. Heat treatment: prevent oxidation and hydrogen pickup</a></li>
+              <li><a href="#surface">6. Surface treatment and cleaning: protect the passive film</a></li>
+              <li><a href="#assembly">7. Assembly: keep crevices and galvanic couples out</a></li>
+              <li><a href="#safety">8. Safety: titanium swarf is not ordinary metal swarf</a></li>
+              <li><a href="#conclusion">Conclusion: clean, protect, control temperature</a></li>
+            </ol>
+          </div>
+
+          <h2 id="cutting">1. Cutting: start clean from the first cut</h2>
+          <p>Cutting looks simple, yet it is the first entry point for iron contamination and thermal damage.</p>
+          <figure class="article-figure">
+            <img src="/assets/article-fabrication-cutting.webp" alt="Titanium part being drilled in a workshop with high-pressure coolant for cooling and chip removal" width="1200" height="675" loading="lazy" decoding="async">
+            <figcaption>Control iron contamination and cutting heat from the cutting stage. Workshop photograph.</figcaption>
+          </figure>
+          <ul class="article-list">
+            <li><strong>Choose the method</strong>: sawing, waterjet, laser and plasma are all usable, but oxy-fuel and ordinary oxy-acetylene cutting are <strong>not suitable for titanium</strong> — high-temperature oxidation contaminates the cut and titanium swarf presents a fire risk.</li>
+            <li><strong>Leave stock for the heat-affected zone</strong>: laser and plasma cutting leave an oxidised, hardened edge. Subsequent machining must <strong>remove this layer completely</strong>; no 'black skin' may enter the next operation.</li>
+            <li><strong>Collect swarf separately</strong>: fine titanium swarf and powder are combustible. Use <strong>dedicated containers</strong>, keep them away from ignition sources, sort by grade and never mix with carbon-steel swarf.</li>
+            <li><strong>Isolate tooling</strong>: platforms, slings and wire ropes that have touched carbon steel must be cleaned or padded before contacting titanium.</li>
+          </ul>
+
+          <h2 id="machining">2. Machining: neither too slow nor too fast</h2>
+          <p>Titanium conducts heat at roughly one quarter the rate of steel, so cutting heat concentrates at the tool tip. It also work-hardens readily and can diffuse into tool materials at temperature. These three traits give titanium machining its unusual behaviour.</p>
+          <figure class="article-figure">
+            <img src="/assets/article-fabrication-machining.webp" alt="CNC turning and milling centre machining a titanium alloy component" width="1200" height="675" loading="lazy" decoding="async">
+            <figcaption>CNC machining of titanium alloy parts: low speed, high feed and ample cooling are the baseline. Workshop photograph.</figcaption>
+          </figure>
+          <ul class="article-list">
+            <li><strong>Tooling</strong>: use carbide (YG-class tungsten-cobalt) or coated tools with a sharp, wear-resistant edge; avoid prolonged cutting with high-speed-steel tools.</li>
+            <li><strong>Cutting parameters</strong>: <strong>low cutting speed, generous feed and adequate depth of cut</strong> — let the tool cut rather than rub. Too shallow a cut and repeated rubbing cause work hardening, making the surface progressively harder.</li>
+            <li><strong>Never dwell mid-cut</strong>: do not let the tool dwell or rub against the workpiece; this instantly forms a hardened layer that will damage the tool on the next pass.</li>
+            <li><strong>Ample cooling</strong>: use high-pressure coolant to remove heat and flush chips; dry cutting is only for a few special tooling cases.</li>
+            <li><strong>Drilling and tapping</strong>: use carbide drills, maintain continuous feed without frequent withdrawal, and use coated taps with good lubrication; slightly enlarge tapping drill size to compensate for springback.</li>
+          </ul>
+
+          <h2 id="forming">3. Forming: remember springback, iron and heat</h2>
+          <ul class="article-list">
+            <li><strong>Springback is significant</strong>: titanium's elastic modulus is about half that of steel, so bending and stamping spring back far more; tooling design must compensate. Commercially pure titanium (Gr.1/Gr.2) forms well at room temperature; alpha-beta alloys such as Gr.5 (Ti-6Al-4V) are difficult to cold form and usually need hot forming.</li>
+            <li><strong>Minimum bend radius matters</strong>: excessive bending cracks the outer fibre; set the radius by grade and thickness.</li>
+            <li><strong>Control temperature and atmosphere</strong>: hold hot-forming temperatures strictly by grade; excessive heat causes oxidation, hydrogen pickup and grain growth. Use inert atmosphere or rapid heating where possible and anneal after forming as required.</li>
+            <li><strong>Prevent iron contamination throughout</strong>: rust or carbon-steel particles on dies, rollers and platforms press iron into the surface and seed later pitting.</li>
+          </ul>
+
+          <h2 id="welding">4. Welding: the highest-risk step for titanium equipment</h2>
+          <p>Titanium is extremely sensitive to oxygen, nitrogen and hydrogen, and reactivity rises sharply above 400 °C. Welding is the step where compromise is least acceptable.</p>
+          <ul class="article-list">
+            <li><strong>High-purity argon</strong>: GTAW/TIG welding must use argon of at least 99.99% purity.</li>
+            <li><strong>Shield both faces</strong>: not just the torch side — <strong>the back of the weld, inside the tube, must also be purged with argon</strong>, with a trailing shield protecting the solidified bead. Do not remove the gas until the weld and heat-affected zone have <strong>cooled below 200 °C</strong>. Lack of back purging is the most common site failure cause.</li>
+            <li><strong>Extreme cleanliness</strong>: within <strong>50 mm</strong> either side of the joint there must be no oil, moisture, scale or marker ink; filler wire must be wiped clean too.</li>
+            <li><strong>Dedicated tools</strong>: use titanium-only stainless wire brushes or clean grinding wheels; never share tools with carbon steel.</li>
+            <li><strong>Control heat input and interpass temperature</strong>: avoid overheating that coarsens grain and reduces toughness.</li>
+            <li><strong>Judge by weld colour</strong>: <strong>silver-white is acceptable</strong>; yellow, blue, grey and black indicate progressive oxidation and must be ground out and rewelded. This is the most direct quality indicator.</li>
+            <li><strong>Qualification first</strong>: titanium welding differs from carbon-steel welding. A qualified WPS/PQR and certified welders should be in place before release. For site repair without a qualified welder and proper shielding, return the piece to the workshop rather than weld under inadequate conditions.</li>
+          </ul>
+          <div class="callout">
+            <p><strong>Buyer checklist:</strong> ask who issued the WPS/PQR, whether welders are certified, how back purging is implemented, and how weld colour is judged and recorded. Ownership of these documents and records must be confirmed per order; they are not automatically issued by ALLOYTI.</p>
+          </div>
+
+          <h2 id="heattreat">5. Heat treatment: prevent oxidation and hydrogen pickup</h2>
+          <ul class="article-list">
+            <li><strong>Stress relief</strong>: stress-relief annealing after welding and cold work reduces residual stress and the risk of stress corrosion cracking (SCC).</li>
+            <li><strong>Protective atmosphere</strong>: anneal in vacuum or inert atmosphere. Heating in a normal air furnace forms scale and may cause hydrogen pickup, so a subsequent pickling step must be allowed for.</li>
+            <li><strong>Temperature window</strong>: commercially pure titanium is typically annealed in the several-hundred-degree Celsius range, strictly by grade, to avoid grain coarsening and loss of strength and ductility.</li>
+            <li><strong>Avoid hydrogen embrittlement</strong>: wet processes such as pickling and plating can introduce hydrogen; affected parts need vacuum dehydrogenation, or ductility drops and brittle fracture becomes possible.</li>
+          </ul>
+
+          <h2 id="surface">6. Surface treatment and cleaning: protect the passive film</h2>
+          <p>Titanium's corrosion resistance depends entirely on the dense TiO₂ passive film on its surface. Fabrication is, in essence, the process of keeping that film intact.</p>
+          <figure class="article-figure">
+            <img src="/assets/article-fabrication-iron.en.svg" alt="Mechanism diagram: iron contamination leading to localised pitting, with detection and removal steps" width="1200" height="675" loading="lazy" decoding="async">
+            <figcaption>Iron contamination to pitting: mechanism, detection and removal. Process-principle illustration.</figcaption>
+          </figure>
+          <ul class="article-list">
+            <li><strong>Iron contamination is the primary enemy</strong>: carbon-steel brushes, hammers, iron platforms and wire ropes embed iron particles in the titanium surface, forming an Fe–Ti galvanic cell that develops into pitting in chloride media. Titanium-only tooling and physical separation from carbon-steel work areas are hard requirements.</li>
+            <li><strong>Detect iron contamination</strong>: use the ferroxyl (potassium ferricyanide) test and treat any colour change.</li>
+            <li><strong>Pickle and passivate</strong>: a nitric-plus-hydrofluoric acid solution removes scale and iron contamination and reactivates the passive film; rinse thoroughly afterwards, since residual acid causes later corrosion.</li>
+            <li><strong>Never use carbon-steel wire brushes or ordinary grinding wheels on titanium</strong>; blasting media must be clean and iron-free.</li>
+            <li><strong>Avoid scratches and contamination</strong>: use nylon slings or padding for transport and lifting; isolate temporary fixtures and supports from the titanium.</li>
+          </ul>
+
+          <h2 id="assembly">7. Assembly: keep crevices and galvanic couples out</h2>
+          <ul class="article-list">
+            <li><strong>Insulate dissimilar metals</strong>: direct contact between titanium and metals with very different potentials, such as carbon steel or copper, accelerates local corrosion in conductive media such as seawater. Use insulating gaskets and sleeves.</li>
+            <li><strong>Reduce crevices</strong>: flange faces and bolted laps are high-risk zones for chloride concentration and crevice corrosion. Prefer continuous welds over bolted laps where practical; centre gaskets and match their specification.</li>
+            <li><strong>Tighten evenly</strong>: tighten in diagonal sequence to the specified torque in stages, avoiding eccentric loading, local stress concentration and leakage.</li>
+            <li><strong>Prevent arc damage</strong>: do not strike or flash an arc on titanium surfaces during nearby welding; even a small arc mark can become a crack initiation site.</li>
+          </ul>
+
+          <h2 id="safety">8. Safety: titanium swarf is not ordinary metal swarf</h2>
+          <p>Fine titanium powder and swarf are combustible in air and present a fire and explosion risk at sufficient concentration near an ignition source. A fabrication area must use dedicated containers, keep swarf away from fire and heat, sort it by grade, prohibit mixing with ordinary metal swarf and avoid raising dust during cleanup.</p>
+
+          <h2 id="conclusion">Conclusion: clean, protect, control temperature</h2>
+          <p>Titanium fabrication comes down to three rules: <strong>clean</strong> — dedicated tooling and zero tolerance of iron contamination; <strong>protect</strong> — full argon shielding throughout welding and an intact passive film throughout processing; <strong>control temperature</strong> — do not let titanium run unprotected at uncontrolled heat in cutting, forming, welding or heat treatment.</p>
+          <p>Write these three rules into cutting lists, process cards and work instructions, and titanium equipment can be made right the first time and stay reliable. Remember: <strong>titanium failures are, more often than not, process failures rather than material failures.</strong></p>
+          <p>Further reading: our guides on titanium industrial selection and use, and on troubleshooting titanium problems in service.</p>
+        </div>
+
+        <div class="cta-band">
+          <div>
+            <h2>Need titanium sourcing support?</h2>
+            <p>Tell us the product form, grade, dimensions, target market and required inspection documents. We will confirm what can be supplied per order and the next step.</p>
+          </div>
+          <a class="button button-primary" href="/contact">Request a quotation <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="/" aria-label="ALLOYTI home">
+          <img class="brand-mark" src="assets/logo-emblem.webp" alt="ALLOYTI logo" width="36" height="36"> <span class="brand-word" data-i18n="s001">ALLOYTI</span>
+        </a>
+        <p class="footer-slogan" data-i18n="ui.slogan"><span data-i18n="s326">Built on Titanium. Driven by Technology.</span></p>
+        <p data-i18n="footer.brandDesc"><span data-i18n="s327">Titanium and titanium alloy sourcing, supply and technical support — plate, bar, tube, fasteners and precision forgings to ASTM, GB and AMS standards, exported to North America, Europe, the Middle East and Southeast Asia.</span></p>
+      </div>
+      <nav class="footer-col" aria-label="Product links">
+        <p class="footer-col-title" data-i18n="s008"><span data-i18n="s008">Products</span></p>
+        <a href="/titanium-plate" data-i18n="s014"><span data-i18n="s014">Titanium Plate &amp; Sheet</span></a>
+        <a href="/titanium-bar" data-i18n="s015"><span data-i18n="s015">Titanium Bar &amp; Rod</span></a>
+        <a href="/titanium-tube" data-i18n="s016"><span data-i18n="s016">Titanium Tube & Pipe</span></a>
+        <a href="/titanium-fasteners" data-i18n="s017"><span data-i18n="s017">Titanium Fasteners</span></a>
+        <a href="/titanium-daily-goods" data-i18n="s530"><span data-i18n="s530">Titanium Daily Goods</span></a>
+        <a href="/titanium-forgings" data-i18n="s018"><span data-i18n="s018">Forgings &amp; Machined Parts</span></a>
+      </nav>
+      <nav class="footer-col" aria-label="Company links">
+        <p class="footer-col-title" data-i18n="footer.colAbout"><span data-i18n="s057">Company</span></p>
+        <a href="/about" data-i18n="nav.about"><span data-i18n="s023">About</span></a>
+        <a href="/quality" data-i18n="nav.quality"><span data-i18n="s043">Quality &amp; Service</span></a>
+        <a href="/faq" data-i18n="nav.faq"><span data-i18n="s010">FAQ</span></a>
+        <a href="/resources" data-i18n="s453"><span data-i18n="s453">Resources</span></a>
+        <a href="/applications" data-i18n="s584"><span data-i18n="s584">Applications</span></a>
+        <a href="/#showcase" data-i18n="nav.showcase"><span data-i18n="s328">Sourcing</span></a>
+      </nav>
+      <div class="footer-col">
+        <p class="footer-col-title" data-i18n="footer.colContact"><span data-i18n="s012">Contact</span></p>
+        <a href="mailto:sales@alloyti.com" data-i18n="s019"><span data-i18n="s019">sales@alloyti.com</span></a>
+        <a href="https://wa.me/8618523283306" target="_blank" rel="noopener noreferrer" data-i18n="s020"><span data-i18n="s020">WhatsApp +86 185 2328 3306</span></a>
+        <a href="/contact" data-i18n="s021"><span data-i18n="s021">Send an enquiry ↗</span></a>
+        <span class="footer-addr" data-i18n="s445">High-Tech Avenue, Baoji, Shaanxi, China</span>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year">2026</span> <span data-i18n="s001">ALLOYTI</span></p>
+      <p data-i18n="ui.bottomTag"><span data-i18n="s329">TITANIUM · ASTM / DIN / ISO · Confirmed per order</span></p>
+      <a href="/privacy" data-i18n="s022"><span data-i18n="s022">Privacy Policy</span></a>
+      <a href="/terms" data-i18n="s557"><span data-i18n="s557">Terms of Sale</span></a>
+      <a href="/" data-i18n="ui.backTop"><span data-i18n="s330">Back to top ↑</span></a>
+    </div>
+  </footer>
+  <script src="app.min.js?v=20261126a"></script>
+  <script src="chat.20261126a.min.js?v=20261126a"></script>
+  <!-- WA FLOAT v1 -->
+  <a class="wa-float" href="https://wa.me/8618523283306" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.15h-.01c-1.52 0-3.01-.41-4.31-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.83 2.41a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23z"/><path d="M16.53 14.09c-.25-.12-1.47-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.79.97-.15.16-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05s.88 2.38 1 2.54c.12.16 1.73 2.64 4.19 3.7.59.25 1.04.4 1.4.51.59.19 1.12.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.11-.23-.17-.48-.29z"/></svg>
+  </a>
+</body>
+</html>

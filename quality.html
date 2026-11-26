@@ -10,7 +10,7 @@
     if (/[?&]gen=1/.test(location.search)) {
       // 构建期渲染译文：临时加载对应语言包，供生成静态语言页使用
       var g = new URLSearchParams(location.search).get("lang");
-      if (g && /^(zh|ko|ar|ru|de)$/.test(g)) document.write('<script src="/i18n/' + g + '.js?v=20261125a"><\/script>');
+      if (g && /^(zh|ko|ar|ru|de)$/.test(g)) document.write('<script src="/i18n/' + g + '.js?v=20261126b"><\/script>');
       return;
     }
     try {

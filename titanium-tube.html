@@ -10,7 +10,7 @@
     if (/[?&]gen=1/.test(location.search)) {
       // 构建期渲染译文：临时加载对应语言包，供生成静态语言页使用
       var g = new URLSearchParams(location.search).get("lang");
-      if (g && /^(zh|ko|ar|ru|de)$/.test(g)) document.write('<script src="/i18n/' + g + '.js?v=20261125a"><\/script>');
+      if (g && /^(zh|ko|ar|ru|de)$/.test(g)) document.write('<script src="/i18n/' + g + '.js?v=20261126b"><\/script>');
       return;
     }
     try {
@@ -395,6 +395,7 @@
             <li><a href="/titanium-grade-guide" data-i18n="s457"><span data-i18n="s457">Titanium grades explained: ASTM, GB and AMS equivalents</span></a></li>
             <li><a href="/titanium-corrosion-guide" data-i18n="s459"><span data-i18n="s459">Titanium corrosion resistance by medium</span></a></li>
             <li><a href="/titanium-specification-guide" data-i18n="s461"><span data-i18n="s461">Specifying titanium: certificates, tolerances and testing</span></a></li>
+            <li><a href="/titanium-fabrication-guide" data-i18n="s650"><span data-i18n="s650">Titanium Fabrication Essentials: A Shop-Floor Guide from Cutting to Assembly</span></a></li>
             <li><a href="/titanium-heat-exchanger-guide" data-i18n="s603"><span data-i18n="s603">Titanium Heat Exchanger Tubes: A Practical Specification Guide</span></a></li>
           </ul>
           <p><a href="/resources" data-i18n="s453"><span data-i18n="s453">Resources</span></a> &rarr;</p>

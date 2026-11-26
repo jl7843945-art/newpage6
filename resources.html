@@ -10,7 +10,7 @@
     if (/[?&]gen=1/.test(location.search)) {
       // 构建期渲染译文：临时加载对应语言包，供生成静态语言页使用
       var g = new URLSearchParams(location.search).get("lang");
-      if (g && /^(zh|ko|ar|ru|de)$/.test(g)) document.write('<script src="/i18n/' + g + '.js?v=20261125a"><\/script>');
+      if (g && /^(zh|ko|ar|ru|de)$/.test(g)) document.write('<script src="/i18n/' + g + '.js?v=20261126b"><\/script>');
       return;
     }
     try {
@@ -157,6 +157,11 @@
           "@type": "TechArticle",
           "headline": "Titanium in Daily Goods: A Practical Guide to Material and Everyday Benefits",
           "url": "https://www.alloyti.com/titanium-daily-goods-guide"
+        },
+        {
+          "@type": "TechArticle",
+          "headline": "Titanium Fabrication Essentials: A Shop-Floor Guide from Cutting to Assembly",
+          "url": "https://www.alloyti.com/titanium-fabrication-guide"
         }
       ]
     }
@@ -268,6 +273,12 @@
             <span class="article-tag" data-i18n="s605">Daily goods</span>
             <h3><a href="/titanium-daily-goods-guide" data-en-only data-i18n="s606"><span data-i18n="s606">Titanium in Daily Goods: A Practical Guide to Material and Everyday Benefits</span></a></h3>
             <p data-i18n="s607"><span data-i18n="s607">A practical guide to titanium bottles, cups and cutlery: the passive oxide film, corrosion behaviour, skin contact, grades and what 'good for the body' can honestly mean.</span></p>
+            <span class="article-read"><span data-i18n="s464">Read the guide</span> <span aria-hidden="true">→</span></span>
+          </article>
+          <article class="article-item">
+            <span class="article-tag" data-i18n="s649">Fabrication</span>
+            <h3><a href="/titanium-fabrication-guide" data-en-only data-i18n="s650"><span data-i18n="s650">Titanium Fabrication Essentials: A Shop-Floor Guide from Cutting to Assembly</span></a></h3>
+            <p data-i18n="s651"><span data-i18n="s651">A shop-floor guide to titanium cutting, machining, forming, welding, heat treatment, surface finishing and assembly: iron contamination control, cutting parameters, dual-side argon shielding, weld colour checks, ferroxyl testing and galvanic isolation.</span></p>
             <span class="article-read"><span data-i18n="s464">Read the guide</span> <span aria-hidden="true">→</span></span>
           </article>
         </div>
